@@ -1,5 +1,5 @@
 within ;
-package OCRAIOS
+package OCRAIOSPSSE
   package Components
 
     model PowerToReal
@@ -1490,7 +1490,7 @@ package OCRAIOS
         annotation (Placement(transformation(extent={{-202,-26},{-182,-6}})));
       OpenIPSL.Electrical.Events.Breaker breaker1(enableTrigger=true)
         annotation (Placement(transformation(extent={{-116,-26},{-96,-6}})));
-      .OCRAIOS.Components.PSSEGeneratorTGOV generatorTGOV(
+      .OCRAIOSPSSE.Components.PSSEGeneratorTGOV generatorTGOV(
         V_b=20,
         M_b=750,
         V_0=pF1_1.voltage.GeneratorV_0,
@@ -1647,7 +1647,7 @@ package OCRAIOS
       Data.SystemData.SystemData.PF7 pF7_1(redeclare record Voltage =
             Data.VoltageData.VPF7, redeclare record Power = Data.PowerData.PPF7)
         annotation (Placement(transformation(extent={{-54,60},{-34,80}})));
-      .OCRAIOS.Components.PSSEGeneratorTGOV generatorTGOV(
+      .OCRAIOSPSSE.Components.PSSEGeneratorTGOV generatorTGOV(
         V_b=20,
         M_b=750,
         V_0=pF1_1.voltage.GeneratorV_0,
@@ -1785,7 +1785,7 @@ package OCRAIOS
         annotation (Placement(transformation(extent={{-202,-26},{-182,-6}})));
       OpenIPSL.Electrical.Events.Breaker breaker1(enableTrigger=true)
         annotation (Placement(transformation(extent={{-116,-26},{-96,-6}})));
-      .OCRAIOS.Components.PSSEGeneratorTGOV generatorTGOV(
+      .OCRAIOSPSSE.Components.PSSEGeneratorTGOV generatorTGOV(
         V_b=20,
         M_b=750,
         V_0=pF1_1.voltage.GeneratorV_0,
@@ -1870,8 +1870,8 @@ package OCRAIOS
         annotation (Line(points={{-72,-92},{-105,-92}}, color={0,0,255}));
       connect(load.p, FiveBus.p) annotation (Line(points={{86,-104},{86,-92},
               {28,-92}}, color={0,0,255}));
-      connect(realExpression.y, recordReferenceRelay.u) annotation (Line(points
-            ={{-181,22},{-168,22},{-168,23},{-155.333,23}}, color={0,0,127}));
+      connect(realExpression.y, recordReferenceRelay.u) annotation (Line(points=
+             {{-181,22},{-168,22},{-168,23},{-155.333,23}}, color={0,0,127}));
       connect(recordReferenceRelay.TripSingal, breaker.Trigger) annotation (
           Line(points={{-129.333,23},{-106,23},{-106,4},{-192,4},{-192,-4}},
             color={255,0,255}));
@@ -1924,14 +1924,14 @@ package OCRAIOS
       record PowerFlow
         extends Modelica.Icons.Record;
         replaceable record Voltage =
-            OCRAIOS.Data.Records.VoltagePFData constrainedby
-          OCRAIOS.Data.Records.VoltagePFData
+            OCRAIOSPSSE.Data.Records.VoltagePFData constrainedby
+          OCRAIOSPSSE.Data.Records.VoltagePFData
         annotation(choicesAllMatching);
         Voltage voltage;
 
         replaceable record Power =
-            OCRAIOS.Data.Records.PowerPFData constrainedby
-          OCRAIOS.Data.Records.PowerPFData
+            OCRAIOSPSSE.Data.Records.PowerPFData constrainedby
+          OCRAIOSPSSE.Data.Records.PowerPFData
         annotation (choicesAllMatching);
         Power power;
         annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
@@ -1942,7 +1942,7 @@ package OCRAIOS
     package PowerData
 
       record PPF1
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=-350,
           InfiniteBusQ_0=-16,
           GeneratorP_0=450,
@@ -1955,7 +1955,7 @@ package OCRAIOS
       end PPF1;
 
       record PPF2
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=50,
           InfiniteBusQ_0=60,
           GeneratorP_0=350,
@@ -1968,7 +1968,7 @@ package OCRAIOS
       end PPF2;
 
       record PPF3
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=150,
           InfiniteBusQ_0=66,
           GeneratorP_0=350,
@@ -1981,7 +1981,7 @@ package OCRAIOS
       end PPF3;
 
       record PPF4
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=400,
           InfiniteBusQ_0=107,
           GeneratorP_0=300,
@@ -1994,7 +1994,7 @@ package OCRAIOS
       end PPF4;
 
       record PPF5
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=9000,
           InfiniteBusQ_0=236,
           GeneratorP_0=300,
@@ -2007,7 +2007,7 @@ package OCRAIOS
       end PPF5;
 
       record PPF6
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=1200,
           InfiniteBusQ_0=434,
           GeneratorP_0=300,
@@ -2020,7 +2020,7 @@ package OCRAIOS
       end PPF6;
 
       record PPF7
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=1050,
           InfiniteBusQ_0=374,
           GeneratorP_0=450,
@@ -2033,7 +2033,7 @@ package OCRAIOS
       end PPF7;
 
       record PPF8
-      extends OCRAIOS.Data.Records.PowerPFData(
+      extends OCRAIOSPSSE.Data.Records.PowerPFData(
           InfiniteBusP_0=1200,
           InfiniteBusQ_0=454,
           GeneratorP_0=300,
@@ -2050,7 +2050,7 @@ package OCRAIOS
     package VoltageData
 
         record VPF1
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.06,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2062,7 +2062,7 @@ package OCRAIOS
         end VPF1;
 
         record VPF2
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.06,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2074,7 +2074,7 @@ package OCRAIOS
         end VPF2;
 
         record VPF3
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.06,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2086,7 +2086,7 @@ package OCRAIOS
         end VPF3;
 
         record VPF4
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.04,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2098,7 +2098,7 @@ package OCRAIOS
         end VPF4;
 
         record VPF5
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.08,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2110,7 +2110,7 @@ package OCRAIOS
         end VPF5;
 
         record VPF6
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.08,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2122,7 +2122,7 @@ package OCRAIOS
         end VPF6;
 
         record VPF7
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.08,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2134,7 +2134,7 @@ package OCRAIOS
         end VPF7;
 
         record VPF8
-        extends OCRAIOS.Data.Records.VoltagePFData(
+        extends OCRAIOSPSSE.Data.Records.VoltagePFData(
           InfiniteBusV_0=1.08,
           InfiniteBusangle_0=0.0,
           BreakerenableTrigger=false,
@@ -2151,41 +2151,49 @@ package OCRAIOS
       record SystemData
 
         record PF1 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF1, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF1)           "Power FLow 1";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF1, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF1)
+                                                             "Power FLow 1";
         record PF2 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF2, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF2)           "Power FLow 2";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF2, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF2)
+                                                             "Power FLow 2";
         record PF3 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF3, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF3)           "Power FLow 3";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF3, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF3)
+                                                             "Power FLow 3";
 
         record PF4 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF4, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF4)           "Power FLow 4";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF4, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF4)
+                                                             "Power FLow 4";
         record PF5 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF5, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF5)           "Power FLow 5";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF5, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF5)
+                                                             "Power FLow 5";
 
         record PF6 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF6, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF6)           "Power FLow 6";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF6, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF6)
+                                                             "Power FLow 6";
 
         record PF7 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF7, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF7)           "Power FLow 7";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF7, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF7)
+                                                             "Power FLow 7";
 
         record PF8 =
-        OCRAIOS.Data.Records.PowerFlow (redeclare replaceable record Voltage =
-                OCRAIOS.Data.VoltageData.VPF8, redeclare replaceable record
-              Power = OCRAIOS.Data.PowerData.PPF8)           "Power FLow 8";
+        OCRAIOSPSSE.Data.Records.PowerFlow (redeclare replaceable record
+              Voltage = OCRAIOSPSSE.Data.VoltageData.VPF8, redeclare
+              replaceable record Power = OCRAIOSPSSE.Data.PowerData.PPF8)
+                                                             "Power FLow 8";
         annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
               coordinateSystem(preserveAspectRatio=false)));
       end SystemData;
@@ -2197,4 +2205,4 @@ package OCRAIOS
       Tutorial(version="1"),
       OpenIPSL(version="2.0.0-dev"),
       Modelica_Synchronous(version="0.93.0")));
-end OCRAIOS;
+end OCRAIOSPSSE;
