@@ -1157,6 +1157,256 @@ package OCRAIOS
                 lineColor={0,0,0},
                 textString="(h)")}));
       end ReferenceRelay;
+
+      package Data
+        package Records
+          record AlphaData
+           parameter Real alpha;
+            annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+                  coordinateSystem(preserveAspectRatio=false)));
+          end AlphaData;
+
+          record CData
+             parameter Real C;
+            annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+                  coordinateSystem(preserveAspectRatio=false)));
+          end CData;
+
+          record RelayData "empty complete relay data record"
+            extends Modelica.Icons.Record;
+            replaceable record Alpha =
+            AlphaData constrainedby AlphaData
+            annotation (choicesAllMatching);
+            Alpha alpha;
+            replaceable record C =
+            CData constrainedby CData
+            annotation (choicesAllMatching);
+            C c;
+             replaceable record EPS = EPSData constrainedby EPSData
+                                             annotation (choicesAllMatching);
+            EPS eps;
+          end RelayData;
+
+          record EPSData
+           parameter Real eps;
+            annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+                  coordinateSystem(preserveAspectRatio=false)));
+          end EPSData;
+        end Records;
+
+        package RelayData
+          record StandardInverseData = Records.RelayData (
+              redeclare replaceable record Alpha = AlphaData.SIAlpha,
+              redeclare replaceable record C = CData.SIC,
+              redeclare replaceable record EPS = EPSData.SIEPS);
+          record VeryInverseData = Records.RelayData (
+              redeclare replaceable record Alpha = AlphaData.VIAlpha,
+              redeclare replaceable record C = CData.VIC,
+              redeclare replaceable record EPS = EPSData.VIEPS);
+          record ExtremelyInverseData = Records.RelayData (
+              redeclare replaceable record Alpha = AlphaData.EIAlpha,
+              redeclare replaceable record C = CData.EIC,
+              redeclare replaceable record EPS = EPSData.EIEPS);
+          record LongInverseData = Records.RelayData (
+              redeclare replaceable record Alpha = AlphaData.LIAlpha,
+              redeclare replaceable record C = CData.LIC,
+              redeclare replaceable record EPS = EPSData.LEPS);
+        end RelayData;
+
+        package AlphaData
+          record SIAlpha
+            extends Records.AlphaData(alpha=0.02);
+          end SIAlpha;
+
+          record VIAlpha
+            extends Records.AlphaData(alpha=1);
+          end VIAlpha;
+
+          record EIAlpha
+            extends Records.AlphaData(alpha=2);
+          end EIAlpha;
+
+          record LIAlpha
+            extends Records.AlphaData(alpha=1);
+          end LIAlpha;
+        end AlphaData;
+
+        package CData
+          record SIC
+            extends Records.CData(C=0.14);
+          end SIC;
+
+          record VIC
+            extends Records.CData(C=13.5);
+          end VIC;
+
+          record EIC
+            extends Records.CData(C=80);
+          end EIC;
+
+          record LIC
+            extends Records.CData(C=120);
+          end LIC;
+        end CData;
+
+        package EPSData
+           record SIEPS
+            extends Records.EPSData(eps=0.41);
+           end SIEPS;
+
+          record VIEPS
+            extends Records.EPSData(eps=0.07);
+          end VIEPS;
+
+          record EIEPS
+            extends Records.EPSData(eps=0.102);
+          end EIEPS;
+
+          record LEPS
+            extends Records.EPSData(eps=0);
+          end LEPS;
+        end EPSData;
+      end Data;
+
+      model RecordReferenceRelay
+        Modelica.Blocks.Math.Add add(       k2=1, k1=-1)
+          annotation (Placement(transformation(extent={{-130,30},{-110,50}})));
+        Modelica.Blocks.Logical.Greater greater1
+          annotation (Placement(transformation(extent={{-252,-10},{-232,10}})));
+        Modelica.Blocks.Math.BooleanToReal booleanToReal1
+          annotation (Placement(transformation(extent={{-214,-10},{-194,10}})));
+        Modelica.Blocks.Sources.Constant const(k=Is)
+                                                    annotation (Placement(
+              transformation(
+              extent={{-10,-10},{10,10}},
+              rotation=0,
+              origin={-286,-52})));
+        Modelica.Blocks.Math.Product product
+          annotation (Placement(transformation(extent={{-296,-10},{-276,10}})));
+        Modelica.Blocks.Sources.Constant const1(k=1/(sqrt(2))) annotation (Placement(
+              transformation(
+              extent={{-10,-10},{10,10}},
+              rotation=0,
+              origin={-334,-62})));
+        Components.ExtractingTimeOfFault extractingTimeOfFault
+          annotation (Placement(transformation(extent={{-172,34},{-152,54}})));
+        Components.Timer timer
+          annotation (Placement(transformation(extent={{-174,-14},{-154,6}})));
+        parameter Real Is=1 "Pick Up Current Value";
+        Modelica.Blocks.Interfaces.BooleanOutput TripSingal
+          annotation (Placement(transformation(extent={{-10,-10},{10,10}},
+              rotation=90,
+              origin={-180,110}),
+                                iconTransformation(extent={{-10,-10},{10,10}},
+              rotation=0,
+              origin={-10,0})));
+        Modelica.Blocks.Logical.Greater greater2
+          annotation (Placement(transformation(extent={{-92,-10},{-72,10}})));
+        parameter Real alpha=0.02 "Alpha Constant Value";
+        parameter Real TMS=0.5 "TMS Constant Value";
+        parameter Real C=0.14 "C Constant Value";
+        //parameter Real ls=1 "Constant output value";
+        Components.CalculatingOperationTime calculatingOperationTime(
+          alpha=alpha,
+          TMS=TMS,
+          C=C,
+          ls=ls,
+          k=k)
+          annotation (Placement(transformation(extent={{-174,-56},{-154,-36}})));
+        parameter Real k= 0.041 "Constant output value";
+
+        Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop
+          annotation (Placement(transformation(extent={{-54,-16},{-34,4}})));
+        Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=false)
+          annotation (Placement(transformation(extent={{-98,-46},{-78,-26}})));
+        Modelica.Blocks.Math.Division division
+          annotation (Placement(transformation(extent={{-332,-8},{-312,12}})));
+        Modelica.Blocks.Sources.Constant const2(k=0.22)        annotation (Placement(
+              transformation(
+              extent={{-10,-10},{10,10}},
+              rotation=0,
+              origin={-342,-32})));
+        Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop1
+          annotation (Placement(transformation(extent={{-232,-42},{-212,-22}})));
+        Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=false)
+          annotation (Placement(transformation(extent={{-260,-54},{-240,-34}})));
+        Modelica.Blocks.Interfaces.RealInput u
+          annotation (Placement(transformation(extent={{-420,-20},{-380,20}})));
+        parameter Real ls=0.73 "Constant output value";
+      equation
+
+        connect(const1.y, product.u2) annotation (Line(points={{-323,-62},{-308,
+                -62},{-308,-6},{-298,-6}}, color={0,0,127}));
+        connect(product.y, greater1.u1)
+          annotation (Line(points={{-275,0},{-254,0}}, color={0,0,127}));
+        connect(const.y, greater1.u2) annotation (Line(points={{-275,-52},{-262,
+                -52},{-262,-8},{-254,-8}}, color={0,0,127}));
+        connect(booleanToReal1.y, timer.u) annotation (Line(points={{-193,0},{
+                -184,0},{-184,0.2},{-176,0.2}}, color={0,0,127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{-174,44},
+                {-184,44},{-184,0.2},{-176,0.2}},          color={0,0,127}));
+        connect(calculatingOperationTime.Control, timer.u) annotation (Line(
+              points={{-176,-40},{-184,-40},{-184,0.2},{-176,0.2}}, color={0,0,
+                127}));
+        connect(extractingTimeOfFault.y, add.u1)
+          annotation (Line(points={{-151,44},{-140,44},{-140,46},{-132,46}},
+                                                         color={0,0,127}));
+        connect(timer.y, add.u2) annotation (Line(points={{-153,-4},{-138,-4},{
+                -138,34},{-132,34}}, color={0,0,127}));
+        connect(add.y, greater2.u1) annotation (Line(points={{-109,40},{-100,40},
+                {-100,0},{-94,0}}, color={0,0,127}));
+        connect(calculatingOperationTime.OperationTime, greater2.u2)
+          annotation (Line(points={{-153,-46},{-124,-46},{-124,-8},{-94,-8}},
+              color={0,0,127}));
+        connect(greater2.y, rSFlipFlop.S)
+          annotation (Line(points={{-71,0},{-56,0}}, color={255,0,255}));
+        connect(booleanConstant.y, rSFlipFlop.R) annotation (Line(points={{-77,-36},
+                {-62,-36},{-62,-12},{-56,-12}},      color={255,0,255}));
+        connect(rSFlipFlop.Q, TripSingal) annotation (Line(points={{-33,0},{-28,
+                0},{-28,80},{-180,80},{-180,110}}, color={255,0,255}));
+        connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
+           Line(points={{-176,-52},{-238,-52},{-238,-78},{-300,-78},{-300,-24},
+                {-266,-24},{-266,0},{-254,0}}, color={0,0,127}));
+        connect(division.u2, const2.y) annotation (Line(points={{-334,-4},{-350,
+                -4},{-350,-32},{-331,-32}}, color={0,0,127}));
+        connect(division.y, product.u1) annotation (Line(points={{-311,2},{-304,
+                2},{-304,6},{-298,6}}, color={0,0,127}));
+        connect(rSFlipFlop1.Q, booleanToReal1.u) annotation (Line(points={{-211,
+                -26},{-202,-26},{-202,-16},{-216,-16},{-216,0}}, color={255,0,
+                255}));
+        connect(rSFlipFlop1.S, greater1.y) annotation (Line(points={{-234,-26},
+                {-240,-26},{-240,-14},{-226,-14},{-226,0},{-231,0}}, color={255,
+                0,255}));
+        connect(booleanConstant1.y, rSFlipFlop1.R) annotation (Line(points={{
+                -239,-44},{-236,-44},{-236,-38},{-234,-38}}, color={255,0,255}));
+        connect(division.u1, u) annotation (Line(points={{-334,8},{-360,8},{-360,0},{-400,
+                0}}, color={0,0,127}));
+        annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-380,-100},
+                  {-20,100}}),       graphics={Rectangle(extent={{-380,100},{
+                    -20,-100}},
+                            lineColor={28,108,200}), Text(
+                extent={{-290,56},{-96,-46}},
+                lineColor={28,108,200},
+                textString="Relay")}),                                 Diagram(
+              coordinateSystem(preserveAspectRatio=false, extent={{-380,-100},{-20,100}}),
+                          graphics={
+              Text(
+                extent={{-252,26},{-232,14}},
+                lineColor={0,0,0},
+                textString="(e)"),
+              Text(
+                extent={{-172,52},{-152,40}},
+                lineColor={0,0,0},
+                textString="(f)"),
+              Text(
+                extent={{-174,2},{-154,-10}},
+                lineColor={0,0,0},
+                textString="(g)"),
+              Text(
+                extent={{-174,-40},{-154,-52}},
+                lineColor={0,0,0},
+                textString="(h)")}));
+      end RecordReferenceRelay;
       annotation ();
     end RelayPack;
   end Components;
@@ -1457,6 +1707,178 @@ package OCRAIOS
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
     end AIOSNoMotor;
+
+    model AIOSRecordNoMotorRelay
+      OpenIPSL.Electrical.Buses.Bus ThreeBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=1200,
+        Q_0=53)
+        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+      OpenIPSL.Electrical.Buses.Bus OneBus(
+        angle_0=0,
+        V_b=380,
+        V_0=1.08,
+        P_0=450,
+        Q_0=118)
+        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine1(
+        R=0,
+        X=0.4143333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-176,-62},{-156,-42}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine3(
+        R=0,
+        X=0.414333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-156,-26},{-136,-6}})));
+      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
+        V_b=380,
+        displayPF=true,
+        V_0=pF1_1.voltage.InfiniteBusV_0,
+        angle_0=pF1_1.voltage.InfiniteBusangle_0,
+        P_0=pF1_1.power.InfiniteBusP_0,
+        Q_0=pF1_1.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-298,-26},{-278,-6}})));
+      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
+            transformation(extent={{-174,-102},{-154,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FiveBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-15.2,
+        P_0=1200,
+        Q_0=0)
+        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine2(
+        R=0,
+        X=0.029999989612,
+        G=0,
+        B=0,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+      Data.SystemData.SystemData.PF2 pF2_1(redeclare record Voltage =
+            Data.VoltageData.VPF2, redeclare record Power = Data.PowerData.PPF2)
+        annotation (Placement(transformation(extent={{-158,60},{-138,80}})));
+      Data.SystemData.SystemData.PF1 pF1_1(redeclare record Voltage =
+            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
+        annotation (Placement(transformation(extent={{-188,60},{-168,80}})));
+      Data.SystemData.SystemData.PF3 pF3_1(redeclare record Voltage =
+            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
+        annotation (Placement(transformation(extent={{-132,60},{-112,80}})));
+      Data.SystemData.SystemData.PF5 pF5_1(redeclare record Voltage =
+            Data.VoltageData.VPF5, redeclare record Power = Data.PowerData.PPF5)
+        annotation (Placement(transformation(extent={{-104,60},{-84,80}})));
+      Data.SystemData.SystemData.PF6 pF6_1(redeclare record Voltage =
+            Data.VoltageData.VPF6, redeclare record Power = Data.PowerData.PPF6)
+        annotation (Placement(transformation(extent={{-78,60},{-58,80}})));
+      Data.SystemData.SystemData.PF7 pF7_1(redeclare record Voltage =
+            Data.VoltageData.VPF7, redeclare record Power = Data.PowerData.PPF7)
+        annotation (Placement(transformation(extent={{-54,60},{-34,80}})));
+      OpenIPSL.Electrical.Events.Breaker breaker(enableTrigger=true)
+        annotation (Placement(transformation(extent={{-202,-26},{-182,-6}})));
+      OpenIPSL.Electrical.Events.Breaker breaker1(enableTrigger=true)
+        annotation (Placement(transformation(extent={{-116,-26},{-96,-6}})));
+      .OCRAIOS.Components.PSSEGeneratorTGOV generatorTGOV(
+        V_b=20,
+        M_b=750,
+        V_0=pF1_1.voltage.GeneratorV_0,
+        angle_0=pF1_1.voltage.Generatorangle_0,
+        P_0=pF1_1.power.GeneratorP_0,
+        Q_0=pF1_1.power.GeneratorQ_0)
+        annotation (Placement(transformation(extent={{-214,-106},{-196,-82}})));
+      OpenIPSL.Electrical.Events.PwFault pwFault(
+        R=0,
+        X=0.0375,
+        t1=1,
+        t2=1.13999)
+               annotation (Placement(transformation(extent={{-116,-46},{-104,-34}})));
+
+     Real Imag;
+      Modelica.Blocks.Sources.RealExpression realExpression(y=Imag)
+        annotation (Placement(transformation(extent={{-202,12},{-182,32}})));
+      OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer
+        twoWindingTransformer(
+        G=0,
+        B=0,
+        VB1=20,
+        VB2=380,
+        CW=1,
+        CZ=1,
+        X=0.12,
+        R=0,
+        t2=1.04)
+        annotation (Placement(transformation(extent={{-118,-96},{-106,-88}})));
+      OpenIPSL.Electrical.Loads.PSSE.Load load(
+        V_b=380,
+        V_0=pF1_1.voltage.PQLoadV_0,
+        angle_0=pF1_1.voltage.PQLoadangle_0,
+        P_0=pF1_1.power.PQLoadP_0,
+        Q_0=pF1_1.power.PQLoadQ_0)
+        annotation (Placement(transformation(extent={{72,-130},{100,-104}})));
+      Components.RelayPack.RecordReferenceRelay recordReferenceRelay(alpha=
+            standardInverseData.alpha.alpha, C=standardInverseData.c.C)
+        annotation (Placement(transformation(extent={{-154,12},{-130,34}})));
+      Components.RelayPack.Data.RelayData.StandardInverseData
+        standardInverseData
+        annotation (Placement(transformation(extent={{-26,60},{-6,80}})));
+      Components.RelayPack.Data.RelayData.VeryInverseData veryInverseData
+        annotation (Placement(transformation(extent={{-26,34},{-6,54}})));
+      Components.RelayPack.Data.RelayData.ExtremelyInverseData
+        extremelyInverseData
+        annotation (Placement(transformation(extent={{-26,10},{-6,30}})));
+      Components.RelayPack.Data.RelayData.LongInverseData longInverseData
+        annotation (Placement(transformation(extent={{-26,-14},{-6,6}})));
+    equation
+      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
+      connect(FiveBus.p, pwLine2.n)
+        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
+      connect(pwLine2.p, ThreeBus.p)
+        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+      connect(pwLine3.p, breaker.r)
+        annotation (Line(points={{-155,-16},{-182,-16}}, color={0,0,255}));
+      connect(breaker1.Trigger, breaker.Trigger) annotation (Line(points={{-106,-4},
+              {-106,4},{-192,4},{-192,-4}},          color={255,0,255}));
+      connect(ThreeBus.p, breaker1.r) annotation (Line(points={{-72,-92},{-72,
+              -16},{-96,-16}},                    color={0,0,255}));
+      connect(generatorTGOV.pwPin, TwoBus.p) annotation (Line(points={{-195.64,
+              -92.2},{-178.44,-92.2},{-178.44,-92},{-164,-92}},     color={0,
+              0,255}));
+      connect(infiniteBus.p, OneBus.p)
+        annotation (Line(points={{-278,-16},{-234,-16}},
+                                                       color={0,0,255}));
+      connect(pwLine1.n, breaker1.r) annotation (Line(points={{-157,-52},{-86,
+              -52},{-86,-16},{-96,-16}}, color={0,0,255}));
+      connect(OneBus.p, pwLine1.p) annotation (Line(points={{-234,-16},{-226,
+              -16},{-226,-52},{-175,-52}},
+                                        color={0,0,255}));
+      connect(pwFault.p, pwLine3.n) annotation (Line(points={{-117,-40},{-126,-40},{
+              -126,-16},{-137,-16}}, color={0,0,255}));
+      connect(breaker1.s, pwLine3.n)
+        annotation (Line(points={{-116,-16},{-137,-16}}, color={0,0,255}));
+      connect(breaker.s, pwLine1.p) annotation (Line(points={{-202,-16},{-226,
+              -16},{-226,-52},{-175,-52}}, color={0,0,255}));
+      connect(TwoBus.p, twoWindingTransformer.p)
+        annotation (Line(points={{-164,-92},{-119,-92}}, color={0,0,255}));
+      connect(ThreeBus.p, twoWindingTransformer.n)
+        annotation (Line(points={{-72,-92},{-105,-92}}, color={0,0,255}));
+      connect(load.p, FiveBus.p) annotation (Line(points={{86,-104},{86,-92},
+              {28,-92}}, color={0,0,255}));
+      connect(realExpression.y, recordReferenceRelay.u) annotation (Line(points
+            ={{-181,22},{-168,22},{-168,23},{-155.333,23}}, color={0,0,127}));
+      connect(recordReferenceRelay.TripSingal, breaker.Trigger) annotation (
+          Line(points={{-129.333,23},{-106,23},{-106,4},{-192,4},{-192,-4}},
+            color={255,0,255}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                -140},{140,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+    end AIOSRecordNoMotorRelay;
   end TestSystems;
 
   package Data
