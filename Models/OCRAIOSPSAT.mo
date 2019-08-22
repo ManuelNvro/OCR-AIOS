@@ -1764,11 +1764,11 @@ package OCRAIOSPSAT
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
         displayPF=true,
-        V_0=pF1_1.voltage.InfiniteBusV_0,
-        angle_0=pF1_1.voltage.InfiniteBusangle_0,
-        P_0=pF1_1.power.InfiniteBusP_0,
-        Q_0=pF1_1.power.InfiniteBusQ_0)
-        annotation (Placement(transformation(extent={{-294,-26},{-274,-6}})));
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-296,-26},{-276,-6}})));
       OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
             transformation(extent={{-174,-102},{-154,-82}})));
       OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
@@ -1797,11 +1797,10 @@ package OCRAIOSPSAT
         annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
       OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
         V_b=380,
-        V_0=pF1_1.voltage.PQLoadV_0,
-        angle_0=pF1_1.voltage.PQLoadangle_0,
-        P_0=pF1_1.power.PQLoadP_0,
-        Q_0=pF1_1.power.PQLoadQ_0)
-               annotation (Placement(transformation(
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
             extent={{-18,-18},{18,18}},
             rotation=90,
             origin={74,-92})));
@@ -1822,13 +1821,15 @@ package OCRAIOSPSAT
       Components.RelayPack.RecordReferenceRelay recordReferenceRelay
         annotation (Placement(transformation(extent={{-172,12},{-136,32}})));
       Components.PSSEGeneratorTGOV pSSEGeneratorTGOV(
-        V_0=pF1_1.voltage.GeneratorV_0,
-        angle_0=pF1_1.voltage.Generatorangle_0,
-        P_0=pF1_1.power.GeneratorP_0,
-        Q_0=pF1_1.power.GeneratorQ_0,
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0,
         V_b=20,
         M_b=750)
         annotation (Placement(transformation(extent={{-222,-106},{-202,-82}})));
+      Data.SystemData.SystemData.PF1 PowerFlow
+        annotation (Placement(transformation(extent={{-194,56},{-174,76}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -1848,7 +1849,7 @@ package OCRAIOSPSAT
       connect(ThreeBus.p, breaker1.r) annotation (Line(points={{-72,-92},{-72,
               -16},{-96,-16}},                    color={0,0,255}));
       connect(infiniteBus.p, OneBus.p)
-        annotation (Line(points={{-274,-16},{-234,-16}},
+        annotation (Line(points={{-276,-16},{-234,-16}},
                                                        color={0,0,255}));
       connect(pwLine1.n, breaker1.r) annotation (Line(points={{-119,-56},{-92,
               -56},{-92,-16},{-96,-16}}, color={0,0,255}));
@@ -1909,10 +1910,10 @@ package OCRAIOSPSAT
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
         displayPF=true,
-        V_0=pF8_1.voltage.InfiniteBusV_0,
-        angle_0=pF8_1.voltage.InfiniteBusangle_0,
-        P_0=pF8_1.power.InfiniteBusP_0,
-        Q_0=pF8_1.power.InfiniteBusQ_0)
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
         annotation (Placement(transformation(extent={{-270,0},{-250,20}})));
       OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750, displayPF=true)
                                                     annotation (Placement(
@@ -1959,26 +1960,23 @@ package OCRAIOSPSAT
         Xr1=0.07,
         Xm=3.20,
         a=0.78,
-        P_0=pF8_1.power.MotorP_0,
-        Q_0=pF8_1.power.MotorQ_0,
+        P_0=PowerFlow.power.MotorP_0,
+        Q_0=PowerFlow.power.MotorQ_0,
         V_0=0.9990,
         angle_0=-21.3)
         annotation (Placement(transformation(extent={{62,-4},{42,16}})));
-      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=pF8_1.power.ShuntCapacitorQnom)
+      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=PowerFlow.power.ShuntCapacitorQnom)
         annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={52,-28})));
-      Data.SystemData.SystemData.PF4 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF3)
-        annotation (Placement(transformation(extent={{-194,58},{-174,78}})));
       Components.PSSEGeneratorTGOV pSSEGeneratorTGOV(
         V_b=20,
         M_b=750,
-        V_0=pF8_1.voltage.GeneratorV_0,
-        angle_0=pF8_1.voltage.Generatorangle_0,
-        P_0=pF8_1.power.GeneratorP_0,
-        Q_0=pF8_1.power.GeneratorQ_0)
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0)
         annotation (Placement(transformation(extent={{-226,-108},{-204,-80}})));
       OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
         twoWindingTransformer2(
@@ -1992,14 +1990,16 @@ package OCRAIOSPSAT
         annotation (Placement(transformation(extent={{-52,-4},{-32,16}})));
       OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
         V_b=380,
-        V_0=pF1_1.voltage.PQLoadV_0,
-        angle_0=pF1_1.voltage.PQLoadangle_0,
-        P_0=pF1_1.power.PQLoadP_0,
-        Q_0=pF1_1.power.PQLoadQ_0)
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0)
                annotation (Placement(transformation(
             extent={{-18,-18},{18,18}},
             rotation=90,
             origin={74,-92})));
+      Data.SystemData.SystemData.PF8 PowerFlow
+        annotation (Placement(transformation(extent={{-204,58},{-184,78}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
               38},{-210,10},{-234,10}},
@@ -2076,10 +2076,10 @@ package OCRAIOSPSAT
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
         displayPF=true,
-        V_0=pF8_1.voltage.InfiniteBusV_0,
-        angle_0=pF8_1.voltage.InfiniteBusangle_0,
-        P_0=pF8_1.power.InfiniteBusP_0,
-        Q_0=pF8_1.power.InfiniteBusQ_0)
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
         annotation (Placement(transformation(extent={{-264,-22},{-244,-2}})));
       OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750, displayPF=true)
                                                     annotation (Placement(
@@ -2111,11 +2111,10 @@ package OCRAIOSPSAT
         annotation (Placement(transformation(extent={{-22,-124},{-2,-104}})));
       OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
         V_b=380,
-        V_0=pF8_1.voltage.PQLoadV_0,
-        angle_0=pF8_1.voltage.PQLoadangle_0,
-        P_0=pF8_1.power.PQLoadP_0,
-        Q_0=pF8_1.power.PQLoadQ_0)
-               annotation (Placement(transformation(
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
             extent={{-17,-17},{17,17}},
             rotation=0,
             origin={87,-145})));
@@ -2136,28 +2135,26 @@ package OCRAIOSPSAT
         Xr1=0.07,
         Xm=3.20,
         a=0.78,
-        P_0=pF8_1.power.MotorP_0,
-        Q_0=pF8_1.power.MotorQ_0,
+        P_0=PowerFlow.power.MotorP_0,
+        Q_0=PowerFlow.power.MotorQ_0,
         V_0=0.9990,
         angle_0=-21.3)
         annotation (Placement(transformation(extent={{68,-26},{48,-6}})));
-      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=pF8_1.power.ShuntCapacitorQnom)
+      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=PowerFlow.power.ShuntCapacitorQnom)
         annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={58,-50})));
-      Data.SystemData.SystemData.PF4 pF4_1
-        annotation (Placement(transformation(extent={{-194,58},{-174,78}})));
-      Data.SystemData.SystemData.PF8 pF8_1
-        annotation (Placement(transformation(extent={{-154,58},{-134,78}})));
+      Data.SystemData.SystemData.PF8 PowerFlow
+        annotation (Placement(transformation(extent={{-198,58},{-178,78}})));
       Components.PSSEGeneratorTGOV pSSEGeneratorTGOV(
         V_b=20,
         M_b=750,
-        V_0=pF8_1.voltage.GeneratorV_0,
-        angle_0=pF8_1.voltage.Generatorangle_0,
-        P_0=pF8_1.power.GeneratorP_0,
-        Q_0=pF8_1.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-220,-130},{-198,-102}})));
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0) annotation (Placement(transformation(
+              extent={{-220,-130},{-198,-102}})));
       OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
         twoWindingTransformer2(
         Sn=750,
@@ -2279,10 +2276,10 @@ package OCRAIOSPSAT
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
         V_b=380,
         displayPF=true,
-        V_0=pF8_1.voltage.InfiniteBusV_0,
-        angle_0=pF8_1.voltage.InfiniteBusangle_0,
-        P_0=pF8_1.power.InfiniteBusP_0,
-        Q_0=pF8_1.power.InfiniteBusQ_0)
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
         annotation (Placement(transformation(extent={{-264,-22},{-244,-2}})));
       OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750, displayPF=true)
                                                     annotation (Placement(
@@ -2329,30 +2326,27 @@ package OCRAIOSPSAT
         Xr1=0.07,
         Xm=3.20,
         a=0.78,
-        P_0=pF8_1.power.MotorP_0,
-        Q_0=pF8_1.power.MotorQ_0,
+        P_0=PowerFlow.power.MotorP_0,
+        Q_0=PowerFlow.power.MotorQ_0,
         V_0=0.9990,
         angle_0=-21.3)
         annotation (Placement(transformation(extent={{68,-26},{48,-6}})));
-      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=pF8_1.power.ShuntCapacitorQnom)
+      OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=PowerFlow.power.ShuntCapacitorQnom)
         annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={58,-50})));
-      Data.SystemData.SystemData.PF4 pF4_1(redeclare record Voltage =
-            Data.VoltageData.VPF3, redeclare record Power = Data.PowerData.PPF1)
-        annotation (Placement(transformation(extent={{-194,58},{-174,78}})));
-      Data.SystemData.SystemData.PF8 pF8_1(redeclare record Voltage =
+      Data.SystemData.SystemData.PF8 PowerFlow(redeclare record Voltage =
             Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
-        annotation (Placement(transformation(extent={{-168,58},{-148,78}})));
+        annotation (Placement(transformation(extent={{-198,58},{-178,78}})));
       Components.PSSEGeneratorTGOV pSSEGeneratorTGOV(
         V_b=20,
         M_b=750,
-        V_0=pF8_1.voltage.GeneratorV_0,
-        angle_0=pF8_1.voltage.Generatorangle_0,
-        P_0=pF8_1.power.GeneratorP_0,
-        Q_0=pF8_1.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-220,-130},{-198,-102}})));
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0) annotation (Placement(transformation(
+              extent={{-220,-130},{-198,-102}})));
       OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
         twoWindingTransformer2(
         Sn=750,
@@ -2369,10 +2363,10 @@ package OCRAIOSPSAT
         Qz=1,
         Qi=0,
         V_b=380,
-        V_0=pF8_1.voltage.PQLoadV_0,
-        angle_0=pF8_1.voltage.PQLoadangle_0,
-        P_0=pF8_1.power.PQLoadP_0,
-        Q_0=pF8_1.power.PQLoadQ_0)
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0)
         annotation (Placement(transformation(extent={{78,-144},{98,-124}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
