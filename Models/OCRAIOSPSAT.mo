@@ -1883,11 +1883,6 @@ package OCRAIOSPSAT
             extent={{-17,-17},{17,17}},
             rotation=90,
             origin={63,-91})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF4 pF4_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF4, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF4)
-        annotation (Placement(transformation(extent={{-196,58},{-176,78}})));
       OpenIPSL.Electrical.Buses.Bus FourBus(
         V_b=380,
         V_0=1.0455,
@@ -1925,16 +1920,12 @@ package OCRAIOSPSAT
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={52,-28})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF8 pF8_1
-        annotation (Placement(transformation(extent={{-160,58},{-140,78}})));
-      RelayCoordination.AIOS.Parts.PSSEGeneratorTGOV generatorTGOV(
-        V_b=20,
-        M_b=750,
-        V_0=pF8_1.voltage.GeneratorV_0,
-        angle_0=pF8_1.voltage.Generatorangle_0,
-        P_0=pF8_1.power.GeneratorP_0,
-        Q_0=pF8_1.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-230,-114},{-200,-74}})));
+      Data.SystemData.SystemData.PF4 pF4_1
+        annotation (Placement(transformation(extent={{-194,58},{-174,78}})));
+      Data.SystemData.SystemData.PF8 pF8_1
+        annotation (Placement(transformation(extent={{-154,58},{-134,78}})));
+      Components.PSSEGeneratorTGOV pSSEGeneratorTGOV
+        annotation (Placement(transformation(extent={{-224,-106},{-204,-82}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
               38},{-210,10},{-234,10}},
@@ -1967,8 +1958,8 @@ package OCRAIOSPSAT
               {-72,6},{-72,-92}},         color={0,0,255}));
       connect(pwShuntC.p,motorTypeIII. p) annotation (Line(points={{42,-28},{18,
               -28},{18,6},{42,6}},    color={0,0,255}));
-      connect(TwoBus.p, generatorTGOV.pwPin) annotation (Line(points={{-164,-92},
-              {-182,-92},{-182,-91},{-199.4,-91}},       color={0,0,255}));
+      connect(TwoBus.p, pSSEGeneratorTGOV.pwPin) annotation (Line(points={{-164,
+              -92},{-182,-92},{-182,-92.2},{-203.6,-92.2}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -280,-140},{140,80}})), Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-280,-140},{140,80}})));
