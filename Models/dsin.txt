@@ -102,10 +102,9 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(674,55)
+char initialName(554,55)
 SysData.S_b
 SysData.fn
-Imag
 ThreeBus.V_b
 ThreeBus.V_0
 ThreeBus.angle_0
@@ -253,123 +252,41 @@ pwLine2.Y.re
 pwLine2.Y.im
 pwLine2.Z.re
 pwLine2.Z.im
-FourBus.V_b
-FourBus.V_0
-FourBus.angle_0
-FourBus.P_0
-FourBus.Q_0
-FourBus.S_b
-FourBus.fn
-FourBus.p.vr
-FourBus.p.vi
-FourBus.p.ir
-FourBus.p.ii
-FourBus.V
-FourBus.angle
-FourBus.displayPF
-motorTypeIII.V_b
-motorTypeIII.V_0
-motorTypeIII.angle_0
-motorTypeIII.P_0
-motorTypeIII.Q_0
-motorTypeIII.S_b
-motorTypeIII.fn
-motorTypeIII.Sup
-motorTypeIII.Rs
-motorTypeIII.Xs
-motorTypeIII.Rr1
-motorTypeIII.Xr1
-motorTypeIII.Xm
-motorTypeIII.Hm
-motorTypeIII.a
-motorTypeIII.b
-motorTypeIII.c
-motorTypeIII.tup
-motorTypeIII.v
-motorTypeIII.anglev
-motorTypeIII.s
-motorTypeIII.der(s)
-motorTypeIII.Tm
-motorTypeIII.Te
-motorTypeIII.P
-motorTypeIII.Q
-motorTypeIII.Ir
-motorTypeIII.Im
-motorTypeIII.epr
-motorTypeIII.der(epr)
-motorTypeIII.epm
-motorTypeIII.der(epm)
-motorTypeIII.I
-motorTypeIII.anglei
-motorTypeIII.pi
-motorTypeIII.Omegab
-motorTypeIII.vr0
-motorTypeIII.vi0
-motorTypeIII.ir0
-motorTypeIII.ii0
-motorTypeIII.i2
-motorTypeIII.A
-motorTypeIII.B
-motorTypeIII.C
-motorTypeIII.X0
-motorTypeIII.Xp
-motorTypeIII.Tp0
-motorTypeIII.RZs2
-motorTypeIII.K
-motorTypeIII.K2
-motorTypeIII.K1
-motorTypeIII.a03
-motorTypeIII.a13
-motorTypeIII.a23
-motorTypeIII.S0
-motorTypeIII.epm0
-motorTypeIII.epr0
-pwShuntC.p.ir
-pwShuntC.p.ii
-pwShuntC.pi
-pwShuntC.Qnom
-pwShuntC.Vbase
-pwShuntC.fn
-pwShuntC.Zbase
-pwShuntC.C
-pwShuntC.v
-pwShuntC.anglev
-pwShuntC.i
-pwShuntC.anglei
-pF4_1.voltage.InfiniteBusV_0
-pF4_1.voltage.InfiniteBusangle_0
-pF4_1.voltage.BreakerenableTrigger
-pF4_1.voltage.TransformerB3B4m
-pF4_1.voltage.GeneratorV_0
-pF4_1.voltage.Generatorangle_0
-pF4_1.voltage.PQLoadV_0
-pF4_1.voltage.PQLoadangle_0
-pF4_1.power.InfiniteBusP_0
-pF4_1.power.InfiniteBusQ_0
-pF4_1.power.GeneratorP_0
-pF4_1.power.GeneratorQ_0
-pF4_1.power.PQLoadP_0
-pF4_1.power.PQLoadQ_0
-pF4_1.power.MotorP_0
-pF4_1.power.MotorQ_0
-pF4_1.power.ShuntCapacitorQnom
-pF8_1.voltage.InfiniteBusV_0
-pF8_1.voltage.InfiniteBusangle_0
-pF8_1.voltage.BreakerenableTrigger
-pF8_1.voltage.TransformerB3B4m
-pF8_1.voltage.GeneratorV_0
-pF8_1.voltage.Generatorangle_0
-pF8_1.voltage.PQLoadV_0
-pF8_1.voltage.PQLoadangle_0
-pF8_1.power.InfiniteBusP_0
-pF8_1.power.InfiniteBusQ_0
-pF8_1.power.GeneratorP_0
-pF8_1.power.GeneratorQ_0
-pF8_1.power.PQLoadP_0
-pF8_1.power.PQLoadQ_0
-pF8_1.power.MotorP_0
-pF8_1.power.MotorQ_0
-pF8_1.power.ShuntCapacitorQnom
+lOADPQ.V_b
+lOADPQ.V_0
+lOADPQ.angle_0
+lOADPQ.P_0
+lOADPQ.Q_0
+lOADPQ.S_b
+lOADPQ.fn
+lOADPQ.Sn
+lOADPQ.V
+lOADPQ.Angle_V
+lOADPQ.P
+lOADPQ.Q
+lOADPQ.angle_0rad
+lOADPQ.CoB
+lOADPQ.Vmax
+lOADPQ.Vmin
+lOADPQ.forcePQ
+Imag
+PowerFlow.voltage.InfiniteBusV_0
+PowerFlow.voltage.InfiniteBusangle_0
+PowerFlow.voltage.BreakerenableTrigger
+PowerFlow.voltage.TransformerB3B4m
+PowerFlow.voltage.GeneratorV_0
+PowerFlow.voltage.Generatorangle_0
+PowerFlow.voltage.PQLoadV_0
+PowerFlow.voltage.PQLoadangle_0
+PowerFlow.power.InfiniteBusP_0
+PowerFlow.power.InfiniteBusQ_0
+PowerFlow.power.GeneratorP_0
+PowerFlow.power.GeneratorQ_0
+PowerFlow.power.PQLoadP_0
+PowerFlow.power.PQLoadQ_0
+PowerFlow.power.MotorP_0
+PowerFlow.power.MotorQ_0
+PowerFlow.power.ShuntCapacitorQnom
 pSSEGeneratorTGOV.SysData.S_b
 pSSEGeneratorTGOV.SysData.fn
 pSSEGeneratorTGOV.gENSAL.V_b
@@ -740,51 +657,12 @@ pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.outMin
 pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.T_mod
 pSSEGeneratorTGOV.tGOV1_2.P0
 pSSEGeneratorTGOV.tGOV1_2.P_REF
-twoWindingTransformer2.p.ir
-twoWindingTransformer2.p.ii
-twoWindingTransformer2.n.ir
-twoWindingTransformer2.n.ii
-twoWindingTransformer2.S_b
-twoWindingTransformer2.V_b
-twoWindingTransformer2.Sn
-twoWindingTransformer2.Vn
-twoWindingTransformer2.rT
-twoWindingTransformer2.xT
-twoWindingTransformer2.m
-twoWindingTransformer2.Zn
-twoWindingTransformer2.Zb
-twoWindingTransformer2.r
-twoWindingTransformer2.x
-twoWindingTransformer2.tc
-zIP.V_b
-zIP.V_0
-zIP.angle_0
-zIP.P_0
-zIP.Q_0
-zIP.S_b
-zIP.fn
-zIP.Sn
-zIP.V
-zIP.Angle_V
-zIP.P
-zIP.Q
-zIP.angle_0rad
-zIP.CoB
-zIP.Pz
-zIP.Pi
-zIP.Pp
-zIP.Qz
-zIP.Qi
-zIP.Qp
-zIP.a
 
-double initialValue(674,6)
+double initialValue(554,6)
  -1     750                       0                       0                
   1   280   # SysData.S_b
  -1      50                       0                       0                
   1   280   # SysData.fn
-  0       0                       0                       0                
-  6   256   # Imag
  -1     380                       0                       0                
   1   280   # ThreeBus.V_b
  -1  1.0455000000000001E+00       0                       0                
@@ -865,7 +743,7 @@ double initialValue(674,6)
   6   256   # pwLine1.t2
   0       1                       0                       0                
   6   258   # pwLine1.opening
- -1       1                       0                       0                
+ -1       0                       0                       0                
   1   281   # pwLine1.displayPF
   0       0                       0                       0                
   6   256   # pwLine1.P12
@@ -901,13 +779,13 @@ double initialValue(674,6)
   1   280   # pwLine3.B
   0       0                       0                       0                
   6   256   # pwLine3.S_b
-  0       1                       0                       0                
+  0  9.9999999999999995E+59       0                       0                
   6   256   # pwLine3.t1
   0  9.9999999999999995E+59       0                       0                
   6   256   # pwLine3.t2
   0       1                       0                       0                
   6   258   # pwLine3.opening
- -1       1                       0                       0                
+ -1       0                       0                       0                
   1   281   # pwLine3.displayPF
   0       0                       0                       0                
   6   256   # pwLine3.P12
@@ -995,7 +873,7 @@ double initialValue(674,6)
   1   280   # twoWindingTransformer1.Vn
  -1       0                       0                       0                
   1   280   # twoWindingTransformer1.rT
- -1  8.6999999999999994E-02       0                       0                
+ -1  8.0000000000000002E-02       0                       0                
   1   280   # twoWindingTransformer1.xT
  -1  9.6153846153846145E-01       0                       0                
   1   280   # twoWindingTransformer1.m
@@ -1080,239 +958,75 @@ double initialValue(674,6)
   0       0                       0                       0                
   6  1280   # pwLine2.Z.im
  -1     380                       0                       0                
-  1   280   # FourBus.V_b
- -1  1.0455000000000001E+00       0                       0                
-  1   280   # FourBus.V_0
- -1 -1.2699999999999999E+01       0                       0                
-  1   280   # FourBus.angle_0
- -1    -300                       0                       0                
-  1   280   # FourBus.P_0
- -1     -23                       0                       0                
-  1   280   # FourBus.Q_0
+  1   280   # lOADPQ.V_b
   0       0                       0                       0                
-  6   256   # FourBus.S_b
+  6   256   # lOADPQ.V_0
   0       0                       0                       0                
-  6   256   # FourBus.fn
+  6   256   # lOADPQ.angle_0
   0       0                       0                       0                
-  6   260   # FourBus.p.vr
+  6   256   # lOADPQ.P_0
   0       0                       0                       0                
-  6   260   # FourBus.p.vi
+  6   256   # lOADPQ.Q_0
   0       0                       0                       0                
-  6   388   # FourBus.p.ir
+  6   256   # lOADPQ.S_b
   0       0                       0                       0                
-  6   388   # FourBus.p.ii
+  6   256   # lOADPQ.fn
   0       0                       0                       0                
-  6   256   # FourBus.V
+  6   256   # lOADPQ.Sn
   0       0                       0                       0                
-  6   256   # FourBus.angle
- -1       1                       0                       0                
-  1   281   # FourBus.displayPF
- -1      15                       0                       0                
-  1   280   # motorTypeIII.V_b
- -1  9.9900000000000000E-01       0                       0                
-  1   280   # motorTypeIII.V_0
- -1 -2.1300000000000001E+01       0                       0                
-  1   280   # motorTypeIII.angle_0
+  6   256   # lOADPQ.V
   0       0                       0                       0                
-  6   256   # motorTypeIII.P_0
+  6   256   # lOADPQ.Angle_V
   0       0                       0                       0                
-  6   256   # motorTypeIII.Q_0
+  6   256   # lOADPQ.P
   0       0                       0                       0                
-  6   256   # motorTypeIII.S_b
+  6   256   # lOADPQ.Q
   0       0                       0                       0                
-  6   256   # motorTypeIII.fn
+  6  1280   # lOADPQ.angle_0rad
+  0       0                       0                       0                
+  6  1280   # lOADPQ.CoB
+  0  1.2000000000000000E+00       0                       0                
+  6   256   # lOADPQ.Vmax
+  0  8.0000000000000004E-01       0                       0                
+  6   256   # lOADPQ.Vmin
+  0       1                       0                       0                
+  6   257   # lOADPQ.forcePQ
+  0       0                       0                       0                
+  6   256   # Imag
+ -1  1.0600000000000001E+00       0                       0                
+  1   280   # PowerFlow.voltage.InfiniteBusV_0
  -1       0                       0                       0                
-  1   282   # motorTypeIII.Sup
- -1  3.1000000000000000E-02       0                       0                
-  1   280   # motorTypeIII.Rs
- -1  1.0000000000000001E-01       0                       0                
-  1   280   # motorTypeIII.Xs
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # motorTypeIII.Rr1
- -1  7.0000000000000007E-02       0                       0                
-  1   280   # motorTypeIII.Xr1
- -1  3.2000000000000002E+00       0                       0                
-  1   280   # motorTypeIII.Xm
- -1  5.9999999999999998E-01       0                       0                
-  1   280   # motorTypeIII.Hm
- -1  7.8000000000000003E-01       0                       0                
-  1   280   # motorTypeIII.a
+  1   280   # PowerFlow.voltage.InfiniteBusangle_0
  -1       0                       0                       0                
-  1   280   # motorTypeIII.b
- -1       0                       0                       0                
-  1   280   # motorTypeIII.c
- -1       0                       0                       0                
-  1   280   # motorTypeIII.tup
-  0       0                       0                       0                
-  6   256   # motorTypeIII.v
-  0       0                       0                       0                
-  6   256   # motorTypeIII.anglev
- -1       0                       0                       0                
-  2   272   # motorTypeIII.s
-  0       0                       0                       0                
-  3   256   # motorTypeIII.der(s)
-  0       0                       0                       0                
-  6   256   # motorTypeIII.Tm
-  0       0                       0                       0                
-  6   256   # motorTypeIII.Te
-  0       0                       0                       0                
-  6   256   # motorTypeIII.P
-  0       0                       0                       0                
-  6   256   # motorTypeIII.Q
-  0       0                       0                       0                
-  6   256   # motorTypeIII.Ir
-  0       0                       0                       0                
-  6   256   # motorTypeIII.Im
- -1       0                       0                       0                
-  2   272   # motorTypeIII.epr
-  0       0                       0                       0                
-  3   256   # motorTypeIII.der(epr)
- -1       0                       0                       0                
-  2   272   # motorTypeIII.epm
-  0       0                       0                       0                
-  3   256   # motorTypeIII.der(epm)
-  0       0                       0                       0                
-  6   256   # motorTypeIII.I
-  0       0                       0                       0                
-  6   256   # motorTypeIII.anglei
-  0  3.1415926535897931E+00       0                       0                
-  6  1280   # motorTypeIII.pi
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.Omegab
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.vr0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.vi0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.ir0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.ii0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.i2
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.A
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.B
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.C
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.X0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.Xp
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.Tp0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.RZs2
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.K
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.K2
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.K1
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.a03
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.a13
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.a23
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.S0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.epm0
-  0       0                       0                       0                
-  6  1280   # motorTypeIII.epr0
-  0       0                       0                       0                
-  6   388   # pwShuntC.p.ir
-  0       0                       0                       0                
-  6   388   # pwShuntC.p.ii
-  0  3.1415926535897931E+00       0                       0                
-  6   256   # pwShuntC.pi
-  0       0                       0                       0                
-  6   256   # pwShuntC.Qnom
- -1      15                       0                       0                
-  1   280   # pwShuntC.Vbase
- -1      50                       0                       0                
-  1   280   # pwShuntC.fn
-  0       0                       0                       0                
-  6   256   # pwShuntC.Zbase
-  0       0                       0                       0                
-  6   256   # pwShuntC.C
-  0       0                       0                       0                
-  6   256   # pwShuntC.v
-  0       0                       0                       0                
-  6   256   # pwShuntC.anglev
-  0       0                       0                       0                
-  6   256   # pwShuntC.i
-  0       0                       0                       0                
-  6   256   # pwShuntC.anglei
- -1  1.0400000000000000E+00       0                       0                
-  1   280   # pF4_1.voltage.InfiniteBusV_0
- -1       0                       0                       0                
-  1   280   # pF4_1.voltage.InfiniteBusangle_0
- -1       0                       0                       0                
-  1   281   # pF4_1.voltage.BreakerenableTrigger
+  1   281   # PowerFlow.voltage.BreakerenableTrigger
  -1    9999                       0                       0                
-  1   280   # pF4_1.voltage.TransformerB3B4m
- -1       1                       0                       0                
-  1   280   # pF4_1.voltage.GeneratorV_0
- -1 -9.4000000000000004E+00       0                       0                
-  1   280   # pF4_1.voltage.Generatorangle_0
- -1  1.0024000000000000E+00       0                       0                
-  1   280   # pF4_1.voltage.PQLoadV_0
- -1 -1.3300000000000001E+01       0                       0                
-  1   280   # pF4_1.voltage.PQLoadangle_0
+  1   280   # PowerFlow.voltage.TransformerB3B4m
+ -1  1.0100000000000000E+00       0                       0                
+  1   280   # PowerFlow.voltage.GeneratorV_0
+ -1  2.5000000000000000E+00       0                       0                
+  1   280   # PowerFlow.voltage.Generatorangle_0
+ -1  1.0410999999999999E+00       0                       0                
+  1   280   # PowerFlow.voltage.PQLoadV_0
+ -1 -1.6000000000000001E+00       0                       0                
+  1   280   # PowerFlow.voltage.PQLoadangle_0
+ -1      50                       0                       0                
+  1   280   # PowerFlow.power.InfiniteBusP_0
+ -1      60                       0                       0                
+  1   280   # PowerFlow.power.InfiniteBusQ_0
+ -1     350                       0                       0                
+  1   280   # PowerFlow.power.GeneratorP_0
+ -1      47                       0                       0                
+  1   280   # PowerFlow.power.GeneratorQ_0
  -1     400                       0                       0                
-  1   280   # pF4_1.power.InfiniteBusP_0
- -1     107                       0                       0                
-  1   280   # pF4_1.power.InfiniteBusQ_0
- -1     300                       0                       0                
-  1   280   # pF4_1.power.GeneratorP_0
- -1     213                       0                       0                
-  1   280   # pF4_1.power.GeneratorQ_0
- -1     500                       0                       0                
-  1   280   # pF4_1.power.PQLoadP_0
+  1   280   # PowerFlow.power.PQLoadP_0
  -1      80                       0                       0                
-  1   280   # pF4_1.power.PQLoadQ_0
- -1  1.3330000000000000E-02       0                       0                
-  1   280   # pF4_1.power.MotorP_0
+  1   280   # PowerFlow.power.PQLoadQ_0
  -1       0                       0                       0                
-  1   280   # pF4_1.power.MotorQ_0
- -1     117                       0                       0                
-  1   280   # pF4_1.power.ShuntCapacitorQnom
- -1  1.0800000000000001E+00       0                       0                
-  1   280   # pF8_1.voltage.InfiniteBusV_0
+  1   280   # PowerFlow.power.MotorP_0
  -1       0                       0                       0                
-  1   280   # pF8_1.voltage.InfiniteBusangle_0
+  1   280   # PowerFlow.power.MotorQ_0
  -1       0                       0                       0                
-  1   281   # pF8_1.voltage.BreakerenableTrigger
- -1    9999                       0                       0                
-  1   280   # pF8_1.voltage.TransformerB3B4m
- -1       1                       0                       0                
-  1   280   # pF8_1.voltage.GeneratorV_0
- -1 -1.4800000000000001E+01       0                       0                
-  1   280   # pF8_1.voltage.Generatorangle_0
- -1  1.0091000000000001E+00       0                       0                
-  1   280   # pF8_1.voltage.PQLoadV_0
- -1 -1.9699999999999999E+01       0                       0                
-  1   280   # pF8_1.voltage.PQLoadangle_0
- -1    1200                       0                       0                
-  1   280   # pF8_1.power.InfiniteBusP_0
- -1     454                       0                       0                
-  1   280   # pF8_1.power.InfiniteBusQ_0
- -1     300                       0                       0                
-  1   280   # pF8_1.power.GeneratorP_0
- -1     177                       0                       0                
-  1   280   # pF8_1.power.GeneratorQ_0
- -1     900                       0                       0                
-  1   280   # pF8_1.power.PQLoadP_0
- -1      50                       0                       0                
-  1   280   # pF8_1.power.PQLoadQ_0
- -1  1.3330000000000000E-02       0                       0                
-  1   280   # pF8_1.power.MotorP_0
- -1       0                       0                       0                
-  1   280   # pF8_1.power.MotorQ_0
- -1     117                       0                       0                
-  1   280   # pF8_1.power.ShuntCapacitorQnom
+  1   280   # PowerFlow.power.ShuntCapacitorQnom
  -1     750                       0                       0                
   1   280   # pSSEGeneratorTGOV.SysData.S_b
  -1      50                       0                       0                
@@ -2053,80 +1767,6 @@ double initialValue(674,6)
   6  1280   # pSSEGeneratorTGOV.tGOV1_2.P0
   0       0                       0                       0                
   6  1280   # pSSEGeneratorTGOV.tGOV1_2.P_REF
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer2.p.ir
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer2.p.ii
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer2.n.ir
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer2.n.ii
- -1     750                       0                       0                
-  1   280   # twoWindingTransformer2.S_b
- -1     380                       0                       0                
-  1   280   # twoWindingTransformer2.V_b
- -1     750                       0                       0                
-  1   280   # twoWindingTransformer2.Sn
- -1     380                       0                       0                
-  1   280   # twoWindingTransformer2.Vn
- -1       0                       0                       0                
-  1   280   # twoWindingTransformer2.rT
- -1  8.0000000000000002E-02       0                       0                
-  1   280   # twoWindingTransformer2.xT
- -1       1                       0                       0                
-  1   280   # twoWindingTransformer2.m
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer2.Zn
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer2.Zb
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer2.r
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer2.x
-  0       0                       0                       0                
-  6  1281   # twoWindingTransformer2.tc
- -1     380                       0                       0                
-  1   280   # zIP.V_b
-  0       0                       0                       0                
-  6   256   # zIP.V_0
-  0       0                       0                       0                
-  6   256   # zIP.angle_0
-  0       0                       0                       0                
-  6   256   # zIP.P_0
-  0       0                       0                       0                
-  6   256   # zIP.Q_0
-  0       0                       0                       0                
-  6   256   # zIP.S_b
-  0       0                       0                       0                
-  6   256   # zIP.fn
-  0       0                       0                       0                
-  6   256   # zIP.Sn
-  0       0                       0                       0                
-  6   256   # zIP.V
-  0       0                       0                       0                
-  6   256   # zIP.Angle_V
-  0       0                       0                       0                
-  6   256   # zIP.P
-  0       0                       0                       0                
-  6   256   # zIP.Q
-  0       0                       0                       0                
-  6  1280   # zIP.angle_0rad
-  0       0                       0                       0                
-  6  1280   # zIP.CoB
- -1       1                       0                       0                
-  1   280   # zIP.Pz
- -1       0                       0                       0                
-  1   280   # zIP.Pi
-  0       0                       0                       0                
-  6   256   # zIP.Pp
- -1       1                       0                       0                
-  1   280   # zIP.Qz
- -1       0                       0                       0                
-  1   280   # zIP.Qi
-  0       0                       0                       0                
-  6   256   # zIP.Qp
-  0       0                       0                       0                
-  6  1280   # zIP.a
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -2177,10 +1817,9 @@ double initialValue(674,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(674,139)
+char initialDescription(554,139)
 System base [MVA]
 System Frequency [Hz]
-
 Base voltage of the bus [kV]
 Voltage magnitude (pu) [1]
 Voltage angle [deg]
@@ -2335,98 +1974,16 @@ Active power [MW]
 Reactive power [Mvar]
 System base power [MVA]
 System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Base voltage of the bus [kV]
+Power rating (MVA) [MVA]
 Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Start up control [:#(type=Integer)]
-Stator resistance (pu)
-Stator reactance (pu)
-1st cage rotor resistance (pu)
-1st cage rotor reactance (pu)
-Magnetizing reactance (pu)
-Inertia constant (s)
-1st coefficient of tau_m(w) (pu)
-2nd coefficient of tau_m(w) (pu)
-3rd coefficient of tau_m(w) (pu)
-Start up time (s)
-Bus voltage magnitude [1]
- Bus voltage angle [deg]
-
-
-
-
-[MW]
-[Mvar]
-
-
-
-
-
-
-
-
-
-Base freq in rad/s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Real part of the current
-Imaginary part of the current
-
-Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar
-Base voltage of the bus, kV
-Frequency rating, Hz
-
-Capacitance in p.u
-
-
-
-
-
-
-[:#(type=Boolean)]
-
-
-
-
-
-
-
-
-
-
-
-
-
+voltage angle (rad) [rad|deg]
+Active power (pu) [1]
+Reactive power (pu) [1]
+[rad|deg]
+Change of base between Machine and System [1]
+maximum voltage [1]
+minimum voltage [1]
+force constant PQ-load, false may cause simulation problems [:#(type=Boolean)]
 
 [1]
 [deg]
@@ -2442,8 +1999,8 @@ Capacitance in p.u
 [Mvar]
 [MW]
 [Mvar]
-[MW]
-[Mvar]
+
+
 
 System base [MVA]
 System Frequency [Hz]
@@ -2815,41 +2372,4 @@ Minimum output value
 [s]
 Power reference of the governor
 
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-System base power (MVA)
-Sending end bus voltage (kV)
-Power rating (MVA)
-Voltage rating of transformer (kV)
-Resistance (pu, transformer base)
-Reactance (pu, transformer base)
-Optional fixed tap ratio
-Transformer base impedance
-System base impedance
-Resistance (pu, system base)
-Reactance (pu, system base)
-Internal parameter to switch on the icon arrow [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Power rating (MVA) [MVA]
-Voltage magnitude (pu) [1]
-voltage angle (rad) [rad|deg]
-Active power (pu) [1]
-Reactive power (pu) [1]
-[rad|deg]
-Change of base between Machine and System [1]
-Conductance (pu)
-Active current (pu)
-Active power (pu)
-Susceptance (pu)
-Reactive current (pu)
-Reactive power (pu)
-Auxiliary variable, voltage division [1]
 
