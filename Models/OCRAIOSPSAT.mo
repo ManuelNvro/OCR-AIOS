@@ -1962,8 +1962,8 @@ package OCRAIOSPSAT
         a=0.78,
         P_0=PowerFlow.power.MotorP_0,
         Q_0=PowerFlow.power.MotorQ_0,
-        V_0=0.9990,
-        angle_0=-21.3)
+        V_0=PowerFlow.voltage.MotorV_0,
+        angle_0=PowerFlow.voltage.Motorangle_0)
         annotation (Placement(transformation(extent={{62,-4},{42,16}})));
       OpenIPSL.Electrical.Banks.PwShuntC pwShuntC(Vbase=15, Qnom=PowerFlow.power.ShuntCapacitorQnom)
         annotation (Placement(transformation(
@@ -1998,7 +1998,8 @@ package OCRAIOSPSAT
             extent={{-18,-18},{18,18}},
             rotation=90,
             origin={74,-92})));
-      Data.SystemData.SystemData.PF8 PowerFlow
+      Data.SystemData.SystemData.PF8 PowerFlow(redeclare record Voltage =
+            Data.VoltageData.VPF8, redeclare record Power = Data.PowerData.PPF8)
         annotation (Placement(transformation(extent={{-204,58},{-184,78}})));
     equation
       connect(pwLine1.p,OneBus. p) annotation (Line(points={{-191,38},{-210,
@@ -2425,6 +2426,9 @@ package OCRAIOSPSAT
           //Generator
          parameter Real GeneratorV_0;
          parameter Real Generatorangle_0;
+          //Motor
+         parameter Real MotorV_0;
+         parameter Real Motorangle_0;
           //PQ Load
          parameter Real PQLoadV_0;
          parameter Real PQLoadangle_0;
@@ -2482,7 +2486,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=20,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom=117);
       end PPF1;
 
       record PPF2
@@ -2495,7 +2499,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=80,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom=117);
       end PPF2;
 
       record PPF3
@@ -2508,7 +2512,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=80,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom=117);
       end PPF3;
 
       record PPF4
@@ -2534,7 +2538,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=0,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom=117);
       end PPF5;
 
       record PPF6
@@ -2547,7 +2551,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=150,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom=117);
       end PPF6;
 
       record PPF7
@@ -2560,7 +2564,7 @@ package OCRAIOSPSAT
           PQLoadQ_0=150,
           MotorP_0=0,
           MotorQ_0=0,
-          ShuntCapacitorQnom=0);
+          ShuntCapacitorQnom= 117);
       end PPF7;
 
       record PPF8
@@ -2588,6 +2592,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.04,
           Generatorangle_0=8.8,
+          MotorV_0 = 1.0078,
+          Motorangle_0 = 4.9,
           PQLoadV_0=1.0675,
           PQLoadangle_0=4.7);
         end VPF1;
@@ -2600,6 +2606,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
           Generatorangle_0=2.5,
+          MotorV_0 = 1.0041,
+          Motorangle_0 = -0.7,
           PQLoadV_0=1.0411,
           PQLoadangle_0=-1.6);
         end VPF2;
@@ -2612,6 +2620,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
           Generatorangle_0=1.0,
+          MotorV_0 = 1.0036,
+          Motorangle_0 = -2.1,
           PQLoadV_0=1.0404,
           PQLoadangle_0=-3.2);
         end VPF3;
@@ -2624,6 +2634,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.00,
           Generatorangle_0=-9.4,
+          MotorV_0 = 0.9930,
+          Motorangle_0 = -15.9,
           PQLoadV_0=1.0024,
           PQLoadangle_0=-13.3);
         end VPF4;
@@ -2636,6 +2648,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
           Generatorangle_0=-10,
+          MotorV_0 = 1.0053,
+          Motorangle_0 = -12.7,
           PQLoadV_0=1.0445,
           PQLoadangle_0=-15.2);
         end VPF5;
@@ -2648,6 +2662,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
           Generatorangle_0=-14.8,
+          MotorV_0 = 0.9966,
+          Motorangle_0 = -17.6,
           PQLoadV_0=1.0089,
           PQLoadangle_0=-20.9);
         end VPF6;
@@ -2660,6 +2676,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1.01,
           Generatorangle_0=-11.1,
+          MotorV_0 = 1.0005,
+          Motorangle_0 = -15.3,
           PQLoadV_0=1.0129,
           PQLoadangle_0=-18.6);
         end VPF7;
@@ -2672,6 +2690,8 @@ package OCRAIOSPSAT
           TransformerB3B4m=9999,
           GeneratorV_0=1,
           Generatorangle_0=-14.8,
+          MotorV_0 = 0.9990,
+          Motorangle_0 = -21.3,
           PQLoadV_0=1.0091,
           PQLoadangle_0=-19.7);
         end VPF8;
