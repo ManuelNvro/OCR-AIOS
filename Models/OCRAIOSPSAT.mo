@@ -1556,44 +1556,22 @@ package OCRAIOSPSAT
             extent={{-18,-18},{18,18}},
             rotation=90,
             origin={74,-92})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF2 pF2_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF2, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF2)
-        annotation (Placement(transformation(extent={{-158,60},{-138,80}})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF1 pF1_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF1, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF1)
-        annotation (Placement(transformation(extent={{-188,60},{-168,80}})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF3 pF3_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF3, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF3)
-        annotation (Placement(transformation(extent={{-132,60},{-112,80}})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF5 pF5_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF5, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF5)
-        annotation (Placement(transformation(extent={{-104,60},{-84,80}})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF6 pF6_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF6, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF6)
-        annotation (Placement(transformation(extent={{-78,60},{-58,80}})));
-      RelayCoordination.AIOS.AIOSModel.Data.SystemData.SystemData.PF7 pF7_1(
-          redeclare record Voltage =
-            RelayCoordination.AIOS.AIOSModel.Data.VoltageData.VPF7, redeclare
-          record Power = RelayCoordination.AIOS.AIOSModel.Data.PowerData.PPF7)
-        annotation (Placement(transformation(extent={{-54,60},{-34,80}})));
 
      Real Imag;
-      RelayCoordination.AIOS.Parts.PSATGeneratorTGOV pSATGeneratorTGOV(
-        V_0=pF1_1.voltage.GeneratorV_0,
-        angle_0=pF1_1.voltage.Generatorangle_0,
-        P_0=pF1_1.power.GeneratorP_0,
-        Q_0=pF1_1.power.GeneratorQ_0)
-        annotation (Placement(transformation(extent={{-246,-106},{-226,-82}})));
+      Data.SystemData.SystemData.PF1 pF1_1
+        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+      Data.SystemData.SystemData.PF2 pF2_1
+        annotation (Placement(transformation(extent={{-172,56},{-152,76}})));
+      Data.SystemData.SystemData.PF3 pF3_1
+        annotation (Placement(transformation(extent={{-142,56},{-122,76}})));
+      Data.SystemData.SystemData.PF5 pF5_1
+        annotation (Placement(transformation(extent={{-114,56},{-94,76}})));
+      Data.SystemData.SystemData.PF6 pF6_1
+        annotation (Placement(transformation(extent={{-88,56},{-68,76}})));
+      Data.SystemData.SystemData.PF7 pF7_1
+        annotation (Placement(transformation(extent={{-62,56},{-42,76}})));
+      Components.PSSEGeneratorTGOV pSSEGeneratorTGOV
+        annotation (Placement(transformation(extent={{-216,-106},{-196,-82}})));
     equation
       Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -1618,9 +1596,8 @@ package OCRAIOSPSAT
               -16},{-116,-56},{-139,-56}}, color={0,0,255}));
       connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
               -38},{-116,-38},{-116,-56},{-139,-56}}, color={0,0,255}));
-      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-164,
-              -92},{-186,-92},{-186,-92.2},{-225.6,-92.2}},      color={0,0,
-              255}));
+      connect(TwoBus.p, pSSEGeneratorTGOV.pwPin) annotation (Line(points={{-164,
+              -92},{-180,-92},{-180,-92.2},{-195.6,-92.2}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
