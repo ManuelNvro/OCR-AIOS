@@ -1,0 +1,76 @@
+Log-file of program ./dymosim
+(generated: Thu Aug 22 17:48:45 2019)
+
+dymosim started
+... "dsin.txt" loading (dymosim input file)
+... "AIOSNoMotorRelay.mat" creating (simulation result file)
+
+The translated model is a DAE. Integrating using DAE solver.
+
+Integration started at T = 0 using integration method DASSL
+(DAE multi-step solver (dassl/dasslrt of Petzold modified by Dynasim))
+
+... Error message from dymosim
+At time T = 1.146829e+00 and stepsize
+H = 2.057927e-07 the matrix of partial derivatives
+(= Jacobian) is singular. Some of the model equations may be redundant.
+The code cannot solve the problem as stated. It is possible that the
+redundant equations could be removed, and then the code could solve the
+problem. It is also possible that a solution to your problem either does
+not exist or is not unique. Integration will be terminated.
+
+Integration terminated before reaching "StopTime" at T = 1.15
+States and derivatives:
+recordReferenceRelay.extractingTimeOfFault.limIntegrator.y=1 0
+pSSEGeneratorTGOV.gENSAL.w=0.0068795 -0.0140819
+pSSEGeneratorTGOV.gENSAL.delta=0.971764 2.16126
+pSSEGeneratorTGOV.gENSAL.Epq=1.12927 0.0162457
+pSSEGeneratorTGOV.gENSAL.PSIkd=0.413378 6.23128
+pSSEGeneratorTGOV.gENSAL.PSIppq=0.150429 6.39862
+pSSEGeneratorTGOV.eSST1A.imDerivativeLag.x=2.44474 0.639755
+pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.x_scaled[1]=0.0124724 0.000401313
+pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.x_scaled[1]=0.0124484 4.25296e-07
+pSSEGeneratorTGOV.eSST1A.simpleLagLim.state=2.44538 0.626533
+pSSEGeneratorTGOV.eSST1A.TransducerDelay.state=0.395404 12.7804
+pSSEGeneratorTGOV.oEL.imLimitedIntegrator.y=1e-10 0
+pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.y=6 0
+pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.y=6 0
+pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.y=7.5 0
+pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.x_scaled[1]=0.603339 -0.00400997
+pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.state=0.601334 -0.0270869
+pwLine2.n.ii=-0.0052563 2.77556e-16
+pwLine1.p.ii=0 2.77556e-17
+pwLine1.p.vi=-62.0145 -2.498e-16
+pwLine1.p.ir=0 0
+pwLine1.p.vr=64.888 -4.16334e-17
+pwLine1.n.vi=-62.0145 1.38778e-16
+pwLine1.n.vr=64.888 2.22045e-16
+twoWindingTransformer1.n.ii=-0.320534 0
+twoWindingTransformer1.n.ir=-0.688062 -5.68664e-17
+pwLine3.n.ii=0.315278 1.50921e-16
+pwLine3.n.ir=0.545875 5.69206e-17
+pwLine2.p.ir=0.142187 -1.50054e-16
+pwLine2.n.ir=-0.142187 -5.63785e-18
+FiveBus.p.vr=0.929528 3.46945e-18
+FiveBus.p.vi=0.221909 -2.22045e-16
+pwLine2.p.ii=0.0052563 4.87668e-28
+pSSEGeneratorTGOV.gENSAL.iq=0.67879 0
+pSSEGeneratorTGOV.gENSAL.id=0.403028 -1.38778e-16
+pSSEGeneratorTGOV.eSST1A.simpleLagLim.y=2.44538 0
+   CPU-time for integration      : 0.0186 seconds
+   CPU-time for one GRID interval: 0.321 milliseconds
+   Number of result points       : 68
+   Number of GRID   points       : 59
+   Number of (successful) steps  : 84
+   Number of F-evaluations       : 969
+   Number of H-evaluations       : 171
+   Number of Jacobian-evaluations: 52
+   Number of (model) time events : 2
+   Number of (U) time events     : 0
+   Number of state    events     : 3
+   Number of step     events     : 0
+   Minimum integration stepsize  : 1e-08
+   Maximum integration stepsize  : 0.156
+   Maximum integration order     : 4
+Calling terminal section
+... "dsfinal.txt" creating (final states)
