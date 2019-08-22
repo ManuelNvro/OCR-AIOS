@@ -1,0 +1,29 @@
+Log-file of program ./dymosim
+(generated: Thu Aug 22 11:56:39 2019)
+
+dymosim started
+... "dsin.txt" loading (dymosim input file)
+... "AIOSMotorGenericFault.mat" creating (simulation result file)
+
+The translated model is a DAE. Integrating using DAE solver.
+
+Integration started at T = 0 using integration method DASSL
+(DAE multi-step solver (dassl/dasslrt of Petzold modified by Dynasim))
+Integration terminated successfully at T = 100
+   CPU-time for integration      : 0.0222 seconds
+   CPU-time for one GRID interval: 0.0444 milliseconds
+   Number of result points       : 505
+   Number of GRID   points       : 501
+   Number of (successful) steps  : 361
+   Number of F-evaluations       : 1162
+   Number of H-evaluations       : 876
+   Number of Jacobian-evaluations: 27
+   Number of (model) time events : 1
+   Number of (U) time events     : 0
+   Number of state    events     : 1
+   Number of step     events     : 0
+   Minimum integration stepsize  : 3e-06
+   Maximum integration stepsize  : 6.91
+   Maximum integration order     : 5
+Calling terminal section
+... "dsfinal.txt" creating (final states)
