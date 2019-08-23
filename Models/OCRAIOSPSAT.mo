@@ -1634,14 +1634,13 @@ package OCRAIOSPSAT
         Is=400)
         annotation (Placement(transformation(extent={{-124,-24},{-88,-4}})));
         //k=3,
-      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=2)
         annotation (Placement(transformation(extent={{-268,-20},{-248,0}})));
       Modelica.Blocks.Math.BooleanToReal booleanToReal
         annotation (Placement(transformation(extent={{-226,-20},{-206,0}})));
-      RelayPack.Data.RelayData.StandardInverseData RelayData(
-        redeclare record EPS = RelayPack.Data.EPSData.SIEPS,
-        redeclare record Alpha = RelayPack.Data.AlphaData.EIAlpha,
-        redeclare record C = RelayPack.Data.CData.EIC)
+      RelayPack.Data.RelayData.StandardInverseData RelayData(redeclare record
+          Alpha = RelayPack.Data.AlphaData.EIAlpha, redeclare record C =
+            RelayPack.Data.CData.EIC)
         annotation (Placement(transformation(extent={{-156,54},{-136,74}})));
       Modelica.Blocks.Math.Add add
         annotation (Placement(transformation(extent={{-160,-26},{-140,-6}})));
@@ -1650,7 +1649,7 @@ package OCRAIOSPSAT
       Modelica.Blocks.Math.Product product
         annotation (Placement(transformation(extent={{-192,-20},{-172,0}})));
       Modelica.Blocks.Sources.Constant const1(k=10133333)
-        annotation (Placement(transformation(extent={{-280,-68},{-260,-48}})));
+        annotation (Placement(transformation(extent={{-272,-66},{-252,-46}})));
     equation
 
       connect(booleanStep.y, booleanToReal.u)
@@ -1664,9 +1663,8 @@ package OCRAIOSPSAT
         annotation (Line(points={{-162,-10},{-171,-10}}, color={0,0,127}));
       connect(booleanToReal.y, product.u1) annotation (Line(points={{-205,-10},
               {-200,-10},{-200,-4},{-194,-4}}, color={0,0,127}));
-      connect(const1.y, product.u2) annotation (Line(points={{-259,-58},{-248,
-              -58},{-248,-56},{-234,-56},{-234,-32},{-202,-32},{-202,-16},{-194,
-              -16}}, color={0,0,127}));
+      connect(const1.y, product.u2) annotation (Line(points={{-251,-56},{-234,
+              -56},{-234,-32},{-202,-32},{-202,-16},{-194,-16}}, color={0,0,127}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,-140},
                 {-80,80}})),            Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{-80,80}})));
