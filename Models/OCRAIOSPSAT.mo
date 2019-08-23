@@ -1279,35 +1279,35 @@ package OCRAIOSPSAT
             CData constrainedby CData
             annotation (choicesAllMatching);
             C c;
-             replaceable record EPS = EPSData constrainedby EPSData
-                                             annotation (choicesAllMatching);
-            EPS eps;
+            //        replaceable record EPS = EPSData constrainedby EPSData
+            //                                        annotation (choicesAllMatching);
+            //       EPS eps;
           end RelayData;
 
-          record EPSData
-           parameter Real eps;
-            annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-                  coordinateSystem(preserveAspectRatio=false)));
-          end EPSData;
+          //     record EPSData
+          //      parameter Real eps;
+          //       annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+          //             coordinateSystem(preserveAspectRatio=false)));
+          //     end EPSData;
         end Records;
 
         package RelayData
           record StandardInverseData = Records.RelayData (
               redeclare replaceable record Alpha = AlphaData.SIAlpha,
-              redeclare replaceable record C = CData.SIC,
-              redeclare replaceable record EPS = EPSData.SIEPS);
+               redeclare replaceable record C = CData.SIC);
+               //         redeclare replaceable record EPS = EPSData.SIEPS
           record VeryInverseData = Records.RelayData (
               redeclare replaceable record Alpha = AlphaData.VIAlpha,
-              redeclare replaceable record C = CData.VIC,
-              redeclare replaceable record EPS = EPSData.VIEPS);
+              redeclare replaceable record C = CData.VIC);
+              //         redeclare replaceable record EPS = EPSData.VIEPS
           record ExtremelyInverseData = Records.RelayData (
               redeclare replaceable record Alpha = AlphaData.EIAlpha,
-              redeclare replaceable record C = CData.EIC,
-              redeclare replaceable record EPS = EPSData.EIEPS);
+              redeclare replaceable record C = CData.EIC);
+              //         redeclare replaceable record EPS = EPSData.EIEPS
           record LongInverseData = Records.RelayData (
               redeclare replaceable record Alpha = AlphaData.LIAlpha,
-              redeclare replaceable record C = CData.LIC,
-              redeclare replaceable record EPS = EPSData.LEPS);
+              redeclare replaceable record C = CData.LIC);
+              //         redeclare replaceable record EPS = EPSData.LEPS
         end RelayData;
 
         package AlphaData
@@ -1346,23 +1346,23 @@ package OCRAIOSPSAT
           end LIC;
         end CData;
 
-        package EPSData
-           record SIEPS
-            extends Records.EPSData(eps=0.41);
-           end SIEPS;
-
-          record VIEPS
-            extends Records.EPSData(eps=0.07);
-          end VIEPS;
-
-          record EIEPS
-            extends Records.EPSData(eps=0.102);
-          end EIEPS;
-
-          record LEPS
-            extends Records.EPSData(eps=0);
-          end LEPS;
-        end EPSData;
+      //   package EPSData
+      //      record SIEPS
+      //       extends Records.EPSData(eps=0.41);
+      //      end SIEPS;
+      //
+      //     record VIEPS
+      //       extends Records.EPSData(eps=0.07);
+      //     end VIEPS;
+      //
+      //     record EIEPS
+      //       extends Records.EPSData(eps=0.102);
+      //     end EIEPS;
+      //
+      //     record LEPS
+      //       extends Records.EPSData(eps=0);
+      //     end LEPS;
+      //   end EPSData;
       end Data;
 
       model RecordReferenceRelay
@@ -1892,8 +1892,15 @@ package OCRAIOSPSAT
             extent={{-18,-18},{18,18}},
             rotation=90,
             origin={68,-92})));
-      Components.RelayPack.RecordReferenceRelay recordReferenceRelay
-        annotation (Placement(transformation(extent={{-164,-16},{-128,4}})));
+      Components.RelayPack.RecordReferenceRelay recordReferenceRelay(
+        alpha=RelayData.alpha.alpha,
+        C=RelayData.c.C,
+        Is=1)
+        annotation (Placement(transformation(extent={{-166,-16},{-130,4}})));
+      Components.RelayPack.Data.RelayData.StandardInverseData RelayData(
+          redeclare record Alpha = Components.RelayPack.Data.AlphaData.SIAlpha,
+          redeclare record C = Components.RelayPack.Data.CData.SIC)
+        annotation (Placement(transformation(extent={{-168,56},{-148,76}})));
     equation
       Imag =  sqrt(pwLine1.p.ir^2+pwLine1.p.ii^2);
       connect(TwoBus.p, twoWindingTransformer1.p)
@@ -1926,11 +1933,13 @@ package OCRAIOSPSAT
       connect(FiveBus.p, lOADPQ.p)
         annotation (Line(points={{28,-92},{50,-92}}, color={0,0,255}));
       connect(realExpression.y, recordReferenceRelay.u)
-        annotation (Line(points={{-183,-6},{-166,-6}}, color={0,0,127}));
+        annotation (Line(points={{-183,-6},{-168.571,-6}},
+                                                       color={0,0,127}));
       connect(recordReferenceRelay.TripSingal, breaker2.Trigger) annotation (
-          Line(points={{-127,-6},{-116,-6},{-116,-42}}, color={255,0,255}));
+          Line(points={{-128.714,-6},{-116,-6},{-116,-42}},
+                                                        color={255,0,255}));
       connect(recordReferenceRelay.TripSingal, breaker1.Trigger) annotation (
-          Line(points={{-127,-6},{-116,-6},{-116,-30},{-204,-30},{-204,-42}},
+          Line(points={{-128.714,-6},{-116,-6},{-116,-30},{-204,-30},{-204,-42}},
             color={255,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
