@@ -306,9 +306,9 @@ package OCRAIOSPSAT
           Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold
             annotation (Placement(transformation(extent={{-82,50},{-62,70}})));
           toThePower toThePower1
-            annotation (Placement(transformation(extent={{-22,-62},{-2,-42}})));
+            annotation (Placement(transformation(extent={{-22,-64},{-2,-44}})));
           Modelica.Blocks.Sources.Constant const(k=alpha)
-            annotation (Placement(transformation(extent={{-62,-90},{-42,-70}})));
+            annotation (Placement(transformation(extent={{-64,-88},{-44,-68}})));
           Modelica.Blocks.Logical.Nand nand
             annotation (Placement(transformation(extent={{-54,44},{-34,64}})));
           parameter Real alpha=0.02 "Constant output value";
@@ -344,13 +344,13 @@ package OCRAIOSPSAT
                              color={0,0,127}));
           connect(const1.y, switch1.u3) annotation (Line(points={{-61,6},{-26,6},
                   {-26,46},{-14,46}}, color={0,0,127}));
-          connect(division1.y, toThePower1.u) annotation (Line(points={{-41,-48},{
-                  -30,-48},{-30,-46},{-24,-46}},
-                                             color={0,0,127}));
-          connect(toThePower1.y, add.u1) annotation (Line(points={{-1,-52},{10,-52}},
+          connect(division1.y, toThePower1.u) annotation (Line(points={{-41,-48},
+                  {-24,-48}},                color={0,0,127}));
+          connect(toThePower1.y, add.u1) annotation (Line(points={{-1,-54},{4,
+                  -54},{4,-52},{10,-52}},
                                   color={0,0,127}));
-          connect(const.y, toThePower1.alpha) annotation (Line(points={{-41,-80},{
-                  -40,-80},{-40,-64},{-28,-64},{-28,-56},{-24,-56}},
+          connect(const.y, toThePower1.alpha) annotation (Line(points={{-43,-78},
+                  {-40,-78},{-40,-64},{-28,-64},{-28,-58},{-24,-58}},
                                                                  color={0,0,127}));
           connect(lessEqualThreshold.y, nand.u1) annotation (Line(points={{-61,60},{
                   -61,57},{-56,57},{-56,54}}, color={255,0,255}));
@@ -1338,7 +1338,7 @@ package OCRAIOSPSAT
 
       model RecordReferenceRelay
         Modelica.Blocks.Math.Add add(       k2=1, k1=-1)
-          annotation (Placement(transformation(extent={{-130,30},{-110,50}})));
+          annotation (Placement(transformation(extent={{-130,14},{-110,34}})));
         Modelica.Blocks.Logical.Greater greater1
           annotation (Placement(transformation(extent={{-252,-10},{-232,10}})));
         Modelica.Blocks.Math.BooleanToReal booleanToReal1
@@ -1349,13 +1349,6 @@ package OCRAIOSPSAT
               extent={{-10,-10},{10,10}},
               rotation=0,
               origin={-286,-52})));
-        Modelica.Blocks.Math.Product product
-          annotation (Placement(transformation(extent={{-296,-10},{-276,10}})));
-        Modelica.Blocks.Sources.Constant const1(k=1/(sqrt(2))) annotation (Placement(
-              transformation(
-              extent={{-10,-10},{10,10}},
-              rotation=0,
-              origin={-334,-62})));
         Components.ExtractingTimeOfFault extractingTimeOfFault
           annotation (Placement(transformation(extent={{-172,34},{-152,54}})));
         Components.Timer timer
@@ -1387,14 +1380,6 @@ package OCRAIOSPSAT
           annotation (Placement(transformation(extent={{-54,-16},{-34,4}})));
         Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=false)
           annotation (Placement(transformation(extent={{-98,-46},{-78,-26}})));
-        Modelica.Blocks.Math.Division division
-          annotation (Placement(transformation(extent={{-332,-8},{-312,12}})));
-        Modelica.Blocks.Sources.Constant const2(k=1) "before it was .22"
-                                                               annotation (Placement(
-              transformation(
-              extent={{-10,-10},{10,10}},
-              rotation=0,
-              origin={-364,-50})));
         Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop1
           annotation (Placement(transformation(extent={{-232,-42},{-212,-22}})));
         Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=false)
@@ -1405,10 +1390,6 @@ package OCRAIOSPSAT
         parameter Real eps=0.41 "Constant output value";
       equation
 
-        connect(const1.y, product.u2) annotation (Line(points={{-323,-62},{-308,
-                -62},{-308,-6},{-298,-6}}, color={0,0,127}));
-        connect(product.y, greater1.u1)
-          annotation (Line(points={{-275,0},{-254,0}}, color={0,0,127}));
         connect(const.y, greater1.u2) annotation (Line(points={{-275,-52},{-262,
                 -52},{-262,-8},{-254,-8}}, color={0,0,127}));
         connect(booleanToReal1.y, timer.u) annotation (Line(points={{-193,0},{
@@ -1419,11 +1400,11 @@ package OCRAIOSPSAT
               points={{-176,-40},{-184,-40},{-184,0.2},{-176,0.2}}, color={0,0,
                 127}));
         connect(extractingTimeOfFault.y, add.u1)
-          annotation (Line(points={{-151,44},{-140,44},{-140,46},{-132,46}},
+          annotation (Line(points={{-151,44},{-140,44},{-140,30},{-132,30}},
                                                          color={0,0,127}));
         connect(timer.y, add.u2) annotation (Line(points={{-153,-4},{-138,-4},{
-                -138,34},{-132,34}}, color={0,0,127}));
-        connect(add.y, greater2.u1) annotation (Line(points={{-109,40},{-100,40},
+                -138,18},{-132,18}}, color={0,0,127}));
+        connect(add.y, greater2.u1) annotation (Line(points={{-109,24},{-100,24},
                 {-100,0},{-94,0}}, color={0,0,127}));
         connect(calculatingOperationTime.OperationTime, greater2.u2)
           annotation (Line(points={{-153,-46},{-124,-46},{-124,-8},{-94,-8}},
@@ -1437,10 +1418,6 @@ package OCRAIOSPSAT
         connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
            Line(points={{-176,-52},{-238,-52},{-238,-78},{-300,-78},{-300,-24},
                 {-266,-24},{-266,0},{-254,0}}, color={0,0,127}));
-        connect(division.u2, const2.y) annotation (Line(points={{-334,-4},{-350,
-                -4},{-350,-50},{-353,-50}}, color={0,0,127}));
-        connect(division.y, product.u1) annotation (Line(points={{-311,2},{-304,
-                2},{-304,6},{-298,6}}, color={0,0,127}));
         connect(rSFlipFlop1.Q, booleanToReal1.u) annotation (Line(points={{-211,
                 -26},{-202,-26},{-202,-16},{-216,-16},{-216,0}}, color={255,0,
                 255}));
@@ -1449,8 +1426,8 @@ package OCRAIOSPSAT
                 0,255}));
         connect(booleanConstant1.y, rSFlipFlop1.R) annotation (Line(points={{
                 -239,-44},{-236,-44},{-236,-38},{-234,-38}}, color={255,0,255}));
-        connect(division.u1, u) annotation (Line(points={{-334,8},{-360,8},{-360,0},{-400,
-                0}}, color={0,0,127}));
+        connect(u, greater1.u1)
+          annotation (Line(points={{-400,0},{-254,0}}, color={0,0,127}));
         annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-380,-100},
                   {-20,100}}),       graphics={Rectangle(extent={{-380,100},{
                     -20,-100}},
@@ -1621,8 +1598,8 @@ package OCRAIOSPSAT
       Components.RelayPack.RecordReferenceRelay recordReferenceRelay(
         alpha=RelayData.alpha.alpha,
         C=RelayData.c.C,
-        eps=0.004,
-        Is=1)
+        Is=400,
+        eps=0.1)
         annotation (Placement(transformation(extent={{-126,-26},{-90,-6}})));
         //k=3,
       Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
@@ -1630,24 +1607,33 @@ package OCRAIOSPSAT
       Modelica.Blocks.Math.BooleanToReal booleanToReal
         annotation (Placement(transformation(extent={{-226,-20},{-206,0}})));
       RelayPack.Data.RelayData.StandardInverseData RelayData(
-        redeclare record C = RelayPack.Data.CData.SIC,
-        redeclare record EPS = RelayPack.Data.EPSData.SIEPS,
-        redeclare record Alpha = RelayPack.Data.AlphaData.SIAlpha)
+        redeclare record EPS = RelayPack.Data.EPSData.EIEPS,
+        redeclare record Alpha = RelayPack.Data.AlphaData.EIAlpha,
+        redeclare record C = RelayPack.Data.CData.EIC)
         annotation (Placement(transformation(extent={{-156,56},{-136,76}})));
       Modelica.Blocks.Math.Add add
         annotation (Placement(transformation(extent={{-160,-26},{-140,-6}})));
       Modelica.Blocks.Sources.Constant const(k=0.3)
-        annotation (Placement(transformation(extent={{-224,-66},{-204,-46}})));
+        annotation (Placement(transformation(extent={{-218,-70},{-198,-50}})));
+      Modelica.Blocks.Math.Product product
+        annotation (Placement(transformation(extent={{-192,-20},{-172,0}})));
+      Modelica.Blocks.Sources.Constant const1(k=10133333)
+        annotation (Placement(transformation(extent={{-280,-68},{-260,-48}})));
     equation
 
       connect(booleanStep.y, booleanToReal.u)
         annotation (Line(points={{-247,-10},{-228,-10}}, color={255,0,255}));
-      connect(booleanToReal.y, add.u1)
-        annotation (Line(points={{-205,-10},{-162,-10}}, color={0,0,127}));
       connect(recordReferenceRelay.u, add.y)
         annotation (Line(points={{-128,-16},{-139,-16}}, color={0,0,127}));
-      connect(const.y, add.u2) annotation (Line(points={{-203,-56},{-178,-56},{
+      connect(const.y, add.u2) annotation (Line(points={{-197,-60},{-178,-60},{
               -178,-22},{-162,-22}}, color={0,0,127}));
+      connect(add.u1, product.y)
+        annotation (Line(points={{-162,-10},{-171,-10}}, color={0,0,127}));
+      connect(booleanToReal.y, product.u1) annotation (Line(points={{-205,-10},
+              {-200,-10},{-200,-4},{-194,-4}}, color={0,0,127}));
+      connect(const1.y, product.u2) annotation (Line(points={{-259,-58},{-248,
+              -58},{-248,-56},{-234,-56},{-234,-32},{-202,-32},{-202,-16},{-194,
+              -16}}, color={0,0,127}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,-140},
                 {-80,80}})),            Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{-80,80}})));
@@ -1840,13 +1826,12 @@ package OCRAIOSPSAT
         displayPF=true)
         annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
       OpenIPSL.Electrical.Events.PwFault pwFault(
-        R=0,
         t1=1,
+        t2=1.139999,
         X=0.0375,
-        t2=1.139999)
-               annotation (Placement(transformation(extent={{6,-6},{-6,6}},
+        R=0)   annotation (Placement(transformation(extent={{6,-6},{-6,6}},
             rotation=0,
-            origin={-154,-72})));
+            origin={-150,-72})));
 
      Real Imag;
       Modelica.Blocks.Sources.RealExpression realExpression(y=Imag)
@@ -1903,7 +1888,7 @@ package OCRAIOSPSAT
               {-224,40},{-179,40}}, color={0,0,255}));
       connect(OneBus.p, pwLine3.p) annotation (Line(points={{-236,-16},{-224,-16},{-224,
               40},{-179,40}}, color={0,0,255}));
-      connect(pwFault.p, breaker2.s) annotation (Line(points={{-147,-72},{-147,
+      connect(pwFault.p, breaker2.s) annotation (Line(points={{-143,-72},{-143,
               -54},{-126,-54}}, color={0,0,255}));
       connect(FiveBus.p, lOADPQ.p)
         annotation (Line(points={{28,-92},{50,-92}}, color={0,0,255}));
@@ -2457,139 +2442,6 @@ package OCRAIOSPSAT
               preserveAspectRatio=false, extent={{-280,-160},{140,80}})));
     end AIOSMotorFault;
 
-    model AIOSNoMotorRelay12
-      OpenIPSL.Electrical.Buses.Bus ThreeBus(
-        V_b=380,
-        V_0=1.0455,
-        angle_0=-12.7,
-        P_0=1200,
-        Q_0=53)
-        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
-      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
-        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
-      OpenIPSL.Electrical.Buses.Bus OneBus(
-        angle_0=0,
-        V_b=380,
-        V_0=1.08,
-        P_0=450,
-        Q_0=118)
-        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
-      OpenIPSL.Electrical.Branches.PwLine pwLine1(
-        R=0,
-        X=0.4143333333,
-        G=0,
-        B=0,
-        displayPF=false)
-        annotation (Placement(transformation(extent={{-186,-66},{-166,-46}})));
-      OpenIPSL.Electrical.Branches.PwLine pwLine3(
-        R=0,
-        X=0.414333333,
-        G=0,
-        B=0,
-        displayPF=false)
-        annotation (Placement(transformation(extent={{-182,18},{-162,38}})));
-      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
-        V_b=380,
-        displayPF=true,
-        V_0=PowerFlow.voltage.InfiniteBusV_0,
-        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
-        P_0=PowerFlow.power.InfiniteBusP_0,
-        Q_0=PowerFlow.power.InfiniteBusQ_0)
-        annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
-      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
-            transformation(extent={{-174,-102},{-154,-82}})));
-      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
-        twoWindingTransformer1(
-        Sn=500,
-        V_b=20,
-        Vn=20,
-        S_b=750,
-        rT=0,
-        xT=0.08,
-        m=1/1.04)
-        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
-      OpenIPSL.Electrical.Buses.Bus FiveBus(
-        V_b=380,
-        V_0=1.0455,
-        angle_0=-15.2,
-        P_0=1200,
-        Q_0=0)
-        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
-      OpenIPSL.Electrical.Branches.PwLine pwLine2(
-        R=0,
-        X=0.029999989612,
-        G=0,
-        B=0,
-        displayPF=true)
-        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
-      OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
-        V_b=380,
-        V_0=PowerFlow.voltage.PQLoadV_0,
-        angle_0=PowerFlow.voltage.PQLoadangle_0,
-        P_0=PowerFlow.power.PQLoadP_0,
-        Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
-            extent={{-18,-18},{18,18}},
-            rotation=90,
-            origin={74,-92})));
-
-     Real Imag;
-      Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
-        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
-      Components.PSSEGeneratorTGOV pSSEGeneratorTGOV(
-        V_0=PowerFlow.voltage.GeneratorV_0,
-        angle_0=PowerFlow.voltage.Generatorangle_0,
-        P_0=PowerFlow.power.GeneratorP_0,
-        Q_0=PowerFlow.power.GeneratorQ_0,
-        V_b=20,
-        M_b=750)
-        annotation (Placement(transformation(extent={{-226,-104},{-206,-82}})));
-      OpenIPSL.Electrical.Events.Breaker breaker(enableTrigger=true)
-        annotation (Placement(transformation(extent={{-218,-66},{-198,-46}})));
-      OpenIPSL.Electrical.Events.Breaker breaker1(enableTrigger=true)
-        annotation (Placement(transformation(extent={{-148,-66},{-128,-46}})));
-      Components.RelayPack.RecordReferenceRelay recordReferenceRelay
-        annotation (Placement(transformation(extent={{-190,-30},{-170,-20}})));
-      Modelica.Blocks.Sources.RealExpression realExpression(y=Imag)
-        annotation (Placement(transformation(extent={{-218,-34},{-198,-14}})));
-    equation
-      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
-      connect(TwoBus.p, twoWindingTransformer1.p)
-        annotation (Line(points={{-164,-92},{-143,-92}}, color={0,0,255}));
-      connect(twoWindingTransformer1.n, ThreeBus.p)
-        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
-      connect(FiveBus.p, pwLine2.n)
-        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
-      connect(FiveBus.p, lOADPQ.p) annotation (Line(points={{28,-92},{56,-92}},
-                                       color={0,0,255}));
-      connect(pwLine2.p, ThreeBus.p)
-        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
-      connect(infiniteBus.p, OneBus.p)
-        annotation (Line(points={{-270,-16},{-234,-16}},
-                                                       color={0,0,255}));
-      connect(TwoBus.p, pSSEGeneratorTGOV.pwPin) annotation (Line(points={{-164,
-              -92},{-180,-92},{-180,-91.35},{-205.6,-91.35}}, color={0,0,255}));
-      connect(pwLine3.p, OneBus.p) annotation (Line(points={{-181,28},{-220,28},
-              {-220,-16},{-234,-16}}, color={0,0,255}));
-      connect(pwLine3.n, ThreeBus.p) annotation (Line(points={{-163,28},{-124,
-              28},{-124,-14},{-72,-14},{-72,-92}}, color={0,0,255}));
-      connect(pwLine1.p, breaker.r)
-        annotation (Line(points={{-185,-56},{-198,-56}}, color={0,0,255}));
-      connect(breaker1.r, ThreeBus.p) annotation (Line(points={{-128,-56},{-124,
-              -56},{-124,-14},{-72,-14},{-72,-92}}, color={0,0,255}));
-      connect(breaker.s, OneBus.p) annotation (Line(points={{-218,-56},{-222,
-              -56},{-222,-16},{-234,-16}}, color={0,0,255}));
-      connect(recordReferenceRelay.TripSingal, breaker1.Trigger) annotation (
-          Line(points={{-169.444,-25},{-138,-25},{-138,-44}}, color={255,0,255}));
-      connect(recordReferenceRelay.TripSingal, breaker.Trigger) annotation (
-          Line(points={{-169.444,-25},{-138,-25},{-138,-36},{-208,-36},{-208,
-              -44}}, color={255,0,255}));
-      connect(recordReferenceRelay.u, realExpression.y) annotation (Line(points=
-             {{-191.111,-25},{-194,-25},{-194,-24},{-197,-24}}, color={0,0,127}));
-      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
-                -140},{140,80}})),      Diagram(coordinateSystem(
-              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
-    end AIOSNoMotorRelay12;
   end TestSystems;
 
   package Data
