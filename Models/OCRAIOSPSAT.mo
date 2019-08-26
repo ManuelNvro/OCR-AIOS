@@ -232,65 +232,14 @@ package OCRAIOSPSAT
 
     package RelayPack
       package Components
-        model ExtractingTimeOfFault
-          Modelica.Blocks.Interfaces.RealOutput y
-            annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-          Modelica.Blocks.Interfaces.RealInput u
-            annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-          Modelica.Blocks.Logical.Switch switch1
-            annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
-          Modelica.Blocks.Math.Product product
-            annotation (Placement(transformation(extent={{40,-4},{60,16}})));
-          Modelica.Blocks.Sources.Constant const(k=1000)
-            annotation (Placement(transformation(extent={{-76,32},{-56,52}})));
-          Modelica.Blocks.Sources.Constant const1(k=1)
-            annotation (Placement(transformation(extent={{-78,-54},{-58,-34}})));
-          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
-               0.9)
-            annotation (Placement(transformation(extent={{-62,-10},{-42,10}})));
-          Modelica.Blocks.Continuous.LimIntegrator limIntegrator(outMax=1)
-            annotation (Placement(transformation(extent={{-32,30},{-12,50}})));
-        equation
-          connect(product.y, y) annotation (Line(points={{61,6},{76,6},{76,0},{
-                  110,0}},
-                       color={0,0,127}));
-          connect(u, product.u1) annotation (Line(points={{-120,0},{-86,0},{-86,
-                  74},{16,74},{16,12},{38,12}},
-                                           color={0,0,127}));
-          connect(switch1.y, product.u2) annotation (Line(points={{17,0},{38,0}},
-                                color={0,0,127}));
-          connect(u,greaterEqualThreshold. u)
-            annotation (Line(points={{-120,0},{-64,0}},   color={0,0,127}));
-          connect(greaterEqualThreshold.y, switch1.u2) annotation (Line(points={{-41,0},
-                  {-6,0}},                         color={255,0,255}));
-          connect(const1.y, switch1.u3) annotation (Line(points={{-57,-44},{-32,
-                  -44},{-32,-8},{-6,-8}}, color={0,0,127}));
-          connect(const.y, limIntegrator.u) annotation (Line(points={{-55,42},{
-                  -44,42},{-44,40},{-34,40}}, color={0,0,127}));
-          connect(limIntegrator.y, switch1.u1) annotation (Line(points={{-11,40},
-                  {-2,40},{-2,16},{-14,16},{-14,8},{-6,8}}, color={0,0,127}));
-          annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
-                  Rectangle(extent={{-100,100},{100,-100}}, lineColor={28,108,200})}),
-                                                                         Diagram(
-                coordinateSystem(preserveAspectRatio=false)));
-        end ExtractingTimeOfFault;
 
         model CalculatingOperationTime
-          Modelica.Blocks.Interfaces.RealInput Control
-            annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
           Modelica.Blocks.Interfaces.RealInput CurrentInput
             annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
           Modelica.Blocks.Interfaces.RealOutput OperationTime
-            annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-          Modelica.Blocks.Logical.Switch switch1
-            annotation (Placement(transformation(extent={{-12,44},{8,64}})));
+            annotation (Placement(transformation(extent={{200,-10},{220,10}})));
           Modelica.Blocks.Sources.Constant Const(k=C)
-            annotation (Placement(transformation(extent={{-58,74},{-38,94}})));
-          Modelica.Blocks.Sources.Constant const1(k=0)
-            annotation (Placement(transformation(extent={{-82,-4},{-62,16}})));
-          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
-               0)
-            annotation (Placement(transformation(extent={{-82,26},{-62,46}})));
+            annotation (Placement(transformation(extent={{-78,66},{-58,86}})));
           Modelica.Blocks.Math.Division division1
             annotation (Placement(transformation(extent={{-66,-62},{-46,-42}})));
           Modelica.Blocks.Sources.Constant pickcupcurrent(k=Is)
@@ -300,17 +249,13 @@ package OCRAIOSPSAT
           Modelica.Blocks.Math.Add add(k2=-1)
             annotation (Placement(transformation(extent={{6,-72},{26,-52}})));
           Modelica.Blocks.Math.Product product
-            annotation (Placement(transformation(extent={{58,28},{78,48}})));
+            annotation (Placement(transformation(extent={{126,28},{146,48}})));
           Modelica.Blocks.Sources.Constant TimeMultiplierSetting(k=0.5)
-            annotation (Placement(transformation(extent={{-10,4},{10,24}})));
-          Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold
-            annotation (Placement(transformation(extent={{-82,50},{-62,70}})));
+            annotation (Placement(transformation(extent={{58,4},{78,24}})));
           toThePower toThePower1
             annotation (Placement(transformation(extent={{-28,-68},{-8,-48}})));
           Modelica.Blocks.Sources.Constant const(k=alpha)
             annotation (Placement(transformation(extent={{-70,-92},{-50,-72}})));
-          Modelica.Blocks.Logical.Nand nand
-            annotation (Placement(transformation(extent={{-54,44},{-34,64}})));
           parameter Real alpha=0.02 "Constant output value";
           parameter Real TMS=0.5 "Constant output value";
           parameter Real C=0.14 "Constant output value";
@@ -318,43 +263,49 @@ package OCRAIOSPSAT
 
           parameter Real eps=0.41 "Constant output value";
           parameter Real Is=1 "Constant output value";
-          Modelica.Blocks.Logical.Switch switch2
-            annotation (Placement(transformation(extent={{68,-106},{88,-86}})));
-          Modelica.Blocks.Sources.Constant const3(k=1)
-            annotation (Placement(transformation(extent={{8,-154},{28,-134}})));
-          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold1(threshold
-              =0)
-            annotation (Placement(transformation(extent={{8,-124},{28,-104}})));
-          Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold1
-            annotation (Placement(transformation(extent={{8,-100},{28,-80}})));
-          Modelica.Blocks.Logical.Nand nand1
-            annotation (Placement(transformation(extent={{36,-106},{56,-86}})));
+            Integer amp = 0;
+
           Modelica.Blocks.Math.Division division
             annotation (Placement(transformation(extent={{42,-64},{62,-44}})));
           Modelica.Blocks.Sources.Constant const4(k=1)
             annotation (Placement(transformation(extent={{4,-38},{24,-18}})));
           Modelica.Blocks.Math.Product product1
-            annotation (Placement(transformation(extent={{22,38},{42,58}})));
+            annotation (Placement(transformation(extent={{90,38},{110,58}})));
+
+          Modelica.Blocks.Interfaces.RealInput Control annotation (Placement(
+                transformation(extent={{-140,28},{-100,68}})));
+          Modelica.Blocks.Logical.Switch switch1
+            annotation (Placement(transformation(extent={{164,-118},{184,-98}})));
+          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
+               0)
+            annotation (Placement(transformation(extent={{94,-136},{114,-116}})));
+          Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold
+            annotation (Placement(transformation(extent={{94,-112},{114,-92}})));
+          Modelica.Blocks.Logical.Nand nand
+            annotation (Placement(transformation(extent={{122,-118},{142,-98}})));
+          Modelica.Blocks.Sources.Constant const1(k=1)
+            annotation (Placement(transformation(extent={{118,-150},{138,-130}})));
+          Modelica.Blocks.Logical.Switch switch2
+            annotation (Placement(transformation(extent={{8,30},{28,50}})));
+          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold1(threshold=
+               0)
+            annotation (Placement(transformation(extent={{-62,12},{-42,32}})));
+          Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold1
+            annotation (Placement(transformation(extent={{-62,36},{-42,56}})));
+          Modelica.Blocks.Logical.Nand nand1
+            annotation (Placement(transformation(extent={{-34,30},{-14,50}})));
+          Modelica.Blocks.Sources.Constant const3(k=0)
+            annotation (Placement(transformation(extent={{-38,-2},{-18,18}})));
         equation
+          //amp = OperationTime;
           connect(pickcupcurrent.y, division1.u2) annotation (Line(points={{-75,-84},
                   {-72,-84},{-72,-58},{-68,-58}}, color={0,0,127}));
-          connect(product.y, OperationTime) annotation (Line(points={{79,38},{82,38},
-                  {82,0},{110,0}}, color={0,0,127}));
           connect(add.u2, const2.y) annotation (Line(points={{4,-68},{-6,-68},{
                   -6,-86},{-19,-86}},
                                    color={0,0,127}));
-          connect(TimeMultiplierSetting.y, product.u2) annotation (Line(points={{11,14},
-                  {14,14},{14,32},{56,32}},
+          connect(TimeMultiplierSetting.y, product.u2) annotation (Line(points={{79,14},
+                  {82,14},{82,32},{124,32}},
                            color={0,0,127}));
-          connect(Control, lessEqualThreshold.u)
-            annotation (Line(points={{-120,60},{-84,60}}, color={0,0,127}));
-          connect(greaterEqualThreshold.u, lessEqualThreshold.u) annotation (Line(
-                points={{-84,36},{-88,36},{-88,60},{-84,60}}, color={0,0,127}));
-          connect(Const.y, switch1.u1) annotation (Line(points={{-37,84},{-22,
-                  84},{-22,62},{-14,62}},
-                             color={0,0,127}));
-          connect(const1.y, switch1.u3) annotation (Line(points={{-61,6},{-26,6},
-                  {-26,46},{-14,46}}, color={0,0,127}));
           connect(division1.y, toThePower1.u) annotation (Line(points={{-45,-52},
                   {-30,-52}},                color={0,0,127}));
           connect(toThePower1.y, add.u1) annotation (Line(points={{-7,-58},{-2,
@@ -363,46 +314,63 @@ package OCRAIOSPSAT
           connect(const.y, toThePower1.alpha) annotation (Line(points={{-49,-82},
                   {-46,-82},{-46,-68},{-34,-68},{-34,-62},{-30,-62}},
                                                                  color={0,0,127}));
-          connect(lessEqualThreshold.y, nand.u1) annotation (Line(points={{-61,60},{
-                  -61,57},{-56,57},{-56,54}}, color={255,0,255}));
-          connect(greaterEqualThreshold.y, nand.u2) annotation (Line(points={{-61,36},
-                  {-58,36},{-58,46},{-56,46}}, color={255,0,255}));
-          connect(nand.y, switch1.u2)
-            annotation (Line(points={{-33,54},{-14,54}}, color={255,0,255}));
           connect(CurrentInput, division1.u1) annotation (Line(points={{-120,
                   -60},{-94,-60},{-94,-46},{-68,-46}}, color={0,0,127}));
-          connect(greaterEqualThreshold1.u, lessEqualThreshold1.u) annotation (
-              Line(points={{6,-114},{2,-114},{2,-90},{6,-90}}, color={0,0,127}));
-          connect(lessEqualThreshold1.y, nand1.u1) annotation (Line(points={{29,
-                  -90},{29,-93},{34,-93},{34,-96}}, color={255,0,255}));
-          connect(greaterEqualThreshold1.y, nand1.u2) annotation (Line(points={
-                  {29,-114},{32,-114},{32,-104},{34,-104}}, color={255,0,255}));
-          connect(nand1.y, switch2.u2)
-            annotation (Line(points={{57,-96},{66,-96}}, color={255,0,255}));
-          connect(Control, lessEqualThreshold1.u) annotation (Line(points={{
-                  -120,60},{-98,60},{-98,-104},{2,-104},{2,-90},{6,-90}}, color
-                ={0,0,127}));
-          connect(const3.y, switch2.u3) annotation (Line(points={{29,-144},{60,
-                  -144},{60,-104},{66,-104}}, color={0,0,127}));
           connect(const4.y, division.u1) annotation (Line(points={{25,-28},{30,
                   -28},{30,-48},{40,-48}}, color={0,0,127}));
           connect(add.y, division.u2) annotation (Line(points={{27,-62},{34,-62},
                   {34,-60},{40,-60}}, color={0,0,127}));
-          connect(division.y, switch2.u1) annotation (Line(points={{63,-54},{66,
-                  -54},{66,-80},{60,-80},{60,-88},{66,-88}}, color={0,0,127}));
-          connect(product.u1, product1.y) annotation (Line(points={{56,44},{50,
-                  44},{50,48},{43,48}}, color={0,0,127}));
-          connect(switch1.y, product1.u1)
-            annotation (Line(points={{9,54},{20,54}}, color={0,0,127}));
-          connect(switch2.y, product1.u2) annotation (Line(points={{89,-96},{94,
-                  -96},{94,-12},{-16,-12},{-16,36},{16,36},{16,42},{20,42}},
-                color={0,0,127}));
-          annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={
-                    {-100,-160},{100,100}}),                            graphics={
-                  Rectangle(extent={{-100,100},{100,-100}}, lineColor={28,108,200})}),
+          connect(product.u1, product1.y) annotation (Line(points={{124,44},{
+                  118,44},{118,48},{111,48}},
+                                        color={0,0,127}));
+          connect(product.y, OperationTime) annotation (Line(points={{147,38},{
+                  164,38},{164,0},{210,0}},
+                               color={0,0,127}));
+          connect(lessEqualThreshold.y,nand. u1) annotation (Line(points={{115,
+                  -102},{115,-105},{120,-105},{120,-108}},
+                                              color={255,0,255}));
+          connect(greaterEqualThreshold.y,nand. u2) annotation (Line(points={{115,
+                  -126},{118,-126},{118,-116},{120,-116}},
+                                               color={255,0,255}));
+          connect(nand.y,switch1. u2)
+            annotation (Line(points={{143,-108},{162,-108}},
+                                                         color={255,0,255}));
+          connect(Control, lessEqualThreshold.u) annotation (Line(points={{-120,
+                  48},{-98,48},{-98,-116},{86,-116},{86,-102},{92,-102}}, color=
+                 {0,0,127}));
+          connect(greaterEqualThreshold.u, lessEqualThreshold.u) annotation (
+              Line(points={{92,-126},{86,-126},{86,-102},{92,-102}}, color={0,0,
+                  127}));
+          connect(division.y, switch1.u1) annotation (Line(points={{63,-54},{
+                  138,-54},{138,-92},{158,-92},{158,-100},{162,-100}}, color={0,
+                  0,127}));
+          connect(switch1.u3, const1.y) annotation (Line(points={{162,-116},{
+                  150,-116},{150,-140},{139,-140}}, color={0,0,127}));
+          connect(lessEqualThreshold1.y, nand1.u1) annotation (Line(points={{
+                  -41,46},{-41,43},{-36,43},{-36,40}}, color={255,0,255}));
+          connect(greaterEqualThreshold1.y, nand1.u2) annotation (Line(points={
+                  {-41,22},{-38,22},{-38,32},{-36,32}}, color={255,0,255}));
+          connect(nand1.y, switch2.u2)
+            annotation (Line(points={{-13,40},{6,40}}, color={255,0,255}));
+          connect(greaterEqualThreshold1.u, lessEqualThreshold1.u) annotation (
+              Line(points={{-64,22},{-70,22},{-70,46},{-64,46}}, color={0,0,127}));
+          connect(switch2.u3, const3.y) annotation (Line(points={{6,32},{-6,32},
+                  {-6,8},{-17,8}}, color={0,0,127}));
+          connect(switch2.y, product1.u1) annotation (Line(points={{29,40},{34,
+                  40},{34,54},{88,54}}, color={0,0,127}));
+          connect(Const.y, switch2.u1) annotation (Line(points={{-57,76},{-6,76},
+                  {-6,46},{6,46},{6,48}}, color={0,0,127}));
+          connect(Control, lessEqualThreshold1.u) annotation (Line(points={{
+                  -120,48},{-76,48},{-76,36},{-70,36},{-70,46},{-64,46}}, color=
+                 {0,0,127}));
+          connect(switch1.y, product1.u2) annotation (Line(points={{185,-108},{
+                  190,-108},{190,-16},{46,-16},{46,42},{88,42}}, color={0,0,127}));
+          annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+                    -160},{200,100}}),                                  graphics={
+                  Rectangle(extent={{-100,100},{200,-162}}, lineColor={28,108,200})}),
                                                                          Diagram(
                 coordinateSystem(preserveAspectRatio=false, extent={{-100,-160},
-                    {100,100}})));
+                    {200,100}})));
         end CalculatingOperationTime;
 
         model Timer
@@ -417,7 +385,8 @@ package OCRAIOSPSAT
           Modelica.Blocks.Sources.Clock clock1
             annotation (Placement(transformation(extent={{-4,-62},{16,-42}})));
           Modelica.Blocks.Interfaces.RealInput u
-            annotation (Placement(transformation(extent={{-140,22},{-100,62}})));
+            annotation (Placement(transformation(extent={{-140,-20},{-100,20}}),
+                iconTransformation(extent={{-140,-20},{-100,20}})));
           Modelica.Blocks.Interfaces.RealOutput y
             annotation (Placement(transformation(extent={{100,-10},{120,10}})));
           Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
@@ -431,7 +400,8 @@ package OCRAIOSPSAT
           connect(clock1.y, add.u2) annotation (Line(points={{17,-52},{28,-52},{28,-6},
                   {42,-6}}, color={0,0,127}));
           connect(u, greaterEqualThreshold.u)
-            annotation (Line(points={{-120,42},{-68,42}}, color={0,0,127}));
+            annotation (Line(points={{-120,0},{-94,0},{-94,42},{-68,42}},
+                                                          color={0,0,127}));
           connect(switch1.y, add.u1) annotation (Line(points={{9,36},{28,36},{28,6},{
                   42,6}}, color={0,0,127}));
           connect(greaterEqualThreshold.y, switch1.u2) annotation (Line(points={{-45,
@@ -1116,6 +1086,64 @@ package OCRAIOSPSAT
                       108,200})}));
         end TwoDiscreteFourier;
 
+        model AmplitudeNumber
+          Modelica.Blocks.Interfaces.RealInput u
+            annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+          Modelica.Blocks.Interfaces.RealOutput y
+            annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+                Real amp;
+        equation
+            if u > 0 then
+            amp = u;
+          end if;
+
+          annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+                coordinateSystem(preserveAspectRatio=false)));
+        end AmplitudeNumber;
+
+        model ExtractingTimeOfFault
+          Modelica.Blocks.Interfaces.RealOutput y
+            annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+          Modelica.Blocks.Interfaces.RealInput u
+            annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+          Modelica.Blocks.Continuous.LimIntegrator limIntegrator(
+            outMax=2,
+            outMin=0,
+            y_start=1)
+            annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
+          Modelica.Blocks.Logical.Switch switch1
+            annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
+          Modelica.Blocks.Math.Product product
+            annotation (Placement(transformation(extent={{26,22},{46,42}})));
+          Modelica.Blocks.Sources.Constant const(k=1000)
+            annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
+          Modelica.Blocks.Sources.Constant const1(k=1)
+            annotation (Placement(transformation(extent={{-78,-54},{-58,-34}})));
+          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
+               1)
+            annotation (Placement(transformation(extent={{-62,-10},{-42,10}})));
+        equation
+          connect(product.y, y) annotation (Line(points={{47,32},{76,32},{76,0},{110,
+                  0}}, color={0,0,127}));
+          connect(const.y, limIntegrator.u)
+            annotation (Line(points={{-59,40},{-42,40}}, color={0,0,127}));
+          connect(limIntegrator.y, switch1.u1) annotation (Line(points={{-19,40},{-12,
+                  40},{-12,8},{-6,8}}, color={0,0,127}));
+          connect(const1.y, switch1.u3) annotation (Line(points={{-57,-44},{-32,-44},
+                  {-32,-8},{-6,-8}}, color={0,0,127}));
+          connect(u, product.u1) annotation (Line(points={{-120,0},{-86,0},{-86,74},{
+                  16,74},{16,38},{24,38}}, color={0,0,127}));
+          connect(switch1.y, product.u2) annotation (Line(points={{17,0},{20,0},{20,
+                  26},{24,26}}, color={0,0,127}));
+          connect(u,greaterEqualThreshold. u)
+            annotation (Line(points={{-120,0},{-64,0}},   color={0,0,127}));
+          connect(greaterEqualThreshold.y, switch1.u2) annotation (Line(points={{-41,0},
+                  {-6,0}},                         color={255,0,255}));
+          annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+                  Rectangle(extent={{-100,100},{100,-100}}, lineColor={28,108,200})}),
+                                                                         Diagram(
+                coordinateSystem(preserveAspectRatio=false)));
+        end ExtractingTimeOfFault;
       end Components;
 
       model ReferenceRelay
@@ -1138,8 +1166,6 @@ package OCRAIOSPSAT
               extent={{-10,-10},{10,10}},
               rotation=0,
               origin={-334,-62})));
-        Components.ExtractingTimeOfFault extractingTimeOfFault
-          annotation (Placement(transformation(extent={{-172,34},{-152,54}})));
         Components.Timer timer
           annotation (Placement(transformation(extent={{-174,-14},{-154,6}})));
         parameter Real Is=1 "Pick Up Current Value";
@@ -1367,31 +1393,28 @@ package OCRAIOSPSAT
 
       model RecordReferenceRelay
         Modelica.Blocks.Math.Add add(       k2=1, k1=-1)
-          annotation (Placement(transformation(extent={{-130,14},{-110,34}})));
+          annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
         Modelica.Blocks.Logical.Greater greater1
           annotation (Placement(transformation(extent={{-252,-10},{-232,10}})));
         Modelica.Blocks.Math.BooleanToReal booleanToReal1
-          annotation (Placement(transformation(extent={{-214,-10},{-194,10}})));
+          annotation (Placement(transformation(extent={{-180,-10},{-160,10}})));
         Modelica.Blocks.Sources.Constant const(k=Is)
                                                     annotation (Placement(
               transformation(
               extent={{-10,-10},{10,10}},
               rotation=0,
-              origin={-276,-50})));
-        Components.ExtractingTimeOfFault extractingTimeOfFault
-          annotation (Placement(transformation(extent={{-172,34},{-152,54}})));
+              origin={-274,-24})));
         Components.Timer timer
-          annotation (Placement(transformation(extent={{-174,-14},{-154,6}})));
+          annotation (Placement(transformation(extent={{-142,-10},{-122,10}})));
         parameter Real Is=1 "Pick Up Current Value";
         Modelica.Blocks.Interfaces.BooleanOutput TripSingal
-          annotation (Placement(transformation(extent={{-10,-10},{10,10}},
-              rotation=90,
-              origin={-180,110}),
-                                iconTransformation(extent={{-10,-10},{10,10}},
+          annotation (Placement(transformation(extent={{10,-10},{-10,10}},
+              rotation=180,
+              origin={10,0}),   iconTransformation(extent={{-10,-10},{10,10}},
               rotation=0,
               origin={-10,0})));
         Modelica.Blocks.Logical.Greater greater2
-          annotation (Placement(transformation(extent={{-92,-10},{-72,10}})));
+          annotation (Placement(transformation(extent={{-68,-10},{-48,10}})));
         parameter Real alpha=0.02 "Alpha Constant Value";
         parameter Real TMS=0.5 "TMS Constant Value";
         parameter Real C=0.14 "C Constant Value";
@@ -1402,92 +1425,179 @@ package OCRAIOSPSAT
           C=C,
           eps=eps,
           Is=Is)
-          annotation (Placement(transformation(extent={{-174,-56},{-154,-36}})));
+          annotation (Placement(transformation(extent={{-142,-48},{-122,-28}})));
         //parameter Real k= 0.041 "Constant output value";
 
         Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop
-          annotation (Placement(transformation(extent={{-54,-16},{-34,4}})));
+          annotation (Placement(transformation(extent={{-34,-16},{-14,4}})));
         Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=false)
-          annotation (Placement(transformation(extent={{-98,-46},{-78,-26}})));
+          annotation (Placement(transformation(extent={{-66,-42},{-46,-22}})));
         Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop1
-          annotation (Placement(transformation(extent={{-232,-42},{-212,-22}})));
+          annotation (Placement(transformation(extent={{-218,-16},{-198,4}})));
         Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=false)
-          annotation (Placement(transformation(extent={{-260,-54},{-240,-34}})));
+          annotation (Placement(transformation(extent={{-284,-64},{-264,-44}})));
         Modelica.Blocks.Interfaces.RealInput u
           annotation (Placement(transformation(extent={{-340,-20},{-300,20}})));
 
         parameter Real eps=0.41 "Constant output value";
       equation
 
-        connect(const.y, greater1.u2) annotation (Line(points={{-265,-50},{-262,
-                -50},{-262,-8},{-254,-8}}, color={0,0,127}));
-        connect(booleanToReal1.y, timer.u) annotation (Line(points={{-193,0},{
-                -184,0},{-184,0.2},{-176,0.2}}, color={0,0,127}));
-        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{-174,44},
-                {-184,44},{-184,0.2},{-176,0.2}},          color={0,0,127}));
-        connect(calculatingOperationTime.Control, timer.u) annotation (Line(
-              points={{-176,-39.0769},{-184,-39.0769},{-184,0.2},{-176,0.2}},
-                                                                    color={0,0,
-                127}));
-        connect(extractingTimeOfFault.y, add.u1)
-          annotation (Line(points={{-151,44},{-140,44},{-140,30},{-132,30}},
-                                                         color={0,0,127}));
-        connect(timer.y, add.u2) annotation (Line(points={{-153,-4},{-138,-4},{
-                -138,18},{-132,18}}, color={0,0,127}));
-        connect(add.y, greater2.u1) annotation (Line(points={{-109,24},{-100,24},
-                {-100,0},{-94,0}}, color={0,0,127}));
-        connect(calculatingOperationTime.OperationTime, greater2.u2)
-          annotation (Line(points={{-153,-43.6923},{-124,-43.6923},{-124,-8},{
-                -94,-8}},
-              color={0,0,127}));
-        connect(greater2.y, rSFlipFlop.S)
-          annotation (Line(points={{-71,0},{-56,0}}, color={255,0,255}));
-        connect(booleanConstant.y, rSFlipFlop.R) annotation (Line(points={{-77,-36},
-                {-62,-36},{-62,-12},{-56,-12}},      color={255,0,255}));
-        connect(rSFlipFlop.Q, TripSingal) annotation (Line(points={{-33,0},{-28,
-                0},{-28,80},{-180,80},{-180,110}}, color={255,0,255}));
-        connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
-           Line(points={{-176,-48.3077},{-230,-48.3077},{-230,-72},{-292,-72},{
-                -292,-10},{-276,-10},{-276,0},{-254,0}},
-                                               color={0,0,127}));
-        connect(rSFlipFlop1.Q, booleanToReal1.u) annotation (Line(points={{-211,
-                -26},{-202,-26},{-202,-16},{-216,-16},{-216,0}}, color={255,0,
-                255}));
-        connect(rSFlipFlop1.S, greater1.y) annotation (Line(points={{-234,-26},
-                {-240,-26},{-240,-14},{-226,-14},{-226,0},{-231,0}}, color={255,
-                0,255}));
-        connect(booleanConstant1.y, rSFlipFlop1.R) annotation (Line(points={{
-                -239,-44},{-236,-44},{-236,-38},{-234,-38}}, color={255,0,255}));
+        connect(const.y, greater1.u2) annotation (Line(points={{-263,-24},{-262,
+                -24},{-262,-8},{-254,-8}}, color={0,0,127}));
+        connect(add.y, greater2.u1) annotation (Line(points={{-79,0},{-70,0}},
+                                   color={0,0,127}));
+        connect(booleanConstant1.y, rSFlipFlop1.R) annotation (Line(points={{-263,
+                -54},{-236,-54},{-236,-12},{-220,-12}},      color={255,0,255}));
         connect(u, greater1.u1)
           annotation (Line(points={{-320,0},{-254,0}}, color={0,0,127}));
+        connect(greater1.y, rSFlipFlop1.S)
+          annotation (Line(points={{-231,0},{-220,0}}, color={255,0,255}));
+        connect(rSFlipFlop1.Q, booleanToReal1.u)
+          annotation (Line(points={{-197,0},{-182,0}}, color={255,0,255}));
+        connect(booleanToReal1.y, timer.u) annotation (Line(points={{-159,0},{
+                -152,0},{-152,0},{-144,0}}, color={0,0,127}));
+        connect(calculatingOperationTime.Control, timer.u) annotation (Line(
+              points={{-143.333,-32},{-154,-32},{-154,0},{-144,0}}, color={0,0,
+                127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{
+                -142,38},{-154,38},{-154,0},{-144,0}}, color={0,0,127}));
+        connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
+           Line(points={{-143.333,-40.3077},{-222,-40.3077},{-222,-86},{-296,
+                -86},{-296,0},{-254,0}}, color={0,0,127}));
+        connect(timer.y, add.u2) annotation (Line(points={{-121,0},{-112,0},{
+                -112,-6},{-102,-6}}, color={0,0,127}));
+        connect(extractingTimeOfFault.y, add.u1) annotation (Line(points={{-119,
+                38},{-114,38},{-114,6},{-102,6}}, color={0,0,127}));
+        connect(calculatingOperationTime.OperationTime, greater2.u2)
+          annotation (Line(points={{-121.333,-35.6923},{-78,-35.6923},{-78,-8},
+                {-70,-8}}, color={0,0,127}));
+        connect(greater2.y, rSFlipFlop.S)
+          annotation (Line(points={{-47,0},{-36,0}}, color={255,0,255}));
+        connect(booleanConstant.y, rSFlipFlop.R) annotation (Line(points={{-45,
+                -32},{-40,-32},{-40,-12},{-36,-12}}, color={255,0,255}));
+        connect(TripSingal, rSFlipFlop.Q) annotation (Line(points={{10,
+                4.44089e-16},{-3,4.44089e-16},{-3,0},{-13,0}}, color={255,0,255}));
         annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
-                  -100},{-20,100}}), graphics={Rectangle(extent={{-300,100},{
+                  -100},{0,100}}),   graphics={Rectangle(extent={{-300,100},{
                     -20,-100}},
                             lineColor={28,108,200}), Text(
                 extent={{-290,56},{-96,-46}},
                 lineColor={28,108,200},
                 textString="Relay")}),                                 Diagram(
               coordinateSystem(preserveAspectRatio=false, extent={{-300,-100},{
-                  -20,100}}),
+                  0,100}}),
                           graphics={
               Text(
                 extent={{-252,26},{-232,14}},
                 lineColor={0,0,0},
                 textString="(e)"),
               Text(
-                extent={{-172,52},{-152,40}},
+                extent={{-140,46},{-120,34}},
                 lineColor={0,0,0},
                 textString="(f)"),
               Text(
-                extent={{-174,2},{-154,-10}},
+                extent={{-142,6},{-122,-6}},
                 lineColor={0,0,0},
                 textString="(g)"),
               Text(
-                extent={{-174,-40},{-154,-52}},
+                extent={{-142,-32},{-122,-44}},
                 lineColor={0,0,0},
                 textString="(h)")}));
       end RecordReferenceRelay;
 
+      model RecordReferenceMNCRelay
+        import RelayPack;
+        Modelica.Blocks.Logical.Greater greater1
+          annotation (Placement(transformation(extent={{-252,-10},{-232,10}})));
+        Modelica.Blocks.Math.BooleanToReal booleanToReal1
+          annotation (Placement(transformation(extent={{-160,-10},{-140,10}})));
+        Modelica.Blocks.Sources.Constant const(k=Is)
+                                                    annotation (Placement(
+              transformation(
+              extent={{-10,-10},{10,10}},
+              rotation=0,
+              origin={-276,-50})));
+        parameter Real Is=1 "Pick Up Current Value";
+        parameter Real alpha=0.02 "Alpha Constant Value";
+        parameter Real TMS=0.5 "TMS Constant Value";
+        parameter Real C=0.14 "C Constant Value";
+        //parameter Real ls=1 "Constant output value";
+
+        Components.CalculatingOperationTime calculatingOperationTime(
+          alpha=alpha,
+          TMS=TMS,
+          C=C,
+          eps=eps,
+          Is=Is)
+          annotation (Placement(transformation(extent={{-110,-66},{-90,-44}})));
+        //parameter Real k= 0.041 "Constant output value";
+
+        Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop1
+          annotation (Placement(transformation(extent={{-218,-16},{-198,4}})));
+        Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=false)
+          annotation (Placement(transformation(extent={{-260,-54},{-240,-34}})));
+        Modelica.Blocks.Interfaces.RealInput u
+          annotation (Placement(transformation(extent={{-340,-20},{-300,20}})));
+
+        parameter Real eps=0.41 "Constant output value";
+        Modelica.Blocks.Math.Add add(k1=-1, k2=1)
+          annotation (Placement(transformation(extent={{-68,6},{-48,26}})));
+        Modelica.Blocks.Logical.Greater greater2
+          annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));
+        Modelica.Blocks.Interfaces.BooleanOutput TripSingal
+          annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+        Components.Timer timer
+          annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
+        RelayPack.Components.ExtractingTimeOfFault
+                                         extractingTimeOfFault
+          annotation (Placement(transformation(extent={{-110,26},{-90,46}})));
+      equation
+
+        connect(const.y, greater1.u2) annotation (Line(points={{-265,-50},{-262,
+                -50},{-262,-8},{-254,-8}}, color={0,0,127}));
+        connect(booleanConstant1.y, rSFlipFlop1.R) annotation (Line(points={{-239,
+                -44},{-236,-44},{-236,-12},{-220,-12}},      color={255,0,255}));
+        connect(u, greater1.u1)
+          annotation (Line(points={{-320,0},{-254,0}}, color={0,0,127}));
+        connect(rSFlipFlop1.S, greater1.y)
+          annotation (Line(points={{-220,0},{-231,0}}, color={255,0,255}));
+        connect(rSFlipFlop1.Q, booleanToReal1.u)
+          annotation (Line(points={{-197,0},{-162,0}}, color={255,0,255}));
+        connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
+           Line(points={{-111.333,-57.5385},{-188,-57.5385},{-188,-70},{-292,
+                -70},{-292,0},{-254,0}}, color={0,0,127}));
+        connect(add.y, greater2.u1) annotation (Line(points={{-47,16},{-38,16},
+                {-38,0},{-28,0}}, color={0,0,127}));
+        connect(calculatingOperationTime.OperationTime, greater2.u2)
+          annotation (Line(points={{-89.3333,-52.4615},{-58,-52.4615},{-58,-8},
+                {-28,-8}}, color={0,0,127}));
+        connect(greater2.y, TripSingal)
+          annotation (Line(points={{-5,0},{30,0}}, color={255,0,255}));
+        connect(booleanToReal1.y, timer.u)
+          annotation (Line(points={{-139,0},{-112,0}}, color={0,0,127}));
+        connect(calculatingOperationTime.Control, timer.u) annotation (Line(
+              points={{-111.333,-48.4},{-126,-48.4},{-126,0},{-112,0}}, color={
+                0,0,127}));
+        connect(timer.y, add.u2) annotation (Line(points={{-89,0},{-80,0},{-80,
+                10},{-70,10}}, color={0,0,127}));
+        connect(add.u1, extractingTimeOfFault.y) annotation (Line(points={{-70,
+                22},{-80,22},{-80,36},{-89,36}}, color={0,0,127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{
+                -112,36},{-124,36},{-124,0},{-112,0}}, color={0,0,127}));
+        annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                  -100},{60,100}}),  graphics={Rectangle(extent={{-300,100},{20,
+                    -100}}, lineColor={28,108,200}), Text(
+                extent={{-240,56},{-46,-46}},
+                lineColor={28,108,200},
+                textString="Relay")}),                                 Diagram(
+              coordinateSystem(preserveAspectRatio=false, extent={{-300,-100},{
+                  60,100}}),
+                          graphics={
+              Text(
+                extent={{-252,26},{-232,14}},
+                lineColor={0,0,0},
+                textString="(e)")}));
+      end RecordReferenceMNCRelay;
       annotation ();
     end RelayPack;
 
@@ -1634,14 +1744,14 @@ package OCRAIOSPSAT
         Is=400)
         annotation (Placement(transformation(extent={{-124,-24},{-88,-4}})));
         //k=3,
-      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=2)
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
         annotation (Placement(transformation(extent={{-268,-20},{-248,0}})));
       Modelica.Blocks.Math.BooleanToReal booleanToReal
         annotation (Placement(transformation(extent={{-226,-20},{-206,0}})));
       RelayPack.Data.RelayData.StandardInverseData RelayData(redeclare record
-          Alpha = RelayPack.Data.AlphaData.EIAlpha, redeclare record C =
-            RelayPack.Data.CData.EIC)
-        annotation (Placement(transformation(extent={{-156,54},{-136,74}})));
+          Alpha = RelayPack.Data.AlphaData.SIAlpha, redeclare record C =
+            RelayPack.Data.CData.SIC)
+        annotation (Placement(transformation(extent={{-168,56},{-148,76}})));
       Modelica.Blocks.Math.Add add
         annotation (Placement(transformation(extent={{-160,-26},{-140,-6}})));
       Modelica.Blocks.Sources.Constant const(k=0.3)
@@ -1655,7 +1765,7 @@ package OCRAIOSPSAT
       connect(booleanStep.y, booleanToReal.u)
         annotation (Line(points={{-247,-10},{-228,-10}}, color={255,0,255}));
       connect(recordReferenceRelay.u, add.y)
-        annotation (Line(points={{-126.571,-14},{-134,-14},{-134,-16},{-139,-16}},
+        annotation (Line(points={{-126.4,-14},{-134,-14},{-134,-16},{-139,-16}},
                                                          color={0,0,127}));
       connect(const.y, add.u2) annotation (Line(points={{-197,-60},{-178,-60},{
               -178,-22},{-162,-22}}, color={0,0,127}));
@@ -1669,6 +1779,53 @@ package OCRAIOSPSAT
                 {-80,80}})),            Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{-80,80}})));
     end RelayCalibration;
+
+    model RelayMNCCalibration
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+
+      Data.SystemData.SystemData.PF1 PowerFlow
+        annotation (Placement(transformation(extent={{-194,56},{-174,76}})));
+        //k=3,
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
+        annotation (Placement(transformation(extent={{-268,-14},{-248,6}})));
+      Modelica.Blocks.Math.BooleanToReal booleanToReal
+        annotation (Placement(transformation(extent={{-224,-14},{-204,6}})));
+      RelayPack.Data.RelayData.StandardInverseData RelayData(redeclare record
+          Alpha = RelayPack.Data.AlphaData.SIAlpha, redeclare record C =
+            RelayPack.Data.CData.SIC)
+        annotation (Placement(transformation(extent={{-168,56},{-148,76}})));
+      Modelica.Blocks.Math.Add add
+        annotation (Placement(transformation(extent={{-160,-26},{-140,-6}})));
+      Modelica.Blocks.Sources.Constant const(k=0.3)
+        annotation (Placement(transformation(extent={{-268,-82},{-248,-62}})));
+      Modelica.Blocks.Math.Product product
+        annotation (Placement(transformation(extent={{-192,-20},{-172,0}})));
+      Modelica.Blocks.Sources.Constant const1(k=10133333)
+        annotation (Placement(transformation(extent={{-268,-50},{-248,-30}})));
+      RelayPack.RecordReferenceMNCRelay recordReferenceMNCRelay(
+        Is=400,
+        alpha=RelayData.alpha.alpha,
+        C=RelayData.c.C)
+        annotation (Placement(transformation(extent={{-124,-26},{-96,-6}})));
+    equation
+
+      connect(booleanStep.y, booleanToReal.u)
+        annotation (Line(points={{-247,-4},{-226,-4}},   color={255,0,255}));
+      connect(const.y, add.u2) annotation (Line(points={{-247,-72},{-172,-72},{
+              -172,-22},{-162,-22}}, color={0,0,127}));
+      connect(add.u1, product.y)
+        annotation (Line(points={{-162,-10},{-171,-10}}, color={0,0,127}));
+      connect(booleanToReal.y, product.u1) annotation (Line(points={{-203,-4},{
+              -194,-4}},                       color={0,0,127}));
+      connect(const1.y, product.u2) annotation (Line(points={{-247,-40},{-202,
+              -40},{-202,-16},{-194,-16}},                       color={0,0,127}));
+      connect(add.y, recordReferenceMNCRelay.u) annotation (Line(points={{-139,
+              -16},{-125.556,-16}},                       color={0,0,127}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,-140},
+                {-80,80}})),            Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{-80,80}})));
+    end RelayMNCCalibration;
   end Components;
 
   package TestSystems
