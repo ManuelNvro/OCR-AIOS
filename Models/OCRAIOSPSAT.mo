@@ -1582,8 +1582,8 @@ package OCRAIOSPSAT
                 10},{-70,10}}, color={0,0,127}));
         connect(add.u1, extractingTimeOfFault.y) annotation (Line(points={{-70,
                 22},{-80,22},{-80,36},{-89,36}}, color={0,0,127}));
-        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{
-                -112,36},{-124,36},{-124,0},{-112,0}}, color={0,0,127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{-112,36},
+                {-126,36},{-126,0},{-112,0}},          color={0,0,127}));
         annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                   -100},{60,100}}),  graphics={Rectangle(extent={{-300,100},{20,
                     -100}}, lineColor={28,108,200}), Text(
@@ -1787,7 +1787,7 @@ package OCRAIOSPSAT
       Data.SystemData.SystemData.PF1 PowerFlow
         annotation (Placement(transformation(extent={{-194,56},{-174,76}})));
         //k=3,
-      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=3)
         annotation (Placement(transformation(extent={{-268,-14},{-248,6}})));
       Modelica.Blocks.Math.BooleanToReal booleanToReal
         annotation (Placement(transformation(extent={{-224,-14},{-204,6}})));
