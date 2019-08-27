@@ -102,213 +102,39 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(668,77)
+char initialName(121,78)
 SysData.S_b
 SysData.fn
-ThreeBus.V_b
-ThreeBus.V_0
-ThreeBus.angle_0
-ThreeBus.P_0
-ThreeBus.Q_0
-ThreeBus.S_b
-ThreeBus.fn
-ThreeBus.p.vr
-ThreeBus.p.vi
-ThreeBus.p.ir
-ThreeBus.p.ii
-ThreeBus.V
-ThreeBus.angle
-ThreeBus.displayPF
-OneBus.V_b
-OneBus.V_0
-OneBus.angle_0
-OneBus.P_0
-OneBus.Q_0
-OneBus.S_b
-OneBus.fn
-OneBus.p.vr
-OneBus.p.vi
-OneBus.p.ir
-OneBus.p.ii
-OneBus.V
-OneBus.angle
-OneBus.displayPF
-pwLine1.p.vr
-pwLine1.p.vi
-pwLine1.p.ir
-pwLine1.p.ii
-pwLine1.n.vr
-pwLine1.n.vi
-pwLine1.n.ir
-pwLine1.n.ii
-pwLine1.R
-pwLine1.X
-pwLine1.G
-pwLine1.B
-pwLine1.S_b
-pwLine1.t1
-pwLine1.t2
-pwLine1.opening
-pwLine1.displayPF
-pwLine1.P12
-pwLine1.P21
-pwLine1.Q12
-pwLine1.Q21
-pwLine1.Y.re
-pwLine1.Y.im
-pwLine1.Z.re
-pwLine1.Z.im
-pwLine3.p.ir
-pwLine3.p.ii
-pwLine3.n.ir
-pwLine3.n.ii
-pwLine3.R
-pwLine3.X
-pwLine3.G
-pwLine3.B
-pwLine3.S_b
-pwLine3.t1
-pwLine3.t2
-pwLine3.opening
-pwLine3.displayPF
-pwLine3.P12
-pwLine3.P21
-pwLine3.Q12
-pwLine3.Q21
-pwLine3.Y.re
-pwLine3.Y.im
-pwLine3.Z.re
-pwLine3.Z.im
-infiniteBus.V_b
-infiniteBus.V_0
-infiniteBus.angle_0
-infiniteBus.P_0
-infiniteBus.Q_0
-infiniteBus.S_b
-infiniteBus.fn
-infiniteBus.P
-infiniteBus.Q
-infiniteBus.p.ir
-infiniteBus.p.ii
-infiniteBus.displayPF
-TwoBus.V_b
-TwoBus.V_0
-TwoBus.angle_0
-TwoBus.P_0
-TwoBus.Q_0
-TwoBus.S_b
-TwoBus.fn
-TwoBus.p.vr
-TwoBus.p.vi
-TwoBus.p.ir
-TwoBus.p.ii
-TwoBus.V
-TwoBus.angle
-TwoBus.displayPF
-twoWindingTransformer1.p.ir
-twoWindingTransformer1.p.ii
-twoWindingTransformer1.n.ir
-twoWindingTransformer1.n.ii
-twoWindingTransformer1.S_b
-twoWindingTransformer1.V_b
-twoWindingTransformer1.Sn
-twoWindingTransformer1.Vn
-twoWindingTransformer1.rT
-twoWindingTransformer1.xT
-twoWindingTransformer1.m
-twoWindingTransformer1.Zn
-twoWindingTransformer1.Zb
-twoWindingTransformer1.r
-twoWindingTransformer1.x
-twoWindingTransformer1.tc
-FiveBus.V_b
-FiveBus.V_0
-FiveBus.angle_0
-FiveBus.P_0
-FiveBus.Q_0
-FiveBus.S_b
-FiveBus.fn
-FiveBus.p.vr
-FiveBus.p.vi
-FiveBus.p.ir
-FiveBus.p.ii
-FiveBus.V
-FiveBus.angle
-FiveBus.displayPF
-pwLine2.p.ir
-pwLine2.p.ii
-pwLine2.n.ir
-pwLine2.n.ii
-pwLine2.R
-pwLine2.X
-pwLine2.G
-pwLine2.B
-pwLine2.S_b
-pwLine2.t1
-pwLine2.t2
-pwLine2.opening
-pwLine2.displayPF
-pwLine2.P12
-pwLine2.P21
-pwLine2.Q12
-pwLine2.Q21
-pwLine2.Y.re
-pwLine2.Y.im
-pwLine2.Z.re
-pwLine2.Z.im
-lOADPQ.V_b
-lOADPQ.V_0
-lOADPQ.angle_0
-lOADPQ.P_0
-lOADPQ.Q_0
-lOADPQ.S_b
-lOADPQ.fn
-lOADPQ.Sn
-lOADPQ.V
-lOADPQ.Angle_V
-lOADPQ.P
-lOADPQ.Q
-lOADPQ.angle_0rad
-lOADPQ.CoB
-lOADPQ.Vmax
-lOADPQ.Vmin
-lOADPQ.forcePQ
-pwFault.p.ir
-pwFault.p.ii
-pwFault.R
-pwFault.X
-pwFault.t1
-pwFault.t2
-pwFault.ground
-Imag
+PowerFlow.voltage.InfiniteBusV_0
+PowerFlow.voltage.InfiniteBusangle_0
+PowerFlow.voltage.BreakerenableTrigger
+PowerFlow.voltage.TransformerB3B4m
+PowerFlow.voltage.GeneratorV_0
+PowerFlow.voltage.Generatorangle_0
+PowerFlow.voltage.MotorV_0
+PowerFlow.voltage.Motorangle_0
+PowerFlow.voltage.PQLoadV_0
+PowerFlow.voltage.PQLoadangle_0
+PowerFlow.power.InfiniteBusP_0
+PowerFlow.power.InfiniteBusQ_0
+PowerFlow.power.GeneratorP_0
+PowerFlow.power.GeneratorQ_0
+PowerFlow.power.PQLoadP_0
+PowerFlow.power.PQLoadQ_0
+PowerFlow.power.MotorP_0
+PowerFlow.power.MotorQ_0
+PowerFlow.power.ShuntCapacitorQnom
 recordReferenceRelay.add.u1
 recordReferenceRelay.add.u2
 recordReferenceRelay.add.y
 recordReferenceRelay.add.k1
 recordReferenceRelay.add.k2
-recordReferenceRelay.greater1.u1
 recordReferenceRelay.greater1.y
 recordReferenceRelay.booleanToReal1.u
 recordReferenceRelay.booleanToReal1.realTrue
 recordReferenceRelay.booleanToReal1.realFalse
 recordReferenceRelay.booleanToReal1.y
 recordReferenceRelay.const.k
-recordReferenceRelay.product.u1
-recordReferenceRelay.const1.k
-recordReferenceRelay.extractingTimeOfFault.switch1.u2
-recordReferenceRelay.extractingTimeOfFault.switch1.y
-recordReferenceRelay.extractingTimeOfFault.const.k
-recordReferenceRelay.extractingTimeOfFault.const1.k
-recordReferenceRelay.extractingTimeOfFault.greaterEqualThreshold.threshold
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.k
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.outMax
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.outMin
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.initType
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.limitsAtInit
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.y_start
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.strict
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.y
-recordReferenceRelay.extractingTimeOfFault.limIntegrator.der(y)
 recordReferenceRelay.timer.clock.offset
 recordReferenceRelay.timer.clock.startTime
 recordReferenceRelay.timer.clock.y
@@ -330,12 +156,7 @@ recordReferenceRelay.greater2.y
 recordReferenceRelay.alpha
 recordReferenceRelay.TMS
 recordReferenceRelay.C
-recordReferenceRelay.calculatingOperationTime.switch1.u2
-recordReferenceRelay.calculatingOperationTime.switch1.y
 recordReferenceRelay.calculatingOperationTime.Const.k
-recordReferenceRelay.calculatingOperationTime.const1.k
-recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.threshold
-recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.y
 recordReferenceRelay.calculatingOperationTime.division1.y
 recordReferenceRelay.calculatingOperationTime.pickcupcurrent.k
 recordReferenceRelay.calculatingOperationTime.const2.k
@@ -345,1770 +166,187 @@ recordReferenceRelay.calculatingOperationTime.add.k1
 recordReferenceRelay.calculatingOperationTime.add.k2
 recordReferenceRelay.calculatingOperationTime.product.u1
 recordReferenceRelay.calculatingOperationTime.TimeMultiplierSetting.k
-recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.threshold
-recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.y
 recordReferenceRelay.calculatingOperationTime.const.k
 recordReferenceRelay.calculatingOperationTime.alpha
 recordReferenceRelay.calculatingOperationTime.TMS
 recordReferenceRelay.calculatingOperationTime.C
-recordReferenceRelay.calculatingOperationTime.ls
-recordReferenceRelay.calculatingOperationTime.eps.k
-recordReferenceRelay.calculatingOperationTime.y3_1.y
-recordReferenceRelay.calculatingOperationTime.k
-recordReferenceRelay.k
+recordReferenceRelay.calculatingOperationTime.eps
+recordReferenceRelay.calculatingOperationTime.Is
+recordReferenceRelay.calculatingOperationTime.amp
+recordReferenceRelay.calculatingOperationTime.division.y
+recordReferenceRelay.calculatingOperationTime.const4.k
+recordReferenceRelay.calculatingOperationTime.product1.u1
+recordReferenceRelay.calculatingOperationTime.product1.u2
+recordReferenceRelay.calculatingOperationTime.switch1.u2
+recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.threshold
+recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.y
+recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.threshold
+recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.y
+recordReferenceRelay.calculatingOperationTime.const1.k
+recordReferenceRelay.calculatingOperationTime.switch2.u2
+recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold1.threshold
+recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold1.y
+recordReferenceRelay.calculatingOperationTime.lessEqualThreshold1.threshold
+recordReferenceRelay.calculatingOperationTime.lessEqualThreshold1.y
+recordReferenceRelay.calculatingOperationTime.const3.k
 recordReferenceRelay.rSFlipFlop.Qini
 recordReferenceRelay.rSFlipFlop.QI
 recordReferenceRelay.rSFlipFlop.pre.pre_u_start
 recordReferenceRelay.rSFlipFlop.pre.u
 recordReferenceRelay.booleanConstant.k
-recordReferenceRelay.const2.k
 recordReferenceRelay.rSFlipFlop1.Qini
 recordReferenceRelay.rSFlipFlop1.QI
 recordReferenceRelay.rSFlipFlop1.pre.pre_u_start
 recordReferenceRelay.rSFlipFlop1.pre.u
 recordReferenceRelay.booleanConstant1.k
-recordReferenceRelay.ls
-pSSEGeneratorTGOV.SysData.S_b
-pSSEGeneratorTGOV.SysData.fn
-pSSEGeneratorTGOV.gENSAL.V_b
-pSSEGeneratorTGOV.gENSAL.V_0
-pSSEGeneratorTGOV.gENSAL.angle_0
-pSSEGeneratorTGOV.gENSAL.P_0
-pSSEGeneratorTGOV.gENSAL.Q_0
-pSSEGeneratorTGOV.gENSAL.S_b
-pSSEGeneratorTGOV.gENSAL.fn
-pSSEGeneratorTGOV.gENSAL.M_b
-pSSEGeneratorTGOV.gENSAL.Tpd0
-pSSEGeneratorTGOV.gENSAL.Tppd0
-pSSEGeneratorTGOV.gENSAL.Tppq0
-pSSEGeneratorTGOV.gENSAL.H
-pSSEGeneratorTGOV.gENSAL.D
-pSSEGeneratorTGOV.gENSAL.Xd
-pSSEGeneratorTGOV.gENSAL.Xq
-pSSEGeneratorTGOV.gENSAL.Xpd
-pSSEGeneratorTGOV.gENSAL.Xppd
-pSSEGeneratorTGOV.gENSAL.Xppq
-pSSEGeneratorTGOV.gENSAL.Xl
-pSSEGeneratorTGOV.gENSAL.S10
-pSSEGeneratorTGOV.gENSAL.S12
-pSSEGeneratorTGOV.gENSAL.R_a
-pSSEGeneratorTGOV.gENSAL.PMECH
-pSSEGeneratorTGOV.gENSAL.ETERM
-pSSEGeneratorTGOV.gENSAL.EFD
-pSSEGeneratorTGOV.gENSAL.PELEC
-pSSEGeneratorTGOV.gENSAL.ISORCE
-pSSEGeneratorTGOV.gENSAL.w
-pSSEGeneratorTGOV.gENSAL.der(w)
-pSSEGeneratorTGOV.gENSAL.delta
-pSSEGeneratorTGOV.gENSAL.der(delta)
-pSSEGeneratorTGOV.gENSAL.anglev
-pSSEGeneratorTGOV.gENSAL.I
-pSSEGeneratorTGOV.gENSAL.anglei
-pSSEGeneratorTGOV.gENSAL.P
-pSSEGeneratorTGOV.gENSAL.Q
-pSSEGeneratorTGOV.gENSAL.Te
-pSSEGeneratorTGOV.gENSAL.id
-pSSEGeneratorTGOV.gENSAL.iq
-pSSEGeneratorTGOV.gENSAL.ud
-pSSEGeneratorTGOV.gENSAL.uq
-pSSEGeneratorTGOV.gENSAL.w_b
-pSSEGeneratorTGOV.gENSAL.anglev_rad
-pSSEGeneratorTGOV.gENSAL.CoB
-pSSEGeneratorTGOV.gENSAL.vr0
-pSSEGeneratorTGOV.gENSAL.vi0
-pSSEGeneratorTGOV.gENSAL.ir0
-pSSEGeneratorTGOV.gENSAL.ii0
-pSSEGeneratorTGOV.gENSAL.p0
-pSSEGeneratorTGOV.gENSAL.q0
-pSSEGeneratorTGOV.gENSAL.Epq
-pSSEGeneratorTGOV.gENSAL.der(Epq)
-pSSEGeneratorTGOV.gENSAL.PSIkd
-pSSEGeneratorTGOV.gENSAL.der(PSIkd)
-pSSEGeneratorTGOV.gENSAL.PSIppq
-pSSEGeneratorTGOV.gENSAL.der(PSIppq)
-pSSEGeneratorTGOV.gENSAL.PSIppd
-pSSEGeneratorTGOV.gENSAL.PSId
-pSSEGeneratorTGOV.gENSAL.PSIq
-pSSEGeneratorTGOV.gENSAL.Zs.re
-pSSEGeneratorTGOV.gENSAL.Zs.im
-pSSEGeneratorTGOV.gENSAL.Is.re
-pSSEGeneratorTGOV.gENSAL.Is.im
-pSSEGeneratorTGOV.gENSAL.PSIpp0.re
-pSSEGeneratorTGOV.gENSAL.PSIpp0.im
-pSSEGeneratorTGOV.gENSAL.a.re
-pSSEGeneratorTGOV.gENSAL.a.im
-pSSEGeneratorTGOV.gENSAL.Epqp.re
-pSSEGeneratorTGOV.gENSAL.Epqp.im
-pSSEGeneratorTGOV.gENSAL.delta0
-pSSEGeneratorTGOV.gENSAL.VT.re
-pSSEGeneratorTGOV.gENSAL.VT.im
-pSSEGeneratorTGOV.gENSAL.S.re
-pSSEGeneratorTGOV.gENSAL.S.im
-pSSEGeneratorTGOV.gENSAL.It.re
-pSSEGeneratorTGOV.gENSAL.It.im
-pSSEGeneratorTGOV.gENSAL.DQ_dq.re
-pSSEGeneratorTGOV.gENSAL.DQ_dq.im
-pSSEGeneratorTGOV.gENSAL.I_dq.re
-pSSEGeneratorTGOV.gENSAL.I_dq.im
-pSSEGeneratorTGOV.gENSAL.iq0
-pSSEGeneratorTGOV.gENSAL.id0
-pSSEGeneratorTGOV.gENSAL.ud0
-pSSEGeneratorTGOV.gENSAL.uq0
-pSSEGeneratorTGOV.gENSAL.PSIpp0_dq.re
-pSSEGeneratorTGOV.gENSAL.PSIpp0_dq.im
-pSSEGeneratorTGOV.gENSAL.PSIppq0
-pSSEGeneratorTGOV.gENSAL.PSIppd0
-pSSEGeneratorTGOV.gENSAL.PSIkd0
-pSSEGeneratorTGOV.gENSAL.PSId0
-pSSEGeneratorTGOV.gENSAL.PSIq0
-pSSEGeneratorTGOV.gENSAL.Epq0
-pSSEGeneratorTGOV.gENSAL.dsat
-pSSEGeneratorTGOV.gENSAL.efd0
-pSSEGeneratorTGOV.gENSAL.pm0
-pSSEGeneratorTGOV.gENSAL.K1d
-pSSEGeneratorTGOV.gENSAL.K2d
-pSSEGeneratorTGOV.gENSAL.K3d
-pSSEGeneratorTGOV.gENSAL.K4d
-pSSEGeneratorTGOV.eSST1A.VOEL
-pSSEGeneratorTGOV.eSST1A.VoltageReference.k
-pSSEGeneratorTGOV.eSST1A.DiffV.u2
-pSSEGeneratorTGOV.eSST1A.DiffV.y
-pSSEGeneratorTGOV.eSST1A.DiffV.k1
-pSSEGeneratorTGOV.eSST1A.DiffV.k2
-pSSEGeneratorTGOV.eSST1A.Efd0
-pSSEGeneratorTGOV.eSST1A.V_REF
-pSSEGeneratorTGOV.eSST1A.ECOMP0
-pSSEGeneratorTGOV.eSST1A.T_R
-pSSEGeneratorTGOV.eSST1A.V_IMAX
-pSSEGeneratorTGOV.eSST1A.V_IMIN
-pSSEGeneratorTGOV.eSST1A.T_C
-pSSEGeneratorTGOV.eSST1A.T_B
-pSSEGeneratorTGOV.eSST1A.T_C1
-pSSEGeneratorTGOV.eSST1A.T_B1
-pSSEGeneratorTGOV.eSST1A.K_A
-pSSEGeneratorTGOV.eSST1A.T_A
-pSSEGeneratorTGOV.eSST1A.V_AMAX
-pSSEGeneratorTGOV.eSST1A.V_AMIN
-pSSEGeneratorTGOV.eSST1A.V_RMAX
-pSSEGeneratorTGOV.eSST1A.V_RMIN
-pSSEGeneratorTGOV.eSST1A.K_C
-pSSEGeneratorTGOV.eSST1A.K_F
-pSSEGeneratorTGOV.eSST1A.T_F
-pSSEGeneratorTGOV.eSST1A.K_LR
-pSSEGeneratorTGOV.eSST1A.I_LR
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.k
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.T
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.initType
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.x_start
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.y_start
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.u
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.y
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.x
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.der(x)
-pSSEGeneratorTGOV.eSST1A.imDerivativeLag.zeroGain
-pSSEGeneratorTGOV.eSST1A.imLimited.uMax
-pSSEGeneratorTGOV.eSST1A.imLimited.uMin
-pSSEGeneratorTGOV.eSST1A.imLimited.strict
-pSSEGeneratorTGOV.eSST1A.imLimited.limitsAtInit
-pSSEGeneratorTGOV.eSST1A.imLimited.u
-pSSEGeneratorTGOV.eSST1A.imLimited.y
-pSSEGeneratorTGOV.eSST1A.hV_GATE.p
-pSSEGeneratorTGOV.eSST1A.imGain.k
-pSSEGeneratorTGOV.eSST1A.imGain.u
-pSSEGeneratorTGOV.eSST1A.imGain.y
-pSSEGeneratorTGOV.eSST1A.hV_GATE1.p
-pSSEGeneratorTGOV.eSST1A.lV_GATE.p
-pSSEGeneratorTGOV.eSST1A.Vref1.k
-pSSEGeneratorTGOV.eSST1A.imLeadLag.y
-pSSEGeneratorTGOV.eSST1A.imLeadLag.K
-pSSEGeneratorTGOV.eSST1A.imLeadLag.T1
-pSSEGeneratorTGOV.eSST1A.imLeadLag.T2
-pSSEGeneratorTGOV.eSST1A.imLeadLag.y_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag.x_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.y
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.b[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.b[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.initType
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.x_start[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.y_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.na
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.nb
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.nx
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.bb[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.bb[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.d
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a_end
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.x_scaled[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.der(x_scaled[1])
-pSSEGeneratorTGOV.eSST1A.imLeadLag.T2_dummy
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.K
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.T1
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.T2
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.y_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.x_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.y
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.b[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.b[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.initType
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.x_start[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.y_start
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.na
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.nb
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.nx
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.bb[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.bb[2]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.d
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a_end
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.x_scaled[1]
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.der(x_scaled[1])
-pSSEGeneratorTGOV.eSST1A.imLeadLag1.T2_dummy
-pSSEGeneratorTGOV.eSST1A.add3_1.k1
-pSSEGeneratorTGOV.eSST1A.add3_1.k2
-pSSEGeneratorTGOV.eSST1A.add3_1.k3
-pSSEGeneratorTGOV.eSST1A.add3_1.u3
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.u
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.y
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.state
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.der(state)
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.K
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.T
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.y_start
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.outMax
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.outMin
-pSSEGeneratorTGOV.eSST1A.simpleLagLim.T_mod
-pSSEGeneratorTGOV.eSST1A.add2.k1
-pSSEGeneratorTGOV.eSST1A.add2.k2
-pSSEGeneratorTGOV.eSST1A.imLimited1.uMax
-pSSEGeneratorTGOV.eSST1A.imLimited1.uMin
-pSSEGeneratorTGOV.eSST1A.imLimited1.strict
-pSSEGeneratorTGOV.eSST1A.imLimited1.limitsAtInit
-pSSEGeneratorTGOV.eSST1A.imLimited1.y
-pSSEGeneratorTGOV.eSST1A.add3_2.k1
-pSSEGeneratorTGOV.eSST1A.add3_2.k2
-pSSEGeneratorTGOV.eSST1A.add3_2.k3
-pSSEGeneratorTGOV.eSST1A.imGain1.k
-pSSEGeneratorTGOV.eSST1A.imGain1.y
-pSSEGeneratorTGOV.eSST1A.imGain2.k
-pSSEGeneratorTGOV.eSST1A.imGain2.y
-pSSEGeneratorTGOV.eSST1A.add3.u1
-pSSEGeneratorTGOV.eSST1A.add3.y
-pSSEGeneratorTGOV.eSST1A.add3.k1
-pSSEGeneratorTGOV.eSST1A.add3.k2
-pSSEGeneratorTGOV.eSST1A.imGain3.k
-pSSEGeneratorTGOV.eSST1A.variableLimiter.strict
-pSSEGeneratorTGOV.eSST1A.variableLimiter.limitsAtInit
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.state
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.der(state)
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.K
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.T
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.y_start
-pSSEGeneratorTGOV.eSST1A.TransducerDelay.T_mod
-pSSEGeneratorTGOV.eSST1A.Limiters.k1
-pSSEGeneratorTGOV.eSST1A.Limiters.k2
-pSSEGeneratorTGOV.eSST1A.IFD0
-pSSEGeneratorTGOV.eSST1A.VA0
-pSSEGeneratorTGOV.const.k
-pSSEGeneratorTGOV.const2.k
-pSSEGeneratorTGOV.const3.k
-pSSEGeneratorTGOV.V_b
-pSSEGeneratorTGOV.V_0
-pSSEGeneratorTGOV.angle_0
-pSSEGeneratorTGOV.P_0
-pSSEGeneratorTGOV.Q_0
-pSSEGeneratorTGOV.M_b
-pSSEGeneratorTGOV.oEL.IFDSetpoint.k
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.k
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.outMax
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.outMin
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.initType
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.limitsAtInit
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.y_start
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.strict
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.u
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.y
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator.der(y)
-pSSEGeneratorTGOV.oEL.IFD1
-pSSEGeneratorTGOV.oEL.IFD2
-pSSEGeneratorTGOV.oEL.IFD3
-pSSEGeneratorTGOV.oEL.TIME1
-pSSEGeneratorTGOV.oEL.TIME2
-pSSEGeneratorTGOV.oEL.TIME3
-pSSEGeneratorTGOV.oEL.IFDdes
-pSSEGeneratorTGOV.oEL.Vmax
-pSSEGeneratorTGOV.oEL.Vmin
-pSSEGeneratorTGOV.oEL.KMX
-pSSEGeneratorTGOV.oEL.comparisor.p
-pSSEGeneratorTGOV.oEL.comparisor.n2
-pSSEGeneratorTGOV.oEL.comparisor.HighCurrentLimit
-pSSEGeneratorTGOV.oEL.comparisor.MediumCurrentLimit
-pSSEGeneratorTGOV.oEL.comparisor.LowCurrentLimit
-pSSEGeneratorTGOV.oEL.comparisor.LL
-pSSEGeneratorTGOV.oEL.comparisor.ML
-pSSEGeneratorTGOV.oEL.comparisor.HL
-pSSEGeneratorTGOV.oEL.comparisor.n3
-pSSEGeneratorTGOV.oEL.comparisor.n4
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.k
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.outMax
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.outMin
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.initType
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.limitsAtInit
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.y_start
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.strict
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.y
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.der(y)
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.k
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.outMax
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.outMin
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.initType
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.limitsAtInit
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.y_start
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.strict
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.y
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.der(y)
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.k
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.outMax
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.outMin
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.initType
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.limitsAtInit
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.y_start
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.strict
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.y
-pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.der(y)
-pSSEGeneratorTGOV.oEL.add.k1
-pSSEGeneratorTGOV.oEL.add.k2
-pSSEGeneratorTGOV.oEL.multiSum.significantDigits
-pSSEGeneratorTGOV.oEL.multiSum.nu
-pSSEGeneratorTGOV.oEL.multiSum.k[1]
-pSSEGeneratorTGOV.oEL.multiSum.k[2]
-pSSEGeneratorTGOV.oEL.multiSum.k[3]
-pSSEGeneratorTGOV.oEL.multiSum.k[4]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.u
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.y
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.K
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T1
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T2
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.y_start
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.x_start
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.y
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.b[1]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.b[2]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a[1]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a[2]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.initType
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.x_start[1]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.y_start
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.na
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.nb
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.nx
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.bb[1]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.bb[2]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.d
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a_end
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.x_scaled[1]
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.der(x_scaled[1])
-pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T2_dummy
-pSSEGeneratorTGOV.tGOV1_2.R
-pSSEGeneratorTGOV.tGOV1_2.D_t
-pSSEGeneratorTGOV.tGOV1_2.T_1
-pSSEGeneratorTGOV.tGOV1_2.T_2
-pSSEGeneratorTGOV.tGOV1_2.T_3
-pSSEGeneratorTGOV.tGOV1_2.V_MAX
-pSSEGeneratorTGOV.tGOV1_2.V_MIN
-pSSEGeneratorTGOV.tGOV1_2.imGain9.k
-pSSEGeneratorTGOV.tGOV1_2.imGain9.u
-pSSEGeneratorTGOV.tGOV1_2.imGain1.k
-pSSEGeneratorTGOV.tGOV1_2.imGain1.y
-pSSEGeneratorTGOV.tGOV1_2.add.k1
-pSSEGeneratorTGOV.tGOV1_2.add.k2
-pSSEGeneratorTGOV.tGOV1_2.add1.k1
-pSSEGeneratorTGOV.tGOV1_2.add1.k2
-pSSEGeneratorTGOV.tGOV1_2.REF.k
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.u
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.state
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.der(state)
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.K
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.T
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.y_start
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.outMax
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.outMin
-pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.T_mod
-pSSEGeneratorTGOV.tGOV1_2.P0
-pSSEGeneratorTGOV.tGOV1_2.P_REF
-PowerFlow.voltage.InfiniteBusV_0
-PowerFlow.voltage.InfiniteBusangle_0
-PowerFlow.voltage.BreakerenableTrigger
-PowerFlow.voltage.TransformerB3B4m
-PowerFlow.voltage.GeneratorV_0
-PowerFlow.voltage.Generatorangle_0
-PowerFlow.voltage.MotorV_0
-PowerFlow.voltage.Motorangle_0
-PowerFlow.voltage.PQLoadV_0
-PowerFlow.voltage.PQLoadangle_0
-PowerFlow.power.InfiniteBusP_0
-PowerFlow.power.InfiniteBusQ_0
-PowerFlow.power.GeneratorP_0
-PowerFlow.power.GeneratorQ_0
-PowerFlow.power.PQLoadP_0
-PowerFlow.power.PQLoadQ_0
-PowerFlow.power.MotorP_0
-PowerFlow.power.MotorQ_0
-PowerFlow.power.ShuntCapacitorQnom
-breaker1.enableTrigger
-breaker1.t_o
-breaker1.rc_enabled
-breaker1.t_rc
-breaker1.s.ir
-breaker1.s.ii
-breaker2.enableTrigger
-breaker2.t_o
-breaker2.rc_enabled
-breaker2.t_rc
-breaker2.s.ir
-breaker2.s.ii
-breaker2.r.ir
-breaker2.r.ii
+recordReferenceRelay.u
+recordReferenceRelay.eps
+recordReferenceRelay.extractingTimeOfFault.switch1.u2
+recordReferenceRelay.extractingTimeOfFault.switch1.y
+recordReferenceRelay.extractingTimeOfFault.const.k
+recordReferenceRelay.extractingTimeOfFault.const1.k
+recordReferenceRelay.extractingTimeOfFault.greaterEqualThreshold.threshold
+recordReferenceRelay.extractingTimeOfFault.integrator.k
+recordReferenceRelay.extractingTimeOfFault.integrator.initType
+recordReferenceRelay.extractingTimeOfFault.integrator.y_start
+recordReferenceRelay.extractingTimeOfFault.integrator.y
+recordReferenceRelay.extractingTimeOfFault.integrator.der(y)
+booleanStep.startTime
+booleanStep.startValue
+booleanStep.y
+booleanToReal.realTrue
+booleanToReal.realFalse
+booleanToReal.y
+RelayData.alpha.alpha
+RelayData.c.C
+add.u1
+add.k1
+add.k2
+const.k
+const1.k
 
-double initialValue(668,6)
- -1     750                       0                       0                
-  1   280   # SysData.S_b
- -1      50                       0                       0                
-  1   280   # SysData.fn
- -1     380                       0                       0                
-  1   280   # ThreeBus.V_b
- -1  1.0455000000000001E+00       0                       0                
-  1   280   # ThreeBus.V_0
- -1 -1.2699999999999999E+01       0                       0                
-  1   280   # ThreeBus.angle_0
- -1    1200                       0                       0                
-  1   280   # ThreeBus.P_0
- -1      53                       0                       0                
-  1   280   # ThreeBus.Q_0
-  0       0                       0                       0                
-  6   256   # ThreeBus.S_b
-  0       0                       0                       0                
-  6   256   # ThreeBus.fn
-  0       0                       0                       0                
-  6   260   # ThreeBus.p.vr
-  0       0                       0                       0                
-  6   260   # ThreeBus.p.vi
-  0       0                       0                       0                
-  6   388   # ThreeBus.p.ir
-  0       0                       0                       0                
-  6   388   # ThreeBus.p.ii
-  0       0                       0                       0                
-  6   256   # ThreeBus.V
-  0       0                       0                       0                
-  6   256   # ThreeBus.angle
- -1       1                       0                       0                
-  1   281   # ThreeBus.displayPF
- -1     380                       0                       0                
-  1   280   # OneBus.V_b
- -1  1.0800000000000001E+00       0                       0                
-  1   280   # OneBus.V_0
- -1       0                       0                       0                
-  1   280   # OneBus.angle_0
- -1     450                       0                       0                
-  1   280   # OneBus.P_0
- -1     118                       0                       0                
-  1   280   # OneBus.Q_0
-  0       0                       0                       0                
-  6   256   # OneBus.S_b
-  0       0                       0                       0                
-  6   256   # OneBus.fn
-  0       0                       0                       0                
-  6   260   # OneBus.p.vr
-  0       0                       0                       0                
-  6   260   # OneBus.p.vi
-  0       0                       0                       0                
-  6   388   # OneBus.p.ir
-  0       0                       0                       0                
-  6   388   # OneBus.p.ii
-  0       0                       0                       0                
-  6   256   # OneBus.V
-  0       0                       0                       0                
-  6   256   # OneBus.angle
- -1       1                       0                       0                
-  1   281   # OneBus.displayPF
-  0       0                       0                       0                
-  6   292   # pwLine1.p.vr
-  0       0                       0                       0                
-  6   292   # pwLine1.p.vi
-  0       0                       0                       0                
-  6   420   # pwLine1.p.ir
-  0       0                       0                       0                
-  6   420   # pwLine1.p.ii
-  0       0                       0                       0                
-  6   292   # pwLine1.n.vr
-  0       0                       0                       0                
-  6   292   # pwLine1.n.vi
-  0       0                       0                       0                
-  6   388   # pwLine1.n.ir
-  0       0                       0                       0                
-  6   388   # pwLine1.n.ii
- -1       0                       0                       0                
-  1   280   # pwLine1.R
- -1  4.1433333330000000E-01       0                       0                
-  1   280   # pwLine1.X
- -1       0                       0                       0                
-  1   280   # pwLine1.G
- -1       0                       0                       0                
-  1   280   # pwLine1.B
-  0       0                       0                       0                
-  6   256   # pwLine1.S_b
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine1.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine1.t2
-  0       1                       0                       0                
-  6   258   # pwLine1.opening
- -1       0                       0                       0                
-  1   281   # pwLine1.displayPF
-  0       0                       0                       0                
-  6   256   # pwLine1.P12
-  0       0                       0                       0                
-  6   256   # pwLine1.P21
-  0       0                       0                       0                
-  6   256   # pwLine1.Q12
-  0       0                       0                       0                
-  6   256   # pwLine1.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine1.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine1.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine1.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine1.Z.im
-  0       0                       0                       0                
-  6   388   # pwLine3.p.ir
-  0       0                       0                       0                
-  6   388   # pwLine3.p.ii
-  0       0                       0                       0                
-  6   420   # pwLine3.n.ir
-  0       0                       0                       0                
-  6   420   # pwLine3.n.ii
- -1       0                       0                       0                
-  1   280   # pwLine3.R
- -1  4.1433333300000003E-01       0                       0                
-  1   280   # pwLine3.X
- -1       0                       0                       0                
-  1   280   # pwLine3.G
- -1       0                       0                       0                
-  1   280   # pwLine3.B
-  0       0                       0                       0                
-  6   256   # pwLine3.S_b
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine3.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine3.t2
-  0       1                       0                       0                
-  6   258   # pwLine3.opening
- -1       0                       0                       0                
-  1   281   # pwLine3.displayPF
-  0       0                       0                       0                
-  6   256   # pwLine3.P12
-  0       0                       0                       0                
-  6   256   # pwLine3.P21
-  0       0                       0                       0                
-  6   256   # pwLine3.Q12
-  0       0                       0                       0                
-  6   256   # pwLine3.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine3.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine3.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine3.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine3.Z.im
- -1     380                       0                       0                
-  1   280   # infiniteBus.V_b
-  0       0                       0                       0                
-  6   256   # infiniteBus.V_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.angle_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.P_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.Q_0
-  0       0                       0                       0                
-  6   256   # infiniteBus.S_b
-  0       0                       0                       0                
-  6   256   # infiniteBus.fn
-  0       0                       0                       0                
-  6   256   # infiniteBus.P
-  0       0                       0                       0                
-  6   256   # infiniteBus.Q
-  0       0                       0                       0                
-  6   388   # infiniteBus.p.ir
-  0       0                       0                       0                
-  6   388   # infiniteBus.p.ii
- -1       1                       0                       0                
-  1   281   # infiniteBus.displayPF
- -1     750                       0                       0                
-  1   280   # TwoBus.V_b
- -1       1                       0                       0                
-  1   280   # TwoBus.V_0
- -1       0                       0                       0                
-  1   280   # TwoBus.angle_0
- -1       1                       0                       0                
-  1   280   # TwoBus.P_0
- -1       0                       0                       0                
-  1   280   # TwoBus.Q_0
-  0       0                       0                       0                
-  6   256   # TwoBus.S_b
-  0       0                       0                       0                
-  6   256   # TwoBus.fn
-  0       0                       0                       0                
-  6   260   # TwoBus.p.vr
-  0       0                       0                       0                
-  6   260   # TwoBus.p.vi
-  0       0                       0                       0                
-  6   388   # TwoBus.p.ir
-  0       0                       0                       0                
-  6   388   # TwoBus.p.ii
-  0       0                       0                       0                
-  6   256   # TwoBus.V
-  0       0                       0                       0                
-  6   256   # TwoBus.angle
- -1       1                       0                       0                
-  1   281   # TwoBus.displayPF
-  0       0                       0                       0                
-  6   388   # twoWindingTransformer1.p.ir
-  0       0                       0                       0                
-  6   388   # twoWindingTransformer1.p.ii
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer1.n.ir
-  0       0                       0                       0                
-  6   420   # twoWindingTransformer1.n.ii
- -1     750                       0                       0                
-  1   280   # twoWindingTransformer1.S_b
- -1      20                       0                       0                
-  1   280   # twoWindingTransformer1.V_b
- -1     500                       0                       0                
-  1   280   # twoWindingTransformer1.Sn
- -1      20                       0                       0                
-  1   280   # twoWindingTransformer1.Vn
- -1       0                       0                       0                
-  1   280   # twoWindingTransformer1.rT
- -1  8.0000000000000002E-02       0                       0                
-  1   280   # twoWindingTransformer1.xT
- -1  9.6153846153846145E-01       0                       0                
-  1   280   # twoWindingTransformer1.m
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.Zn
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.Zb
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.r
-  0       0                       0                       0                
-  6  1280   # twoWindingTransformer1.x
-  0       0                       0                       0                
-  6  1281   # twoWindingTransformer1.tc
- -1     380                       0                       0                
-  1   280   # FiveBus.V_b
- -1  1.0455000000000001E+00       0                       0                
-  1   280   # FiveBus.V_0
- -1 -1.5199999999999999E+01       0                       0                
-  1   280   # FiveBus.angle_0
- -1    1200                       0                       0                
-  1   280   # FiveBus.P_0
- -1       0                       0                       0                
-  1   280   # FiveBus.Q_0
-  0       0                       0                       0                
-  6   256   # FiveBus.S_b
-  0       0                       0                       0                
-  6   256   # FiveBus.fn
-  0       0                       0                       0                
-  6   260   # FiveBus.p.vr
-  0       0                       0                       0                
-  6   260   # FiveBus.p.vi
-  0       0                       0                       0                
-  6   388   # FiveBus.p.ir
-  0       0                       0                       0                
-  6   388   # FiveBus.p.ii
-  0       0                       0                       0                
-  6   256   # FiveBus.V
-  0       0                       0                       0                
-  6   256   # FiveBus.angle
- -1       1                       0                       0                
-  1   281   # FiveBus.displayPF
-  0       0                       0                       0                
-  6   420   # pwLine2.p.ir
-  0       0                       0                       0                
-  6   420   # pwLine2.p.ii
-  0       0                       0                       0                
-  6   420   # pwLine2.n.ir
-  0       0                       0                       0                
-  6   420   # pwLine2.n.ii
- -1       0                       0                       0                
-  1   280   # pwLine2.R
- -1  2.9999989612000000E-02       0                       0                
-  1   280   # pwLine2.X
- -1       0                       0                       0                
-  1   280   # pwLine2.G
- -1       0                       0                       0                
-  1   280   # pwLine2.B
-  0       0                       0                       0                
-  6   256   # pwLine2.S_b
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine2.t1
-  0  9.9999999999999995E+59       0                       0                
-  6   256   # pwLine2.t2
-  0       1                       0                       0                
-  6   258   # pwLine2.opening
- -1       1                       0                       0                
-  1   281   # pwLine2.displayPF
-  0       0                       0                       0                
-  6   256   # pwLine2.P12
-  0       0                       0                       0                
-  6   256   # pwLine2.P21
-  0       0                       0                       0                
-  6   256   # pwLine2.Q12
-  0       0                       0                       0                
-  6   256   # pwLine2.Q21
-  0       0                       0                       0                
-  6  1280   # pwLine2.Y.re
-  0       0                       0                       0                
-  6  1280   # pwLine2.Y.im
-  0       0                       0                       0                
-  6  1280   # pwLine2.Z.re
-  0       0                       0                       0                
-  6  1280   # pwLine2.Z.im
- -1     380                       0                       0                
-  1   280   # lOADPQ.V_b
-  0       0                       0                       0                
-  6   256   # lOADPQ.V_0
-  0       0                       0                       0                
-  6   256   # lOADPQ.angle_0
-  0       0                       0                       0                
-  6   256   # lOADPQ.P_0
-  0       0                       0                       0                
-  6   256   # lOADPQ.Q_0
-  0       0                       0                       0                
-  6   256   # lOADPQ.S_b
-  0       0                       0                       0                
-  6   256   # lOADPQ.fn
-  0       0                       0                       0                
-  6   256   # lOADPQ.Sn
-  0       0                       0                       0                
-  6   256   # lOADPQ.V
-  0       0                       0                       0                
-  6   256   # lOADPQ.Angle_V
-  0       0                       0                       0                
-  6   256   # lOADPQ.P
-  0       0                       0                       0                
-  6   256   # lOADPQ.Q
-  0       0                       0                       0                
-  6  1280   # lOADPQ.angle_0rad
-  0       0                       0                       0                
-  6  1280   # lOADPQ.CoB
-  0  1.2000000000000000E+00       0                       0                
-  6   256   # lOADPQ.Vmax
-  0  8.0000000000000004E-01       0                       0                
-  6   256   # lOADPQ.Vmin
-  0       1                       0                       0                
-  6   257   # lOADPQ.forcePQ
-  0       0                       0                       0                
-  6   388   # pwFault.p.ir
-  0       0                       0                       0                
-  6   388   # pwFault.p.ii
-  0       0                       0                       0                
-  6   256   # pwFault.R
-  0  3.7499999999999999E-02       0                       0                
-  6   256   # pwFault.X
-  0       1                       0                       0                
-  6   256   # pwFault.t1
-  0  1.1399900000000001E+00       0                       0                
-  6   256   # pwFault.t2
-  0       0                       0                       0                
-  6  1281   # pwFault.ground
-  0       0                       0                       0                
-  6   256   # Imag
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.add.u1
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.add.u2
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.add.y
- -1      -1                       0                       0                
-  1   280   # recordReferenceRelay.add.k1
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.add.k2
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.greater1.u1
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.greater1.y
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.booleanToReal1.u
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.booleanToReal1.realTrue
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.booleanToReal1.realFalse
-  0       0                       0                       0                
-  6   320   # recordReferenceRelay.booleanToReal1.y
-  0       1                       0                       0                
-  6   256   # recordReferenceRelay.const.k
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.product.u1
- -1  7.0710678118654746E-01       0                       0                
-  1   280   # recordReferenceRelay.const1.k
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.extractingTimeOfFault.switch1.u2
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.extractingTimeOfFault.switch1.y
- -1    1000                       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.const.k
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.const1.k
- -1  9.0000000000000002E-01       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.greaterEqualThreshold.threshold
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.k
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.outMax
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.outMin
-  0       3                       1                       4                
-  6   258   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.initType
-  0       1                       0                       0                
-  6   257   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.limitsAtInit
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.y_start
-  0       0                       0                       0                
-  6   257   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.strict
- -1       0                       0                       0                
-  2   272   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.y
-  0       0                       0                       0                
-  3   256   # recordReferenceRelay.extractingTimeOfFault.limIntegrator.der(y)
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.timer.clock.offset
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.timer.clock.startTime
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.timer.clock.y
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.timer.add.u1
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.timer.add.u2
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.timer.add.k1
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.timer.add.k2
- -1      -1                       0                       0                
-  1   280   # recordReferenceRelay.timer.const.k
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.timer.product.y
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.timer.clock1.offset
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.timer.clock1.startTime
- -1  9.0000000000000002E-01       0                       0                
-  1   280   # recordReferenceRelay.timer.greaterEqualThreshold.threshold
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.timer.greaterEqualThreshold.y
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.timer.const1.k
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.Is
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.TripSingal
-  0       0                       0                       0                
-  6   320   # recordReferenceRelay.greater2.u2
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.greater2.y
- -1  2.0000000000000000E-02       0                       0                
-  1   280   # recordReferenceRelay.alpha
- -1  5.0000000000000000E-01       0                       0                
-  1   280   # recordReferenceRelay.TMS
- -1  1.4000000000000001E-01       0                       0                
-  1   280   # recordReferenceRelay.C
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.calculatingOperationTime.switch1.u2
-  0       0                       0                       0                
-  6   320   # recordReferenceRelay.calculatingOperationTime.switch1.y
-  0       1                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.Const.k
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.const1.k
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.threshold
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.y
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.division1.y
-  0       1                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.pickcupcurrent.k
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.const2.k
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.add.u1
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.add.y
- -1       1                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.add.k1
- -1      -1                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.add.k2
-  0       0                       0                       0                
-  6   320   # recordReferenceRelay.calculatingOperationTime.product.u1
- -1  4.2999999999999999E-01       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.TimeMultiplierSetting.k
- -1       0                       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.threshold
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.y
-  0       1                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.const.k
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.alpha
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.TMS
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.C
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.ls
- -1  4.0999999999999998E-01       0                       0                
-  1   280   # recordReferenceRelay.calculatingOperationTime.eps.k
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.y3_1.y
-  0       0                       0                       0                
-  6   256   # recordReferenceRelay.calculatingOperationTime.k
- -1  4.1000000000000002E-02       0                       0                
-  1   280   # recordReferenceRelay.k
- -1       0                       0                       0                
-  1   281   # recordReferenceRelay.rSFlipFlop.Qini
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.rSFlipFlop.QI
-  0       0                       0                       0                
-  6   257   # recordReferenceRelay.rSFlipFlop.pre.pre_u_start
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.rSFlipFlop.pre.u
- -1       0                       0                       0                
-  1   281   # recordReferenceRelay.booleanConstant.k
- -1  2.2000000000000000E-01       0                       0                
-  1   280   # recordReferenceRelay.const2.k
- -1       0                       0                       0                
-  1   281   # recordReferenceRelay.rSFlipFlop1.Qini
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.rSFlipFlop1.QI
-  0       0                       0                       0                
-  6   257   # recordReferenceRelay.rSFlipFlop1.pre.pre_u_start
-  0       0                       0                       0                
-  6   321   # recordReferenceRelay.rSFlipFlop1.pre.u
- -1       0                       0                       0                
-  1   281   # recordReferenceRelay.booleanConstant1.k
- -1  7.2999999999999998E-01       0                       0                
-  1   280   # recordReferenceRelay.ls
- -1     750                       0                       0                
-  1   280   # pSSEGeneratorTGOV.SysData.S_b
- -1      50                       0                       0                
-  1   280   # pSSEGeneratorTGOV.SysData.fn
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.V_b
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.V_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.angle_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.P_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.Q_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.S_b
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.fn
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.M_b
- -1       5                       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Tpd0
- -1  7.0000000000000007E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Tppd0
- -1  8.9999999999999997E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Tppq0
- -1  4.2800000000000002E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.H
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.D
- -1  2.5000000000000000E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xd
- -1  1.6499999999999999E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xq
- -1  7.6000000000000001E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xpd
- -1  6.2000000000000000E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xppd
- -1  5.7999999999999996E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xppq
- -1  6.6000000000000003E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.Xl
- -1  1.1000000000000000E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.S10
- -1  3.9000000000000001E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.S12
- -1  1.0000000000000000E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.gENSAL.R_a
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.PMECH
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.ETERM
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.EFD
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.PELEC
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.ISORCE
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.gENSAL.w
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.gENSAL.der(w)
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.gENSAL.delta
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.gENSAL.der(delta)
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.anglev
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.I
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.anglei
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.P
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.Q
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.Te
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.id
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.iq
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.ud
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.uq
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.w_b
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.anglev_rad
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.CoB
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.vr0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.vi0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.ir0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.ii0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.p0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.q0
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.gENSAL.Epq
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.gENSAL.der(Epq)
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.gENSAL.PSIkd
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.gENSAL.der(PSIkd)
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.gENSAL.PSIppq
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.gENSAL.der(PSIppq)
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.PSIppd
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.PSId
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.gENSAL.PSIq
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Zs.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Zs.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Is.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Is.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIpp0.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIpp0.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.a.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.a.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Epqp.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Epqp.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.delta0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.VT.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.VT.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.S.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.S.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.It.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.It.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.DQ_dq.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.DQ_dq.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.I_dq.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.I_dq.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.iq0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.id0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.ud0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.uq0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIpp0_dq.re
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIpp0_dq.im
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIppq0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIppd0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIkd0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSId0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.PSIq0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.Epq0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.dsat
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.efd0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.pm0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.K1d
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.K2d
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.K3d
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.gENSAL.K4d
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.VOEL
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.VoltageReference.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.DiffV.u2
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.DiffV.y
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.DiffV.k1
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.DiffV.k2
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.Efd0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.V_REF
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.ECOMP0
- -1  4.0000000000000001E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_R
- -1     999                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_IMAX
- -1    -999                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_IMIN
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_C
- -1      10                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_B
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_C1
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_B1
- -1     190                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.K_A
- -1  1.0000000000000000E-03       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_A
- -1     999                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_AMAX
- -1    -999                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_AMIN
- -1  7.7999999999999998E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_RMAX
- -1 -6.7000000000000002E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.V_RMIN
- -1  8.0000000000000002E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.K_C
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.K_F
- -1  1.0000000000000000E-03       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.T_F
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.K_LR
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.I_LR
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.k
-  0  9.9999999999999997E-61  9.9999999999999997E-61 1.0000000000000000E+100
-  6   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.T
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.initType
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.x_start
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.y_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.u
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.y
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.x
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.der(x)
-  0       0                       0                       0                
-  6  1281   # pSSEGeneratorTGOV.eSST1A.imDerivativeLag.zeroGain
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLimited.uMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLimited.uMin
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.imLimited.strict
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.imLimited.limitsAtInit
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLimited.u
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLimited.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.hV_GATE.p
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain.u
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.hV_GATE1.p
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.lV_GATE.p
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.Vref1.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.y
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.T1
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.T2
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.y_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.x_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.b[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.b[2]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a[1]
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a[2]
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.initType
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.x_start[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.y_start
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.na
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.nb
-  0       1                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.nx
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.bb[1]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.bb[2]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.d
-  0       1                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.a_end
- -1       0                       0                       0                
-  2  1296   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.x_scaled[1]
-  0       0                       0                       0                
-  3  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.TF.der(x_scaled[1])
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag.T2_dummy
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.T1
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.T2
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.y_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.x_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.b[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.b[2]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a[1]
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a[2]
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.initType
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.x_start[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.y_start
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.na
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.nb
-  0       1                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.nx
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.bb[1]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.bb[2]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.d
-  0       1                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.a_end
- -1       0                       0                       0                
-  2  1296   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.x_scaled[1]
-  0       0                       0                       0                
-  3  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.TF.der(x_scaled[1])
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.imLeadLag1.T2_dummy
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_1.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_1.k2
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_1.k3
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.add3_1.u3
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.u
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.y
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.state
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.der(state)
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.T
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.y_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.outMin
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.simpleLagLim.T_mod
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add2.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add2.k2
- -1  9.9999999999999995E+59       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.imLimited1.uMax
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.imLimited1.uMin
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.imLimited1.strict
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.imLimited1.limitsAtInit
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imLimited1.y
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_2.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_2.k2
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3_2.k3
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain1.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain1.y
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain2.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain2.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.add3.u1
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.add3.y
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.add3.k2
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.imGain3.k
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.variableLimiter.strict
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.eSST1A.variableLimiter.limitsAtInit
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.state
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.der(state)
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.T
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.y_start
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.TransducerDelay.T_mod
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.Limiters.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.eSST1A.Limiters.k2
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.IFD0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.eSST1A.VA0
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.const.k
- -1 -9.9999999999999995E+59       0                       0                
-  1   280   # pSSEGeneratorTGOV.const2.k
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.const3.k
- -1      20                       0                       0                
-  1   280   # pSSEGeneratorTGOV.V_b
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.V_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.angle_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.P_0
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.Q_0
- -1     750                       0                       0                
-  1   280   # pSSEGeneratorTGOV.M_b
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.IFDSetpoint.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.k
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.outMin
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.initType
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.limitsAtInit
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.y_start
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.strict
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.u
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.y
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator.der(y)
-  0  3.7799999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.IFD1
-  0  4.5000000000000000E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.IFD2
-  0  5.7599999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.IFD3
- -1      60                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.TIME1
- -1      30                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.TIME2
- -1      15                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.TIME3
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.IFDdes
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.Vmax
- -1 -5.0000000000000003E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.Vmin
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.KMX
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.p
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.n2
-  0  5.7599999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.HighCurrentLimit
-  0  4.5000000000000000E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.MediumCurrentLimit
-  0  3.7799999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.LowCurrentLimit
-  0 -4.7599999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.LL
-  0 -3.5000000000000000E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.ML
-  0 -2.7799999999999998E+00       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.HL
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.n3
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.comparisor.n4
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.k
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.outMin
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.initType
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.limitsAtInit
- -1       6                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.y_start
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.strict
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.y
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator1.der(y)
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.k
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.outMin
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.initType
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.limitsAtInit
- -1       6                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.y_start
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.strict
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.y
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator2.der(y)
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.k
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.outMin
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.initType
-  0       1                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.limitsAtInit
- -1  7.5000000000000000E+00       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.y_start
-  0       0                       0                       0                
-  6   257   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.strict
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.y
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.oEL.imLimitedIntegrator3.der(y)
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.add.k1
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.add.k2
- -1       3                       1                 1.0000000000000000E+100
-  1   282   # pSSEGeneratorTGOV.oEL.multiSum.significantDigits
-  0       4                       0                 1.0000000000000000E+100
-  6   770   # pSSEGeneratorTGOV.oEL.multiSum.nu
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.multiSum.k[1]
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.multiSum.k[2]
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.multiSum.k[3]
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.oEL.multiSum.k[4]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.u
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.y
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T1
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T2
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.y_start
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.x_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.y
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.b[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.b[2]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a[1]
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a[2]
-  0       4                       1                       4                
-  6   258   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.initType
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.x_start[1]
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.y_start
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.na
-  0       2                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.nb
-  0       1                       0                       0                
-  6  1282   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.nx
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.bb[1]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.bb[2]
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.d
-  0       1                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.a_end
- -1       0                       0                       0                
-  2  1296   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.x_scaled[1]
-  0       0                       0                       0                
-  3  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.TF.der(x_scaled[1])
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.imLeadLag.T2_dummy
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.R
- -1  2.0000000000000001E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.D_t
- -1       5                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.T_1
- -1  5.0000000000000003E-02       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.T_2
- -1  5.0000000000000000E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.T_3
- -1  6.9999999999999996E-01       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.V_MAX
- -1       0                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.V_MIN
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imGain9.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imGain9.u
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imGain1.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.imGain1.y
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.add.k1
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.add.k2
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.add1.k1
- -1      -1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.add1.k2
-  0       1                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.REF.k
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.u
- -1       0                       0                       0                
-  2   272   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.state
-  0       0                       0                       0                
-  3   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.der(state)
- -1       1                       0                       0                
-  1   280   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.K
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.T
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.y_start
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.outMax
-  0       0                       0                       0                
-  6   256   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.outMin
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.simpleLagLim.T_mod
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.P0
-  0       0                       0                       0                
-  6  1280   # pSSEGeneratorTGOV.tGOV1_2.P_REF
- -1  1.0600000000000001E+00       0                       0                
-  1   280   # PowerFlow.voltage.InfiniteBusV_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.voltage.InfiniteBusangle_0
- -1       0                       0                       0                
-  1   281   # PowerFlow.voltage.BreakerenableTrigger
- -1    9999                       0                       0                
-  1   280   # PowerFlow.voltage.TransformerB3B4m
- -1  1.0400000000000000E+00       0                       0                
-  1   280   # PowerFlow.voltage.GeneratorV_0
- -1  8.8000000000000007E+00       0                       0                
-  1   280   # PowerFlow.voltage.Generatorangle_0
- -1  1.0078000000000000E+00       0                       0                
-  1   280   # PowerFlow.voltage.MotorV_0
- -1  4.9000000000000004E+00       0                       0                
-  1   280   # PowerFlow.voltage.Motorangle_0
- -1  1.0674999999999999E+00       0                       0                
-  1   280   # PowerFlow.voltage.PQLoadV_0
- -1  4.7000000000000002E+00       0                       0                
-  1   280   # PowerFlow.voltage.PQLoadangle_0
- -1    -350                       0                       0                
-  1   280   # PowerFlow.power.InfiniteBusP_0
- -1     -16                       0                       0                
-  1   280   # PowerFlow.power.InfiniteBusQ_0
- -1     450                       0                       0                
-  1   280   # PowerFlow.power.GeneratorP_0
- -1      99                       0                       0                
-  1   280   # PowerFlow.power.GeneratorQ_0
- -1     100                       0                       0                
-  1   280   # PowerFlow.power.PQLoadP_0
- -1      20                       0                       0                
-  1   280   # PowerFlow.power.PQLoadQ_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.power.MotorP_0
- -1       0                       0                       0                
-  1   280   # PowerFlow.power.MotorQ_0
- -1     117                       0                       0                
-  1   280   # PowerFlow.power.ShuntCapacitorQnom
-  0       1                       0                       0                
-  6   257   # breaker1.enableTrigger
- -1  9.9999999999999995E+59       0                       0                
-  1   280   # breaker1.t_o
-  0       0                       0                       0                
-  6   257   # breaker1.rc_enabled
- -1  9.9999999999999995E+59       0                       0                
-  1   280   # breaker1.t_rc
-  0       0                       0                       0                
-  6   388   # breaker1.s.ir
-  0       0                       0                       0                
-  6   388   # breaker1.s.ii
-  0       1                       0                       0                
-  6   257   # breaker2.enableTrigger
- -1  9.9999999999999995E+59       0                       0                
-  1   280   # breaker2.t_o
-  0       0                       0                       0                
-  6   257   # breaker2.rc_enabled
- -1  9.9999999999999995E+59       0                       0                
-  1   280   # breaker2.t_rc
-  0       0                       0                       0                
-  6   388   # breaker2.s.ir
-  0       0                       0                       0                
-  6   388   # breaker2.s.ii
-  0       0                       0                       0                
-  6   388   # breaker2.r.ir
-  0       0                       0                       0                
-  6   388   # breaker2.r.ii
+double initialValue(121,6)
+ -1     750                  0  0  1  280   # SysData.S_b
+ -1      50                  0  0  1  280   # SysData.fn
+ -1  1.0600000000000001E+00  0  0  1  280   # PowerFlow.voltage.InfiniteBusV_0
+ -1       0                  0  0  1  280   # PowerFlow.voltage.InfiniteBusangle_0
+ -1       0                  0  0  1  281   # PowerFlow.voltage.BreakerenableTrigger
+ -1    9999                  0  0  1  280   # PowerFlow.voltage.TransformerB3B4m
+ -1  1.0400000000000000E+00  0  0  1  280   # PowerFlow.voltage.GeneratorV_0
+ -1  8.8000000000000007E+00  0  0  1  280   # PowerFlow.voltage.Generatorangle_0
+ -1  1.0078000000000000E+00  0  0  1  280   # PowerFlow.voltage.MotorV_0
+ -1  4.9000000000000004E+00  0  0  1  280   # PowerFlow.voltage.Motorangle_0
+ -1  1.0674999999999999E+00  0  0  1  280   # PowerFlow.voltage.PQLoadV_0
+ -1  4.7000000000000002E+00  0  0  1  280   # PowerFlow.voltage.PQLoadangle_0
+ -1    -350                  0  0  1  280   # PowerFlow.power.InfiniteBusP_0
+ -1     -16                  0  0  1  280   # PowerFlow.power.InfiniteBusQ_0
+ -1     450                  0  0  1  280   # PowerFlow.power.GeneratorP_0
+ -1      99                  0  0  1  280   # PowerFlow.power.GeneratorQ_0
+ -1     100                  0  0  1  280   # PowerFlow.power.PQLoadP_0
+ -1      20                  0  0  1  280   # PowerFlow.power.PQLoadQ_0
+ -1       0                  0  0  1  280   # PowerFlow.power.MotorP_0
+ -1       0                  0  0  1  280   # PowerFlow.power.MotorQ_0
+ -1     117                  0  0  1  280   # PowerFlow.power.ShuntCapacitorQnom
+  0       0                  0  0  6  256   # recordReferenceRelay.add.u1
+  0       0                  0  0  6  256   # recordReferenceRelay.add.u2
+  0       0                  0  0  6  256   # recordReferenceRelay.add.y
+ -1      -1                  0  0  1  280   # recordReferenceRelay.add.k1
+ -1       1                  0  0  1  280   # recordReferenceRelay.add.k2
+  0       0                  0  0  6  321   # recordReferenceRelay.greater1.y
+  0       0                  0  0  6  321   # recordReferenceRelay.booleanToReal1.u
+ -1       1                  0  0  1  280   # recordReferenceRelay.booleanToReal1.realTrue
+ -1       0                  0  0  1  280   # recordReferenceRelay.booleanToReal1.realFalse
+  0       0                  0  0  6  320   # recordReferenceRelay.booleanToReal1.y
+  0       1                  0  0  6  256   # recordReferenceRelay.const.k
+ -1       0                  0  0  1  280   # recordReferenceRelay.timer.clock.offset
+ -1       0                  0  0  1  280   # recordReferenceRelay.timer.clock.startTime
+  0       0                  0  0  6  256   # recordReferenceRelay.timer.clock.y
+  0       0                  0  0  6  256   # recordReferenceRelay.timer.add.u1
+  0       0                  0  0  6  256   # recordReferenceRelay.timer.add.u2
+ -1       1                  0  0  1  280   # recordReferenceRelay.timer.add.k1
+ -1       1                  0  0  1  280   # recordReferenceRelay.timer.add.k2
+ -1      -1                  0  0  1  280   # recordReferenceRelay.timer.const.k
+  0       0                  0  0  6  256   # recordReferenceRelay.timer.product.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.timer.clock1.offset
+ -1       0                  0  0  1  280   # recordReferenceRelay.timer.clock1.startTime
+ -1  9.0000000000000002E-01  0  0  1  280   # recordReferenceRelay.timer.greaterEqualThreshold.threshold
+  0       0                  0  0  6  321   # recordReferenceRelay.timer.greaterEqualThreshold.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.timer.const1.k
+ -1     400                  0  0  1  280   # recordReferenceRelay.Is
+  0       0                  0  0  6  321   # recordReferenceRelay.TripSingal
+  0       0                  0  0  6  320   # recordReferenceRelay.greater2.u2
+  0       0                  0  0  6  321   # recordReferenceRelay.greater2.y
+  0       0                  0  0  6  256   # recordReferenceRelay.alpha
+ -1  5.0000000000000000E-01  0  0  1  280   # recordReferenceRelay.TMS
+  0       0                  0  0  6  256   # recordReferenceRelay.C
+  0       1                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.Const.k
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.division1.y
+  0       1                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.pickcupcurrent.k
+ -1       1                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.const2.k
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.add.u1
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.add.y
+ -1       1                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.add.k1
+ -1      -1                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.add.k2
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.product.u1
+ -1  5.0000000000000000E-01  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.TimeMultiplierSetting.k
+  0       1                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.const.k
+  0       0                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.alpha
+  0       0                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.TMS
+  0       0                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.C
+  0       0                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.eps
+  0       0                  0  0  6  256   # recordReferenceRelay.calculatingOperationTime.Is
+  0       0                  0  0  6  258   # recordReferenceRelay.calculatingOperationTime.amp
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.division.y
+ -1       1                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.const4.k
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.product1.u1
+  0       0                  0  0  6  320   # recordReferenceRelay.calculatingOperationTime.product1.u2
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.switch1.u2
+ -1       0                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.threshold
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.threshold
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold.y
+ -1       1                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.const1.k
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.switch2.u2
+ -1       0                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold1.threshold
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.greaterEqualThreshold1.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold1.threshold
+  0       0                  0  0  6  321   # recordReferenceRelay.calculatingOperationTime.lessEqualThreshold1.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.calculatingOperationTime.const3.k
+ -1       0                  0  0  1  281   # recordReferenceRelay.rSFlipFlop.Qini
+  0       0                  0  0  6  321   # recordReferenceRelay.rSFlipFlop.QI
+  0       0                  0  0  6  257   # recordReferenceRelay.rSFlipFlop.pre.pre_u_start
+  0       0                  0  0  6  321   # recordReferenceRelay.rSFlipFlop.pre.u
+ -1       0                  0  0  1  281   # recordReferenceRelay.booleanConstant.k
+ -1       0                  0  0  1  281   # recordReferenceRelay.rSFlipFlop1.Qini
+  0       0                  0  0  6  321   # recordReferenceRelay.rSFlipFlop1.QI
+  0       0                  0  0  6  257   # recordReferenceRelay.rSFlipFlop1.pre.pre_u_start
+  0       0                  0  0  6  321   # recordReferenceRelay.rSFlipFlop1.pre.u
+ -1       0                  0  0  1  281   # recordReferenceRelay.booleanConstant1.k
+  0       0                  0  0  6  320   # recordReferenceRelay.u
+ -1  4.0999999999999998E-01  0  0  1  280   # recordReferenceRelay.eps
+  0       0                  0  0  6  321   # recordReferenceRelay.extractingTimeOfFault.switch1.u2
+  0       0                  0  0  6  320   # recordReferenceRelay.extractingTimeOfFault.switch1.y
+ -1       0                  0  0  1  280   # recordReferenceRelay.extractingTimeOfFault.const.k
+ -1       1                  0  0  1  280   # recordReferenceRelay.extractingTimeOfFault.const1.k
+ -1  9.0000000000000002E-01  0  0  1  280   # recordReferenceRelay.extractingTimeOfFault.greaterEqualThreshold.threshold
+ -1       1                  0  0  1  280   # recordReferenceRelay.extractingTimeOfFault.integrator.k
+  0       3                  1  4  6  258   # recordReferenceRelay.extractingTimeOfFault.integrator.initType
+ -1       0                  0  0  1  280   # recordReferenceRelay.extractingTimeOfFault.integrator.y_start
+ -1       0                  0  0  2  272   # recordReferenceRelay.extractingTimeOfFault.integrator.y
+  0       0                  0  0  3  256   # recordReferenceRelay.extractingTimeOfFault.integrator.der(y)
+ -1       7                  0  0  1  280   # booleanStep.startTime
+ -1       0                  0  0  1  281   # booleanStep.startValue
+  0       0                  0  0  6  321   # booleanStep.y
+ -1       1                  0  0  1  280   # booleanToReal.realTrue
+ -1       0                  0  0  1  280   # booleanToReal.realFalse
+  0       0                  0  0  6  320   # booleanToReal.y
+ -1  2.0000000000000000E-02  0  0  1  280   # RelayData.alpha.alpha
+ -1  1.4000000000000001E-01  0  0  1  280   # RelayData.c.C
+  0       0                  0  0  6  320   # add.u1
+ -1       1                  0  0  1  280   # add.k1
+ -1       1                  0  0  1  280   # add.k2
+ -1  2.9999999999999999E-01  0  0  1  280   # const.k
+ -1  1.0133333000000000E+07  0  0  1  280   # const1.k
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -2159,213 +397,39 @@ double initialValue(668,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(668,139)
+char initialDescription(121,111)
 System base [MVA]
 System Frequency [Hz]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Active Power absorbed by the Infinite bus (MW)
-Reactive Power absorbed by the Infinite bus (MVAr)
-Real part of the current
-Imaginary part of the current
-Display power flow results: [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-System base power (MVA)
-Sending end bus voltage (kV)
-Power rating (MVA)
-Voltage rating of transformer (kV)
-Resistance (pu, transformer base)
-Reactance (pu, transformer base)
-Optional fixed tap ratio
-Transformer base impedance
-System base impedance
-Resistance (pu, system base)
-Reactance (pu, system base)
-Internal parameter to switch on the icon arrow [:#(type=Boolean)]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Real part of the voltage
-Imaginary part of the voltage
-Real part of the current
-Imaginary part of the current
-Bus voltage magnitude (pu) [1]
-Bus voltage angle [deg]
-Display voltage values: [:#(type=Boolean)]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
-Resistance (pu) [1]
-Reactance (pu) [1]
-Shunt half conductance (pu) [1]
-Shunt half susceptance (pu) [1]
-System base power (MVA) [MVA]
-[s]
-[s]
-[:#(type=Integer)]
-Display power flow results: [:#(type=Boolean)]
-[MW]
-[MW]
-[Mvar]
-[Mvar]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Real part of complex number [1]
-Imaginary part of complex number [1]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Power rating (MVA) [MVA]
-Voltage magnitude (pu) [1]
-voltage angle (rad) [rad|deg]
-Active power (pu) [1]
-Reactive power (pu) [1]
-[rad|deg]
-Change of base between Machine and System [1]
-maximum voltage [1]
-minimum voltage [1]
-force constant PQ-load, false may cause simulation problems [:#(type=Boolean)]
-Real part of the current
-Imaginary part of the current
-Resistance (pu)
-Reactance (pu)
-Start time of the fault (s)
-End time of the fault (s)
+
+
 [:#(type=Boolean)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Connector of Real input signal 1
 Connector of Real input signal 2
 Connector of Real output signal
 Gain of upper input
 Gain of lower input
-Connector of first Boolean input signal
 Connector of Boolean output signal [:#(type=Boolean)]
 Connector of Boolean input signal [:#(type=Boolean)]
 Output signal for true Boolean input
 Output signal for false Boolean input
 Connector of Real output signal
 Constant output value
-Connector of Real input signal 1
-Constant output value
-Connector of Boolean input signal [:#(type=Boolean)]
-Connector of Real output signal
-Constant output value
-Constant output value
-Comparison with respect to threshold
-Integrator gain [1]
-Upper limit of output
-Lower limit of output
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-= false, if limits are ignored during initialization (i.e., der(y)=k*u) [:#(type=Boolean)]
-Initial or guess value of output (must be in the limits outMin .. outMax)
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Connector of Real output signal
-der(Connector of Real output signal)
 Offset of output signal [s]
 Output = offset for time < startTime [s]
 Connector of Real output signal [s]
@@ -2387,12 +451,7 @@ Connector of Boolean output signal [:#(type=Boolean)]
 Alpha Constant Value
 TMS Constant Value
 C Constant Value
-Connector of Boolean input signal [:#(type=Boolean)]
-Connector of Real output signal
 Constant output value
-Constant output value
-Comparison with respect to threshold
-Connector of Boolean output signal [:#(type=Boolean)]
 Connector of Real output signal
 Constant output value
 Constant output value
@@ -2402,430 +461,62 @@ Gain of upper input
 Gain of lower input
 Connector of Real input signal 1
 Constant output value
+Constant output value
+Constant output value
+Constant output value
+Constant output value
+Constant output value
+Constant output value
+[:#(type=Integer)]
+Connector of Real output signal
+Constant output value
+Connector of Real input signal 1
+Connector of Real input signal 2
+Connector of Boolean input signal [:#(type=Boolean)]
+Comparison with respect to threshold
+Connector of Boolean output signal [:#(type=Boolean)]
 Comparison with respect to threshold
 Connector of Boolean output signal [:#(type=Boolean)]
 Constant output value
-Constant output value
-Constant output value
-Constant output value
-Constant output value
-Constant output value
-
-Constant output value
+Connector of Boolean input signal [:#(type=Boolean)]
+Comparison with respect to threshold
+Connector of Boolean output signal [:#(type=Boolean)]
+Comparison with respect to threshold
+Connector of Boolean output signal [:#(type=Boolean)]
 Constant output value
 Start value of Q at initial time [:#(type=Boolean)]
 [:#(type=Boolean)]
 Start value of pre(u) at initial time [:#(type=Boolean)]
 Connector of Boolean input signal [:#(type=Boolean)]
 Constant output value [:#(type=Boolean)]
-Constant output value
 Start value of Q at initial time [:#(type=Boolean)]
 [:#(type=Boolean)]
 Start value of pre(u) at initial time [:#(type=Boolean)]
 Connector of Boolean input signal [:#(type=Boolean)]
 Constant output value [:#(type=Boolean)]
+
 Constant output value
-System base [MVA]
-System Frequency [Hz]
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-System base power [MVA]
-System Frequeny [Hz]
-Machine base power (MVA)
-d-axis transient open-circuit time constant (s)
-d-axis sub-transient open-circuit time constant (s)
-q-axis transient open-circuit time constant (s)
-Inertia constant (s)
-Speed damping
-d-axis reactance
-q-axis reactance
-d-axis transient reactance
-d-axis sub-transient reactance
-q-axis sub-transient reactance
-leakage reactance
-Saturation factor at 1.0 pu
-Saturation factor at 1.2 pu
-amature resistance
-Turbine mechanical power (pu on M_b)
-Machine terminal voltage (pu) [1]
-Generator main field voltage (pu) [1]
-Machine electrical power (pu on M_b)
-Machine source current (pu)
-Machine speed deviation (pu)
-der(Machine speed deviation (pu))
-Rotor angle (deg.)
-der(Rotor angle (deg.))
-Bus voltage angle (deg.)
-Terminal current magnitude (pu)
-Terminal current angle (deg.)
-Active power (p.u. on S_b) [1]
-Reactive power (p.u. on S_b) [1]
-Electrical torque (pu)
-d-axis armature current (pu)
-q-axis armature current (pu)
-d-axis terminal voltage (pu)
-q-axis terminal voltage (pu)
-System base speed (rad/s)
-initial value of bus voltage angle in rad
-
-Real component of initial terminal voltage
-Imaginary component of intitial terminal voltage
-Real component of initial armature current, systembase
-Imaginary component of initial armature current, systembase
-initial active power generation in pu machinebase
-initial reactive power generation in pu machinebase
-q-axis voltage behind transient reactance (pu)
-der(q-axis voltage behind transient reactance (pu))
-d-axis rotor flux linkage (pu)
-der(d-axis rotor flux linkage (pu))
-q-axis subtransient flux linkage (pu)
-der(q-axis subtransient flux linkage (pu))
-d-axis subtransient flux linkage (pu)
-d-axis flux linkage (pu)
-q-axis flux linkage (pu)
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-rotor angle in radians
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-Real part of complex number
-Imaginary part of complex number
-q-axis component of intitial current
-d-axis component of intitial current
-d-axis component of intitial voltage
-q-axis component of intitial voltage
-Real part of complex number
-Imaginary part of complex number
-q-axis component of the sub-transient flux linkage
-d-axis component of the sub-transient flux linkage
-d-axis initial rotor flux linkage
-
-
-
-
-Initial field voltage magnitude [1]
-Initial mechanical power, machine base
-
-
-
-
-[1]
-Constant output value [1]
-Connector of Real input signal 2 [1]
+Connector of Boolean input signal [:#(type=Boolean)]
 Connector of Real output signal
-Gain of upper input
-Gain of lower input
-[1]
-[1]
-[1]
-Voltage input time constant (s) [s]
-
-
-AVR lead-lag time constant (s) [s]
-AVR lead-lag time constant (s) [s]
-AVR lead-lag time constant (s) [s]
-AVR lead-lag time constant (s) [s]
-AVR gain
-AVR time constant (s) [s]
-Maximum AVR output (pu)
-Minimum AVR output (pu)
-[1]
-[1]
-Rectifier load factor (pu) [1]
-Rate feedback gain (pu) [1]
-Rate feedback time constant (s) [s]
-[1]
-
-Gains [1]
-Time constants (T>0 required; T=0 is ideal derivative block) [s]
-Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess value of state [1]
-Initial value of output (= state) [s-1]
-Connector of Real input signal [1]
-Connector of Real output signal [s-1]
-State of block [1]
-der(State of block) [s-1]
-[:#(type=Boolean)]
-Upper limits of input signals
-Lower limits of input signals
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Has no longer an effect and is only kept for backwards compatibility (the implementation uses now the homotopy operator) [:#(type=Boolean)]
-Connector of Real input signal
-Connector of Real output signal [1]
-[1]
-Gain value multiplied with input signal [1]
-Input signal connector
-Output signal connector
-[1]
-[1]
 Constant output value
+Constant output value
+Comparison with respect to threshold
+Integrator gain [1]
+Type of initialization (1: no init, 2: steady state, 3,4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
+Initial or guess value of output (= state)
 Connector of Real output signal
-Gain
-Lead time constant [s]
-Lag time constant [s]
-Output start value
-Start value of state variable [1]
+der(Connector of Real output signal)
+Time instant of step start [s]
+Output before startTime [:#(type=Boolean)]
+Connector of Boolean output signal [:#(type=Boolean)]
+Output signal for true Boolean input
+Output signal for false Boolean input
 Connector of Real output signal
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess values of states [1]
-Initial value of output (derivatives of y are zero up to nx-1-th derivative)
-Size of Denominator of transfer function. [:#(type=Integer)]
-Size of Numerator of transfer function. [:#(type=Integer)]
-[:#(type=Integer)]
 
 
-
-
-Scaled vector x
-der(Scaled vector x)
-Lead time constant [s]
-Gain
-Lead time constant [s]
-Lag time constant [s]
-Output start value
-Start value of state variable
-Connector of Real output signal
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess values of states
-Initial value of output (derivatives of y are zero up to nx-1-th derivative)
-Size of Denominator of transfer function. [:#(type=Integer)]
-Size of Numerator of transfer function. [:#(type=Integer)]
-[:#(type=Integer)]
-
-
-
-
-Scaled vector x
-der(Scaled vector x)
-Lead time constant [s]
-Gain of upper input
-Gain of middle input
-Gain of lower input
-Connector 3 of Real input signals
-Connector of Real input signal
-Connector of Real output signal [1]
-[1]
-[s-1]
-Gain
-Lag time constant [s]
-Output start value [1]
-Maximum output value [1]
-Minimum output value [1]
-[s]
-Gain of upper input
-Gain of lower input
-Upper limits of input signals
-Lower limits of input signals
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Has no longer an effect and is only kept for backwards compatibility (the implementation uses now the homotopy operator) [:#(type=Boolean)]
-Connector of Real output signal
-Gain of upper input
-Gain of middle input
-Gain of lower input
-Gain value multiplied with input signal [1]
-Output signal connector [1]
-Gain value multiplied with input signal [1]
-Output signal connector [1]
 Connector of Real input signal 1
-Connector of Real output signal [1]
-Gain of upper input
-Gain of lower input
-Gain value multiplied with input signal [1]
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Has no longer an effect and is only kept for backwards compatibility (the implementation uses now the homotopy operator) [:#(type=Boolean)]
-[1]
-[s-1]
-Gain
-Lag time constant [s]
-Output start value [1]
-[s]
-Gain of upper input
-Gain of lower input
-
-[1]
-Constant output value
-Constant output value [1]
-Constant output value
-Base voltage of the bus [kV]
-Voltage magnitude (pu) [1]
-Voltage angle [deg]
-Active power [MW]
-Reactive power [Mvar]
-Machine base power (MVA)
-Constant output value
-Integrator gain [1]
-Upper limit of output
-Lower limit of output
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-= false, if limits are ignored during initialization (i.e., der(y)=k*u) [:#(type=Boolean)]
-Initial or guess value of output (must be in the limits outMin .. outMax)
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Connector of Real input signal
-Connector of Real output signal
-der(Connector of Real output signal)
-Low OEL limit (pu)
-Medium OEL limit (pu)
-High OEL limit (pu)
-Timing for low OEL (s)
-Timimg for medium OEL (s)
-Timing for high OEL (s)
-IFD setpoint (pu)
-Max. OEL output (pu)
-Min. OEL output (pu)
-Control constant [1]
-
-
-
-
-
-
-
-
-
-
-Integrator gain [1]
-Upper limit of output
-Lower limit of output
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-= false, if limits are ignored during initialization (i.e., der(y)=k*u) [:#(type=Boolean)]
-Initial or guess value of output (must be in the limits outMin .. outMax)
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Connector of Real output signal
-der(Connector of Real output signal)
-Integrator gain [1]
-Upper limit of output
-Lower limit of output
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-= false, if limits are ignored during initialization (i.e., der(y)=k*u) [:#(type=Boolean)]
-Initial or guess value of output (must be in the limits outMin .. outMax)
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Connector of Real output signal
-der(Connector of Real output signal)
-Integrator gain [1]
-Upper limit of output
-Lower limit of output
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-= false, if limits are ignored during initialization (i.e., der(y)=k*u) [:#(type=Boolean)]
-Initial or guess value of output (must be in the limits outMin .. outMax)
-= true, if strict limits with noEvent(..) [:#(type=Boolean)]
-Connector of Real output signal
-der(Connector of Real output signal)
-Gain of upper input
-Gain of lower input
-Number of significant digits to be shown in dynamic diagram layer for y [:#(type=Integer)]
-Number of input connections [:#(type=Integer)]
-Input gains
-Input gains
-Input gains
-Input gains
-Connector of Real input signal
-Connector of Real output signal
-Gain
-Lead time constant [s]
-Lag time constant [s]
-Output start value
-Start value of state variable
-Connector of Real output signal
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6}) [s]
-Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess values of states
-Initial value of output (derivatives of y are zero up to nx-1-th derivative)
-Size of Denominator of transfer function. [:#(type=Integer)]
-Size of Numerator of transfer function. [:#(type=Integer)]
-[:#(type=Integer)]
-
-
-
-
-Scaled vector x
-der(Scaled vector x)
-Lead time constant [s]
-Governor gain, 1/R (pu)
-(pu) [1]
-Control time constant (s) [s]
-Control time constant (s) [s]
-Control time constant (s) [s]
-Max. valve position (p.u. on M_b)
-min. valve position (p.u. on M_b)
-Gain value multiplied with input signal [1]
-Input signal connector
-Gain value multiplied with input signal [1]
-Output signal connector
-Gain of upper input
-Gain of lower input
 Gain of upper input
 Gain of lower input
 Constant output value
-Connector of Real input signal
-
-
-Gain
-Lag time constant [s]
-Output start value
-Maximum output value
-Minimum output value
-[s]
-Power reference of the governor
-
-[1]
-[deg]
-[:#(type=Boolean)]
-
-[1]
-[deg]
-
-
-[1]
-[deg]
-[MW]
-[Mvar]
-[MW]
-[Mvar]
-[MW]
-[Mvar]
-
-
-
-=true, if external tigger signal is used [:#(type=Boolean)]
-Opening time [s]
-Enable reclosure [:#(type=Boolean)]
-Reclosing time [s]
-Real part of the current
-Imaginary part of the current
-=true, if external tigger signal is used [:#(type=Boolean)]
-Opening time [s]
-Enable reclosure [:#(type=Boolean)]
-Reclosing time [s]
-Real part of the current
-Imaginary part of the current
-Real part of the current
-Imaginary part of the current
+Constant output value
 
