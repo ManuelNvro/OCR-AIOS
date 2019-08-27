@@ -1548,9 +1548,8 @@ package OCRAIOSPSAT
           annotation (Placement(transformation(extent={{20,-10},{40,10}})));
         Components.Timer timer
           annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-        RelayPack.Components.ExtractingTimeOfFault
-                                         extractingTimeOfFault
-          annotation (Placement(transformation(extent={{-110,26},{-90,46}})));
+        Components.ExtractingTimeOfFault extractingTimeOfFault
+          annotation (Placement(transformation(extent={{-110,20},{-90,40}})));
       equation
 
         connect(const.y, greater1.u2) annotation (Line(points={{-265,-50},{-262,
@@ -1580,10 +1579,10 @@ package OCRAIOSPSAT
                 0,0,127}));
         connect(timer.y, add.u2) annotation (Line(points={{-89,0},{-80,0},{-80,
                 10},{-70,10}}, color={0,0,127}));
-        connect(add.u1, extractingTimeOfFault.y) annotation (Line(points={{-70,
-                22},{-80,22},{-80,36},{-89,36}}, color={0,0,127}));
-        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{-112,36},
-                {-126,36},{-126,0},{-112,0}},          color={0,0,127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{
+                -112,30},{-126,30},{-126,0},{-112,0}}, color={0,0,127}));
+        connect(extractingTimeOfFault.y, add.u1) annotation (Line(points={{-89,
+                30},{-78,30},{-78,22},{-70,22}}, color={0,0,127}));
         annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                   -100},{60,100}}),  graphics={Rectangle(extent={{-300,100},{20,
                     -100}}, lineColor={28,108,200}), Text(
