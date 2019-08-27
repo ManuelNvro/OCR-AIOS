@@ -1106,39 +1106,39 @@ package OCRAIOSPSAT
             annotation (Placement(transformation(extent={{100,-10},{120,10}})));
           Modelica.Blocks.Interfaces.RealInput u
             annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-          Modelica.Blocks.Continuous.LimIntegrator limIntegrator(
-            outMax=2,
-            outMin=0,
-            y_start=1)
-            annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
           Modelica.Blocks.Logical.Switch switch1
-            annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
+            annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
           Modelica.Blocks.Math.Product product
-            annotation (Placement(transformation(extent={{26,22},{46,42}})));
-          Modelica.Blocks.Sources.Constant const(k=1000)
-            annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
+            annotation (Placement(transformation(extent={{44,22},{64,42}})));
+          Modelica.Blocks.Sources.Constant const(k=0)
+            annotation (Placement(transformation(extent={{-62,18},{-42,38}})));
           Modelica.Blocks.Sources.Constant const1(k=1)
-            annotation (Placement(transformation(extent={{-78,-54},{-58,-34}})));
-          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
-               1)
+            annotation (Placement(transformation(extent={{-62,-38},{-42,-18}})));
+          Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold
+              =0.9)
             annotation (Placement(transformation(extent={{-62,-10},{-42,10}})));
+          Modelica.Blocks.Continuous.Integrator integrator
+            annotation (Placement(transformation(extent={{12,-10},{32,10}})));
         equation
-          connect(product.y, y) annotation (Line(points={{47,32},{76,32},{76,0},{110,
-                  0}}, color={0,0,127}));
-          connect(const.y, limIntegrator.u)
-            annotation (Line(points={{-59,40},{-42,40}}, color={0,0,127}));
-          connect(limIntegrator.y, switch1.u1) annotation (Line(points={{-19,40},{-12,
-                  40},{-12,8},{-6,8}}, color={0,0,127}));
-          connect(const1.y, switch1.u3) annotation (Line(points={{-57,-44},{-32,-44},
-                  {-32,-8},{-6,-8}}, color={0,0,127}));
-          connect(u, product.u1) annotation (Line(points={{-120,0},{-86,0},{-86,74},{
-                  16,74},{16,38},{24,38}}, color={0,0,127}));
-          connect(switch1.y, product.u2) annotation (Line(points={{17,0},{20,0},{20,
-                  26},{24,26}}, color={0,0,127}));
+          connect(product.y, y) annotation (Line(points={{65,32},{76,32},{76,0},
+                  {110,0}},
+                       color={0,0,127}));
+          connect(const1.y, switch1.u3) annotation (Line(points={{-41,-28},{-32,
+                  -28},{-32,-8},{-22,-8}},
+                                     color={0,0,127}));
+          connect(u, product.u1) annotation (Line(points={{-120,0},{-86,0},{-86,
+                  74},{16,74},{16,38},{42,38}},
+                                           color={0,0,127}));
           connect(u,greaterEqualThreshold. u)
             annotation (Line(points={{-120,0},{-64,0}},   color={0,0,127}));
           connect(greaterEqualThreshold.y, switch1.u2) annotation (Line(points={{-41,0},
-                  {-6,0}},                         color={255,0,255}));
+                  {-22,0}},                        color={255,0,255}));
+          connect(switch1.u1, const.y) annotation (Line(points={{-22,8},{-32,8},
+                  {-32,28},{-41,28}}, color={0,0,127}));
+          connect(switch1.y, integrator.u)
+            annotation (Line(points={{1,0},{10,0}}, color={0,0,127}));
+          connect(product.u2, integrator.y) annotation (Line(points={{42,26},{
+                  36,26},{36,0},{33,0}}, color={0,0,127}));
           annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
                   Rectangle(extent={{-100,100},{100,-100}}, lineColor={28,108,200})}),
                                                                          Diagram(
@@ -1440,6 +1440,8 @@ package OCRAIOSPSAT
           annotation (Placement(transformation(extent={{-340,-20},{-300,20}})));
 
         parameter Real eps=0.41 "Constant output value";
+        Components.ExtractingTimeOfFault extractingTimeOfFault
+          annotation (Placement(transformation(extent={{-140,28},{-120,48}})));
       equation
 
         connect(const.y, greater1.u2) annotation (Line(points={{-263,-24},{-262,
@@ -1459,15 +1461,15 @@ package OCRAIOSPSAT
         connect(calculatingOperationTime.Control, timer.u) annotation (Line(
               points={{-143.333,-32},{-154,-32},{-154,0},{-144,0}}, color={0,0,
                 127}));
-        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{
-                -142,38},{-154,38},{-154,0},{-144,0}}, color={0,0,127}));
+        connect(extractingTimeOfFault.u, timer.u) annotation (Line(points={{-142,38},
+                {-154,38},{-154,0},{-144,0}},          color={0,0,127}));
         connect(calculatingOperationTime.CurrentInput, greater1.u1) annotation (
            Line(points={{-143.333,-40.3077},{-222,-40.3077},{-222,-86},{-296,
                 -86},{-296,0},{-254,0}}, color={0,0,127}));
         connect(timer.y, add.u2) annotation (Line(points={{-121,0},{-112,0},{
                 -112,-6},{-102,-6}}, color={0,0,127}));
-        connect(extractingTimeOfFault.y, add.u1) annotation (Line(points={{-119,
-                38},{-114,38},{-114,6},{-102,6}}, color={0,0,127}));
+        connect(extractingTimeOfFault.y, add.u1) annotation (Line(points={{-119,38},
+                {-114,38},{-114,6},{-102,6}},     color={0,0,127}));
         connect(calculatingOperationTime.OperationTime, greater2.u2)
           annotation (Line(points={{-121.333,-35.6923},{-78,-35.6923},{-78,-8},
                 {-70,-8}}, color={0,0,127}));
@@ -1743,7 +1745,7 @@ package OCRAIOSPSAT
         Is=400)
         annotation (Placement(transformation(extent={{-124,-24},{-88,-4}})));
         //k=3,
-      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=1)
+      Modelica.Blocks.Sources.BooleanStep booleanStep(startTime=7)
         annotation (Placement(transformation(extent={{-268,-20},{-248,0}})));
       Modelica.Blocks.Math.BooleanToReal booleanToReal
         annotation (Placement(transformation(extent={{-226,-20},{-206,0}})));
@@ -2073,21 +2075,26 @@ package OCRAIOSPSAT
       connect(ThreeBus.p, pwLine3.n) annotation (Line(points={{-72,-92},{-72,-18},{-100,
               -18},{-100,40},{-161,40}}, color={0,0,255}));
       connect(breaker1.r, pwLine1.p)
-        annotation (Line(points={{-194,-54},{-179,-54}}, color={0,0,255}));
+        annotation (Line(points={{-191.5,-54},{-179,-54}},
+                                                         color={0,0,255}));
       connect(pwLine1.n, breaker2.s)
-        annotation (Line(points={{-161,-54},{-126,-54}}, color={0,0,255}));
-      connect(breaker2.r, pwLine3.n) annotation (Line(points={{-106,-54},{-100,-54},
-              {-100,40},{-161,40}}, color={0,0,255}));
-      connect(breaker1.s, pwLine3.p) annotation (Line(points={{-214,-54},{-224,-54},
-              {-224,40},{-179,40}}, color={0,0,255}));
+        annotation (Line(points={{-161,-54},{-128.5,-54}},
+                                                         color={0,0,255}));
+      connect(breaker2.r, pwLine3.n) annotation (Line(points={{-103.5,-54},{
+              -100,-54},{-100,40},{-161,40}},
+                                    color={0,0,255}));
+      connect(breaker1.s, pwLine3.p) annotation (Line(points={{-216.5,-54},{
+              -224,-54},{-224,40},{-179,40}},
+                                    color={0,0,255}));
       connect(OneBus.p, pwLine3.p) annotation (Line(points={{-236,-16},{-224,-16},{-224,
               40},{-179,40}}, color={0,0,255}));
       connect(pwFault.p, breaker2.s) annotation (Line(points={{-143,-72},{-143,
-              -54},{-126,-54}}, color={0,0,255}));
+              -54},{-128.5,-54}},
+                                color={0,0,255}));
       connect(FiveBus.p, lOADPQ.p)
         annotation (Line(points={{28,-92},{50,-92}}, color={0,0,255}));
       connect(realExpression.y, recordReferenceRelay.u)
-        annotation (Line(points={{-183,-6},{-168.571,-6}},
+        annotation (Line(points={{-183,-6},{-168.4,-6}},
                                                        color={0,0,127}));
       connect(recordReferenceRelay.TripSingal, breaker2.Trigger) annotation (
           Line(points={{-128.714,-6},{-116,-6},{-116,-42}},
