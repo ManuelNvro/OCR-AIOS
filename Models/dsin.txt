@@ -1,0 +1,823 @@
+#1
+char Aclass(3,24)
+Adymosim
+1.4
+Modelica experiment file
+
+
+#    Experiment parameters
+double experiment(7,1)
+       0                   # StartTime    Time at which integration starts
+                           #              (and linearization and trimming time)
+  4.0000000000000002E-01   # StopTime     Time at which integration stops
+       0                   # Increment    Communication step size, if > 0
+     500                   # nInterval    Number of communication intervals, if > 0
+  1.0000000000000000E-04   # Tolerance    Relative precision of signals for
+                           #              simulation, linearization and trimming
+       0                   # MaxFixedStep Maximum step size of fixed step size
+                           #              integrators, if > 0.0
+       8                   # Algorithm    Integration algorithm as integer (1...28)
+                           #
+                           #             | model|       |        | dense | state |
+                           # Algorithm   | typ  | stiff | order  | output| event |
+                           # ------------+------+-------+--------+-------+-------+
+                           #  1 | deabm  |  ode |   no  |  1-12  |  yes  |   no  |
+                           #  2 | lsode1 |  ode |   no  |  1-12  |  yes  |   no  |
+                           #  3 | lsode2 |  ode |  yes  |  1-5   |  yes  |   no  |
+                           #  4 | lsodar |  ode |  both |1-12,1-5|  yes  |  yes  |
+                           #  5 | dopri5 |  ode |   no  |   5    |   no  |   no  |
+                           #  6 | dopri8 |  ode |   no  |   8    |   no  |   no  |
+                           #  7 | grk4t  |  ode |  yes  |   4    |   no  |   no  |
+                           #  8 | dassl  |  dae |  yes  |  1-5   |  yes  |  yes  |
+                           #  9 | odassl | hdae |  yes  |  1-5   |  yes  |  yes  |
+                           # 10 | mexx   | hdae |   no  |  2-24  |   no  |   no  |
+                           # 11 | euler  |  ode |   no  |   1    |   no  |  yes  |
+                           # 12 | rkfix2 |  ode |   no  |   2    |   no  |  yes  |
+                           # 13 | rkfix3 |  ode |   no  |   3    |   no  |  yes  |
+                           # 14 | rkfix4 |  ode |   no  |   4    |   no  |  yes  |
+                           #>=14| others |  ode |yes/no |  2-5   |   yes |  yes  |
+                           # ---+--------+------+-------+--------+-------+-------+
+                           # euler and rkfix have fixed stepsize.
+
+
+#    Method tuning parameters
+double method(27,1)
+       1                   # grid     type of communication time grid, defined by
+                           #          = 1: equidistant points ("Increment/nInterval")
+                           #          = 2: vector of grid points ("tgrid")
+                           #          = 3: variable step integrator (automatically)
+                           #          = 4: model (call of "increment" in Dymola, e.g.
+                           #                      incr=Time > 2 then 0 else 0.1
+                           #                      dummy=increment(incr))
+                           #          grid = 1,3 is stopped by "StopTime"
+                           #          grid = 2   is stopped by "tgrid(last)"
+                           #          grid = 4   runs forever (stopped by model)
+       1                   # nt       Use every NT time instant, if grid = 3
+       3                   # dense    1/2/3 restart/step/interpolate GRID points
+       1                   # evgrid   0/1 do not/save event points in comm. time grid
+       1                   # evu      0/1 U-discontinuity does not/trigger events
+       0                   # evuord       U-discontinuity order to consider (0,1,...)
+       0                   # error    0/1/2 One message/warning/error messages
+       0                   # jac      0/1 Compute jacobian numerically/by BLOCKJ
+       0                   # xd0c     0/1 Compute/set XD0
+       0                   # f3       0/1 Ignore/use F3 of HDAE (= index 1)
+       0                   # f4       0/1 Ignore/use F4 of HDAE (= index 2)
+       0                   # f5       0/1 Ignore/use F5 of HDAE (= invar.)
+       0                   # debug    flags for debug information (1<<0 uses pdebug) 
+     100                   # pdebug       priority of debug information (1...100)
+       0                   # fmax     Maximum number of evaluations of BLOCKF, if > 0
+       0                   # ordmax   Maximum allowed integration order, if > 0
+       0                   # hmax     Maximum absolute stepsize, if > 0
+       0                   # hmin     Minimum absolute stepsize, if > 0 (use with care!)
+       0                   # h0       Stepsize to be attempted on first step, if > 0
+  2.0000000000000000E-14   # teps     Bound to check, if 2 equal time instants
+  1.0000000000000000E-10   # eveps    Hysteresis epsilon at event points
+      20                   # eviter   Maximum number of event iterations
+  9.9999999999999995E-07   # delaym   Minimum time increment in delay buffers
+       1                   # fexcep   0/1 floating exception crashes/stops dymosim
+       1                   # tscale   clock-time = tscale*simulation-time, if grid = 5
+                           #          > 1: simulation too slow
+                           #          = 1: simulation-time = real-time
+                           #          < 1: simulation too fast
+       1                   # shared   (not used)
+    2473                   # memkey   (not used)
+
+
+#    Output parameters
+int settings(13,1)
+ 0                         # lprec    0/1 do not/store result data in double
+ 1                         # lx       0/1 do not/store x  (state variables)
+ 1                         # lxd      0/1 do not/store xd (derivative of states)
+ 1                         # lu       0/1 do not/store u  (input     signals)
+ 1                         # ly       0/1 do not/store y  (output    signals)
+ 0                         # lz       0/1 do not/store z  (indicator signals)
+ 1                         # lw       0/1 do not/store w  (auxiliary signals)
+ 1                         # la       0/1 do not/store a  (alias     signals)
+ 0                         # lperf    0/1 do not/store performance indicators
+ 0                         # levent   0/1 do not/store event point
+ 1                         # lres     0/1 do not/store results on result file
+ 0                         # lshare   0/1 do not/store info data for shared memory on dsshare.txt
+ 1                         # lform    0/1 ASCII/Matlab-binary storage format of results
+                           #              (for simulation/linearization; not for trimming)
+
+
+#    Names of initial variables
+char initialName(166,45)
+panelData.Q
+panelData.TRef
+panelData.irradianceRef
+panelData.VocRef
+panelData.VocCellRef
+panelData.IscRef
+panelData.VmpRef
+panelData.VmpCellRef
+panelData.ImpRef
+panelData.alphaIsc
+panelData.alphaVoc
+panelData.ns
+panelData.nb
+panelData.BvCell
+panelData.Ibv
+panelData.Nbv
+panelData.VtCellRef
+PV1.i
+PV1.n.v
+PV1.moduleData.Q
+PV1.moduleData.TRef
+PV1.moduleData.irradianceRef
+PV1.moduleData.VocRef
+PV1.moduleData.VocCellRef
+PV1.moduleData.IscRef
+PV1.moduleData.VmpRef
+PV1.moduleData.VmpCellRef
+PV1.moduleData.ImpRef
+PV1.moduleData.alphaIsc
+PV1.moduleData.alphaVoc
+PV1.moduleData.ns
+PV1.moduleData.nb
+PV1.moduleData.BvCell
+PV1.moduleData.Ibv
+PV1.moduleData.Nbv
+PV1.moduleData.VtCellRef
+PV1.Np
+PV1.Ns
+PV1.Irr
+PV1.Ac
+PV1.Eg
+PV1.q
+PV1.lambdaRef
+PV1.Isc
+PV1.Voc
+PV1.Tref
+PV1.K
+PV1.K1
+PV1.K2
+PV1.Rspv
+PV1.ns
+PV1.Ior
+PV1.Iph
+PV1.Irs
+PV1.exponent
+PV1.Vpv
+Boost.L_boost
+Boost.Vdrop
+Boost.r_diode
+Boost.g_diode
+Boost.r_switch
+Boost.g_switch
+Boost.f_s
+Boost.Input_p.v
+Boost.Input_n.v
+Boost.Input_n.i
+Boost.Output_p.i
+Boost.Output_n.v
+Boost.Output_n.i
+Boost.InputInductor.v
+Boost.InputInductor.i
+Boost.InputInductor.der(i)
+Boost.InputInductor.n.v
+Boost.InputInductor.L
+Boost.diode.v
+Boost.diode.r_on
+Boost.diode.g_off
+Boost.diode.v_knee
+Boost.diode.off
+Boost.diode.s
+Boost.diode.unitVoltage
+Boost.diode.unitCurrent
+Boost.switch.i
+Boost.switch.n.v
+Boost.switch.control
+Boost.switch.r_on
+Boost.switch.g_off
+Boost.switch.off
+Boost.switch.s
+Boost.switch.unitVoltage
+Boost.switch.unitCurrent
+Boost.DutyRatio.sensorSignal
+Boost.sawtoothPWM.f
+Boost.sawtoothPWM.limiter.uMax
+Boost.sawtoothPWM.limiter.uMin
+Boost.sawtoothPWM.limiter.strict
+Boost.sawtoothPWM.limiter.limitsAtInit
+Boost.sawtoothPWM.limiter.y
+Boost.sawtoothPWM.greaterEqual.u1
+Boost.sawtoothPWM.greaterEqual.u2
+Boost.sawtoothPWM.zeroOrderHold.samplePeriod
+Boost.sawtoothPWM.zeroOrderHold.startTime
+Boost.sawtoothPWM.zeroOrderHold.sampleTrigger
+Boost.sawtoothPWM.zeroOrderHold.firstTrigger
+Boost.sawtoothPWM.zeroOrderHold.ySample
+Boost.sawtoothPWM.sawtooth.amplitude
+Boost.sawtoothPWM.sawtooth.period
+Boost.sawtoothPWM.sawtooth.nperiod
+Boost.sawtoothPWM.sawtooth.offset
+Boost.sawtoothPWM.sawtooth.startTime
+Boost.sawtoothPWM.sawtooth.T_start
+Boost.sawtoothPWM.sawtooth.count
+voltageSensor1.p.i
+voltageSensor1.n.v
+voltageSensor1.n.i
+mppt1.u.sensorSignal
+mppt1.y.sensorSignal
+mppt1.Ts
+mppt1.deltaVpvRefPanel
+mppt1.pot
+mppt1.potActFiltered
+mppt1.der(potActFiltered)
+mppt1.potact
+mppt1.potprev
+mppt1.prevu
+mppt1.actu
+mppt1.deltau
+mppt1.deltap
+mppt1.vref
+boostControl1.Gain
+boostControl1.TimeCons
+boostControl1.feedback1.y
+boostControl1.PI.k
+boostControl1.PI.T
+boostControl1.PI.initType
+boostControl1.PI.x_start
+boostControl1.PI.y_start
+boostControl1.PI.y
+boostControl1.PI.x
+boostControl1.PI.der(x)
+boostControl1.gain1.k
+V_dc.V
+V_dc.n.v
+resistor1.v
+resistor1.R
+capacitor1.v
+capacitor1.der(v)
+capacitor1.i
+capacitor1.n.v
+capacitor1.C
+Temperature.k
+ground1.p.v
+ground1.p.i
+Irradiation.amplitude
+Irradiation.rising
+Irradiation.width
+Irradiation.falling
+Irradiation.period
+Irradiation.nperiod
+Irradiation.offset
+Irradiation.startTime
+Irradiation.T_rising
+Irradiation.T_width
+Irradiation.T_falling
+Irradiation.T_start
+Irradiation.count
+
+double initialValue(166,6)
+  0  1.6021766208000001E-19       0                       0                
+  6   256   # panelData.Q
+  0  2.9814999999999998E+02       0                 1.0000000000000000E+100
+  6   256   # panelData.TRef
+  0    1000                       0                       0                
+  6   256   # panelData.irradianceRef
+  0  3.0199999999999999E+01  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # panelData.VocRef
+  0  6.2916666666666665E-01       0                       0                
+  6   256   # panelData.VocCellRef
+  0  8.5399999999999991E+00  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # panelData.IscRef
+  0      24                  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # panelData.VmpRef
+  0  5.0000000000000000E-01       0                       0                
+  6   256   # panelData.VmpCellRef
+  0  7.7100000000000000E+00  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # panelData.ImpRef
+  0  5.2999999999999998E-04       0                       0                
+  6   256   # panelData.alphaIsc
+  0 -3.3999999999999998E-03       0                       0                
+  6   256   # panelData.alphaVoc
+  0      48                       0                       0                
+  6   258   # panelData.ns
+  0       3                       0                       0                
+  6   258   # panelData.nb
+ -1      18                       0                       0                
+  1   280   # panelData.BvCell
+ -1       1                       0                       0                
+  1   280   # panelData.Ibv
+ -1  7.3999999999999999E-01       0                       0                
+  1   280   # panelData.Nbv
+  0  2.5692570400413117E-02       0                       0                
+  6   256   # panelData.VtCellRef
+  0       0                       0                       0                
+  6   256   # PV1.i
+  0       0                       0                       0                
+  6   260   # PV1.n.v
+  0  1.6021766208000001E-19       0                       0                
+  6   256   # PV1.moduleData.Q
+  0  2.9814999999999998E+02       0                 1.0000000000000000E+100
+  6   256   # PV1.moduleData.TRef
+  0    1000                       0                       0                
+  6   256   # PV1.moduleData.irradianceRef
+  0  3.0199999999999999E+01  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # PV1.moduleData.VocRef
+  0  6.2916666666666665E-01       0                       0                
+  6   256   # PV1.moduleData.VocCellRef
+  0  8.5399999999999991E+00  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # PV1.moduleData.IscRef
+  0      24                  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # PV1.moduleData.VmpRef
+  0  5.0000000000000000E-01       0                       0                
+  6   256   # PV1.moduleData.VmpCellRef
+  0  7.7100000000000000E+00  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # PV1.moduleData.ImpRef
+  0  5.2999999999999998E-04       0                       0                
+  6   256   # PV1.moduleData.alphaIsc
+  0 -3.3999999999999998E-03       0                       0                
+  6   256   # PV1.moduleData.alphaVoc
+  0      48                       0                       0                
+  6   258   # PV1.moduleData.ns
+  0       3                       0                       0                
+  6   258   # PV1.moduleData.nb
+  0       0                       0                       0                
+  6   256   # PV1.moduleData.BvCell
+  0       0                       0                       0                
+  6   256   # PV1.moduleData.Ibv
+  0       0                       0                       0                
+  6   256   # PV1.moduleData.Nbv
+  0  2.5692570400413117E-02       0                       0                
+  6   256   # PV1.moduleData.VtCellRef
+ -1       3                       0                       0                
+  1   282   # PV1.Np
+ -1       3                       0                       0                
+  1   282   # PV1.Ns
+  0       0                       0                       0                
+  6   256   # PV1.Irr
+  0  1.6000000000000001E+00       0                       0                
+  6   256   # PV1.Ac
+  0  1.1000000000000001E+00       0                       0                
+  6   256   # PV1.Eg
+  0  1.6021766208000001E-19       0                       0                
+  6   256   # PV1.q
+  0    1000                       0                       0                
+  6   256   # PV1.lambdaRef
+  0  8.5399999999999991E+00       0                       0                
+  6   256   # PV1.Isc
+  0  3.0199999999999999E+01       0                       0                
+  6   256   # PV1.Voc
+  0  2.9814999999999998E+02       0                       0                
+  6   256   # PV1.Tref
+  0  1.3806485199999999E-23       0                       0                
+  6   256   # PV1.K
+  0  5.2999999999999998E-04       0                       0                
+  6   256   # PV1.K1
+  0 -3.3999999999999998E-03       0                       0                
+  6   256   # PV1.K2
+  0  1.0000000000000000E-02       0                       0                
+  6   256   # PV1.Rspv
+  0      48                       0                       0                
+  6   258   # PV1.ns
+  0  1.0646999999999999E-06       0                       0                
+  6   256   # PV1.Ior
+  0       0                       0                       0                
+  6   256   # PV1.Iph
+  0       0                       0                       0                
+  6   256   # PV1.Irs
+  0       0                       0                       0                
+  6   288   # PV1.exponent
+  0       0                       0                       0                
+  6   256   # PV1.Vpv
+ -1  5.0000000000000001E-03       0                       0                
+  1   280   # Boost.L_boost
+ -1       0                       0                       0                
+  1   280   # Boost.Vdrop
+ -1  1.0000000000000001E-05       0                       0                
+  1   280   # Boost.r_diode
+ -1  1.0000000000000001E-05       0                       0                
+  1   280   # Boost.g_diode
+ -1  1.0000000000000001E-05       0                       0                
+  1   280   # Boost.r_switch
+ -1  1.0000000000000001E-05       0                       0                
+  1   280   # Boost.g_switch
+ -1  100000                       0                       0                
+  1   280   # Boost.f_s
+  0       0                       0                       0                
+  6   260   # Boost.Input_p.v
+  0       0                       0                       0                
+  6   260   # Boost.Input_n.v
+  0       0                       0                       0                
+  6   388   # Boost.Input_n.i
+  0       0                       0                       0                
+  6   388   # Boost.Output_p.i
+  0       0                       0                       0                
+  6   260   # Boost.Output_n.v
+  0       0                       0                       0                
+  6   388   # Boost.Output_n.i
+  0       0                       0                       0                
+  6   256   # Boost.InputInductor.v
+ -1       0                       0                       0                
+  2   280   # Boost.InputInductor.i
+  0       0                       0                       0                
+  3   256   # Boost.InputInductor.der(i)
+  0       0                       0                       0                
+  6   260   # Boost.InputInductor.n.v
+  0       0                       0                       0                
+  6   256   # Boost.InputInductor.L
+  0       0                       0                       0                
+  6   256   # Boost.diode.v
+  0       0                       0                 1.0000000000000000E+100
+  6   256   # Boost.diode.r_on
+  0       0                       0                 1.0000000000000000E+100
+  6   256   # Boost.diode.g_off
+  0       0                       0                 1.0000000000000000E+100
+  6   256   # Boost.diode.v_knee
+  0       1                       0                       0                
+  6  1377   # Boost.diode.off
+  0       0                       0                       0                
+  6  1280   # Boost.diode.s
+  0       1                       0                       0                
+  6   768   # Boost.diode.unitVoltage
+  0       1                       0                       0                
+  6   768   # Boost.diode.unitCurrent
+  0       0                       0                       0                
+  6   256   # Boost.switch.i
+  0       0                       0                       0                
+  6   260   # Boost.switch.n.v
+  0       0                       0                       0                
+  6   321   # Boost.switch.control
+  0       0                       0                 1.0000000000000000E+100
+  6   256   # Boost.switch.r_on
+  0       0                       0                 1.0000000000000000E+100
+  6   256   # Boost.switch.g_off
+  0       0                       0                       0                
+  6  1345   # Boost.switch.off
+  0       0                       0                       0                
+  6  1280   # Boost.switch.s
+  0       1                       0                       0                
+  6   768   # Boost.switch.unitVoltage
+  0       1                       0                       0                
+  6   768   # Boost.switch.unitCurrent
+  0       0                       0                       0                
+  6   260   # Boost.DutyRatio.sensorSignal
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.f
+ -1       1                       0                       0                
+  1   280   # Boost.sawtoothPWM.limiter.uMax
+ -1       0                       0                       0                
+  1   280   # Boost.sawtoothPWM.limiter.uMin
+  0       0                       0                       0                
+  6   257   # Boost.sawtoothPWM.limiter.strict
+  0       1                       0                       0                
+  6   257   # Boost.sawtoothPWM.limiter.limitsAtInit
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.limiter.y
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.greaterEqual.u1
+  0       0                       0                       0                
+  6   320   # Boost.sawtoothPWM.greaterEqual.u2
+  0  1.0000000000000001E-01  1.0000000000000000E-13 1.0000000000000000E+100
+  6   256   # Boost.sawtoothPWM.zeroOrderHold.samplePeriod
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.zeroOrderHold.startTime
+  0       0                       0                       0                
+  6  1345   # Boost.sawtoothPWM.zeroOrderHold.sampleTrigger
+  0       0                       0                       0                
+  6  1353   # Boost.sawtoothPWM.zeroOrderHold.firstTrigger
+  0       0                       0                       0                
+  6   328   # Boost.sawtoothPWM.zeroOrderHold.ySample
+  0       1                       0                       0                
+  6   256   # Boost.sawtoothPWM.sawtooth.amplitude
+  0       1                  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # Boost.sawtoothPWM.sawtooth.period
+  0      -1                       0                       0                
+  6   258   # Boost.sawtoothPWM.sawtooth.nperiod
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.sawtooth.offset
+  0       0                       0                       0                
+  6   256   # Boost.sawtoothPWM.sawtooth.startTime
+  0       0                       0                       0                
+  6  1344   # Boost.sawtoothPWM.sawtooth.T_start
+  0       0                       0                       0                
+  6  1346   # Boost.sawtoothPWM.sawtooth.count
+  0       0                       0                       0                
+  6   388   # voltageSensor1.p.i
+  0       0                       0                       0                
+  6   260   # voltageSensor1.n.v
+  0       0                       0                       0                
+  6   388   # voltageSensor1.n.i
+  0       0                       0                       0                
+  6   260   # mppt1.u.sensorSignal
+  0       0                       0                       0                
+  6   324   # mppt1.y.sensorSignal
+ -1  1.0000000000000000E-03       0                       0                
+  1   280   # mppt1.Ts
+ -1  5.0000000000000003E-02       0                       0                
+  1   280   # mppt1.deltaVpvRefPanel
+  0       0                       0                       0                
+  6   256   # mppt1.pot
+ -1       0                       0                       0                
+  2   280   # mppt1.potActFiltered
+  0       0                       0                       0                
+  3   256   # mppt1.der(potActFiltered)
+  0       0                       0                       0                
+  6   328   # mppt1.potact
+  0       0                       0                       0                
+  6   328   # mppt1.potprev
+  0       0                       0                       0                
+  6   328   # mppt1.prevu
+  0       0                       0                       0                
+  6   328   # mppt1.actu
+  0       0                       0                       0                
+  6   328   # mppt1.deltau
+  0       0                       0                       0                
+  6   328   # mppt1.deltap
+  0      75                       0                       0                
+  6   328   # mppt1.vref
+ -1  5.0000000000000001E-03       0                       0                
+  1   280   # boostControl1.Gain
+ -1  5.0000000000000001E-03       0                       0                
+  1   280   # boostControl1.TimeCons
+  0       0                       0                       0                
+  6   256   # boostControl1.feedback1.y
+  0       0                       0                       0                
+  6   256   # boostControl1.PI.k
+  0       1                  9.9999999999999997E-61 1.0000000000000000E+100
+  6   256   # boostControl1.PI.T
+  0       4                       1                       4                
+  6   258   # boostControl1.PI.initType
+ -1       0                       0                       0                
+  1   280   # boostControl1.PI.x_start
+ -1       0                       0                       0                
+  1   280   # boostControl1.PI.y_start
+  0       0                       0                       0                
+  6   256   # boostControl1.PI.y
+ -1       0                       0                       0                
+  2   272   # boostControl1.PI.x
+  0       0                       0                       0                
+  3   256   # boostControl1.PI.der(x)
+ -1      -1                       0                       0                
+  1   280   # boostControl1.gain1.k
+ -1     400                       0                       0                
+  1   280   # V_dc.V
+  0       0                       0                       0                
+  6   260   # V_dc.n.v
+  0       0                       0                       0                
+  6   256   # resistor1.v
+ -1  2.0000000000000000E-02       0                       0                
+  1   280   # resistor1.R
+ -1       0                       0                       0                
+  2   280   # capacitor1.v
+  0       0                       0                       0                
+  3   256   # capacitor1.der(v)
+  0       0                       0                       0                
+  6   256   # capacitor1.i
+  0       0                       0                       0                
+  6   260   # capacitor1.n.v
+ -1  4.0000000000000003E-05       0                 1.0000000000000000E+100
+  1   280   # capacitor1.C
+ -1     303                       0                       0                
+  1   280   # Temperature.k
+  0       0                       0                       0                
+  6   260   # ground1.p.v
+  0       0                       0                       0                
+  6   388   # ground1.p.i
+ -1     100                       0                       0                
+  1   280   # Irradiation.amplitude
+ -1  1.0000000000000001E-01       0                 1.0000000000000000E+100
+  1   280   # Irradiation.rising
+ -1  2.9999999999999999E-01       0                 1.0000000000000000E+100
+  1   280   # Irradiation.width
+ -1  1.0000000000000001E-01       0                 1.0000000000000000E+100
+  1   280   # Irradiation.falling
+ -1       1                  9.9999999999999997E-61 1.0000000000000000E+100
+  1   280   # Irradiation.period
+ -1      -1                       0                       0                
+  1   282   # Irradiation.nperiod
+ -1     700                       0                       0                
+  1   280   # Irradiation.offset
+ -1  1.0000000000000001E-01       0                       0                
+  1   280   # Irradiation.startTime
+  0       0                       0                       0                
+  6  1280   # Irradiation.T_rising
+  0       0                       0                       0                
+  6  1280   # Irradiation.T_width
+  0       0                       0                       0                
+  6  1280   # Irradiation.T_falling
+  0       0                       0                       0                
+  6  1344   # Irradiation.T_start
+  0       0                       0                       0                
+  6  1346   # Irradiation.count
+
+
+# Matrix with 6 columns defining the initial value calculation
+# (columns 5 and 6 are not utilized for the calculation but are
+#  reported by dymosim via dymosim -i for user convenience):
+#
+# column 1: Type of initial value
+#           = -2: special case: for continuing simulation (column 2 = value)
+#           = -1: fixed value (column 2 = fixed value)
+#           =  0: free value, i.e., no restriction (column 2 = initial value)
+#           >  0: desired value (column 1 = weight for optimization
+#                                column 2 = desired value)
+#                 use weight=1, since automatic scaling usually
+#                 leads to equally weighted terms
+# column 2: fixed, free or desired value according to column 1.
+# column 3: Minimum value (ignored, if Minimum >= Maximum).
+# column 4: Maximum value (ignored, if Minimum >= Maximum).
+#           Minimum and maximum restrict the search range in initial
+#           value calculation. They might also be used for scaling.
+# column 5: Category of variable.
+#           = 1: parameter.
+#           = 2: state.
+#           = 3: state derivative.
+#           = 4: output.
+#           = 5: input.
+#           = 6: auxiliary variable.
+# column 6: Data type of variable and flags according to dsBaseType
+#  <value>&3= 0: real.
+#  <value>&3= 1: boolean.
+#  <value>&3= 2: integer.
+#
+# Initial values are calculated according to the following procedure:
+#
+# - If parameters, states and inputs are FIXED, and other variables
+#   are FREE, no special action takes place (default setting).
+#
+# - If there are only FIXED and FREE variables and the number of
+#   FREE parameters, states and inputs is IDENTICAL to the number of
+#   FIXED state derivatives, outputs and auxiliary variables, a non-linear
+#   equation is solved to determine a consistent set of initial conditions.
+#
+# - In all other cases the following optimization problem is solved:
+#      min( sum( weight(i)*( (value(i) - DESIRED(i))/scale(i) )^2 ) )
+#   under the constraint that the differential equation is fulfilled
+#   at the initial time. In most cases weight(i)=1 is sufficient, due
+#   to the automatic scaling (if DESIRED(i) is not close to zero,
+#   scale(i) = DESIRED(i). Otherwise, the scaling is based on the
+#   nominal value (and maybe minimum and maximum values given in 
+#   column 3 and 4). If these values are zero, scale(i)=1 is used).
+#
+char initialDescription(166,139)
+Elementary charge of electron [C]
+Reference temperature [K|degC]
+Reference solar irradiance [W/m2]
+Reference open circuit module voltage > 0 at TRref [V]
+Reference open circuit cell voltage > 0 at TRref [V]
+Reference short circuit current > 0 at TRref and irradianceRef [A]
+Reference maximum power module voltage > 0 at TRref [V]
+Reference maximum power cell voltage > 0 at TRref [V]
+Reference maximum power current > 0 at TRref and irradianceRef [A]
+Temperature coefficient of reference short circuit current at TRref [1/K]
+Temperature coefficient of reference open circuit module voltage at TRref [1/K]
+Number of series connected cells [:#(type=Integer)]
+Number of bypass diodes per module [:#(type=Integer)]
+Breakthrough cell voltage [V]
+Breakthrough knee current [A]
+Breakthrough emission coefficient
+Reference temperature voltage of cell [V]
+Current flowing from pin p to pin n [A]
+Potential at the pin [V]
+Elementary charge of electron [C]
+Reference temperature [K|degC]
+Reference solar irradiance [W/m2]
+Reference open circuit module voltage > 0 at TRref [V]
+Reference open circuit cell voltage > 0 at TRref [V]
+Reference short circuit current > 0 at TRref and irradianceRef [A]
+Reference maximum power module voltage > 0 at TRref [V]
+Reference maximum power cell voltage > 0 at TRref [V]
+Reference maximum power current > 0 at TRref and irradianceRef [A]
+Temperature coefficient of reference short circuit current at TRref [1/K]
+Temperature coefficient of reference open circuit module voltage at TRref [1/K]
+Number of series connected cells [:#(type=Integer)]
+Number of bypass diodes per module [:#(type=Integer)]
+Breakthrough cell voltage [V]
+Breakthrough knee current [A]
+Breakthrough emission coefficient
+Reference temperature voltage of cell [V]
+[:#(type=Integer)]
+[:#(type=Integer)]
+
+
+
+
+
+
+
+
+
+
+
+
+[:#(type=Integer)]
+
+
+
+
+
+Boost input indctance [H]
+Diode forward voltage drop [V]
+Diode forward resistance [Ohm]
+Diode reverse conductance [S]
+Switch forward resistance [Ohm]
+Switch reverse conductance [S]
+Desired fixed switching frequency [Hz]
+Potential at the pin [V]
+Potential at the pin [V]
+Current flowing into the pin [A]
+Current flowing into the pin [A]
+Potential at the pin [V]
+Current flowing into the pin [A]
+Voltage drop between the two pins (= p.v - n.v) [V]
+Current flowing from pin p to pin n [A]
+der(Current flowing from pin p to pin n) [A/s]
+Potential at the pin [V]
+Inductance [H]
+Voltage drop between the two pins (= p.v - n.v) [V]
+Forward ON state resistance [Ohm]
+Backward OFF state conductance [S]
+Forward threshold voltage [V]
+Switching off-state indicator [:#(type=Boolean)]
+Auxiliary variable for actual position on the diode characteristic [1]
+[V]
+[A]
+Current flowing from pin p to pin n [A]
+Potential at the pin [V]
+true => switch is closed, false => switch is open [:#(type=Boolean)]
+Forward ON state resistance [Ohm]
+Backward OFF state conductance [S]
+Indicates off-state [:#(type=Boolean)]
+Auxiliary variable for actual position on the switch characteristic [1]
+[V]
+[A]
+
+Switching frequency [Hz]
+Upper limits of input signals
+Lower limits of input signals
+= true, if strict limits with noEvent(..) [:#(type=Boolean)]
+Has no longer an effect and is only kept for backwards compatibility (the implementation uses now the homotopy operator) [:#(type=Boolean)]
+Connector of Real output signal
+Connector of first Boolean input signal
+Connector of second Boolean input signal
+Sample period of component [s]
+First sample time instant [s]
+True, if sample time instant [:#(type=Boolean)]
+Rising edge signals first sample instant [:#(type=Boolean)]
+
+Amplitude of saw tooth
+Time for one period [s]
+Number of periods (< 0 means infinite number of periods) [:#(type=Integer)]
+Offset of output signals
+Output = offset for time < startTime [s]
+Start time of current period [s]
+Period count [:#(type=Integer)]
+Current flowing into the pin [A]
+Potential at the pin [V]
+Current flowing into the pin [A]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gain [1]
+Time Constant (T>0 required) [s]
+Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
+Initial or guess value of state
+Initial value of output
+Connector of Real output signal
+State of block
+der(State of block)
+Gain value multiplied with input signal [1]
+Voltage value [V]
+Potential at the pin [V]
+Voltage drop between the two pins (= p.v - n.v) [V]
+Resistance [Ohm]
+Voltage drop between the two pins (= p.v - n.v) [V]
+der(Voltage drop between the two pins (= p.v - n.v)) [V/s]
+Current flowing from pin p to pin n [A]
+Potential at the pin [V]
+Capacitance [F]
+Constant output value
+Potential at the pin [V]
+Current flowing into the pin [A]
+Amplitude of trapezoid
+Rising duration of trapezoid [s]
+Width duration of trapezoid [s]
+Falling duration of trapezoid [s]
+Time for one period [s]
+Number of periods (< 0 means infinite number of periods) [:#(type=Integer)]
+Offset of output signal
+Output = offset for time < startTime [s]
+End time of rising phase within one period [s]
+End time of width phase within one period [s]
+End time of falling phase within one period [s]
+Start time of current period [s]
+Period count [:#(type=Integer)]
+
