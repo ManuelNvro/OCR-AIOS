@@ -168,55 +168,36 @@ package OCRAIOSPSAT
             iconTransformation(extent={{94,-12},{114,8}})));
       inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
         annotation (Placement(transformation(extent={{-98,78},{-38,98}})));
-    //   parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
-    //   parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
-    //   parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
-    //     "Voltage angle";
-    //   parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
-    //   parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
-    //   parameter Real M_b=460 "Machine base power (MVA)";
-      OpenIPSL.Electrical.Machines.PSAT.Order2 order2_1(
-        V_b=20,
-        Sn=500,
-        Vn=20,
-        ra=0,
-        x1d=0.4148,
-        M=7,
-        D=1,
-        V_0=V_0,
-        angle_0=angle_0,
-        P_0=P_0,
-        Q_0=Q_0)
-        annotation (Placement(transformation(extent={{42,2},{62,22}})));
-      parameter Modelica.SIunits.PerUnit V_0
-        "Voltage magnitude (pu)";
-      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0
+      parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
+      parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
+      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
         "Voltage angle";
-      parameter OpenIPSL.Types.ActivePowerMega P_0
-        "Active power";
-      parameter OpenIPSL.Types.ReactivePowerMega Q_0
-        "Reactive power";
-      OpenIPSL.Electrical.Controls.PSAT.TG.TGtypeII tGtypeII(
-        R=0.05,
-        pmax0=0.7,
-        pmin0=0,
-        S_b=750,
-        Sn=460,
-        Ts=0.5,
-        T3=0.05)
-        annotation (Placement(transformation(extent={{-2,-52},{18,-32}})));
+      parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
+      parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
+      parameter Real M_b=460 "Machine base power (MVA)";
+      OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 order5_Type2_1(
+      Vn = V_b,
+      T1d0=5,
+      T2d0=0.07,
+      T2q0=0.09,
+      M=8.56,
+      D=0,
+      xd=2.5,
+      xq=1.65,
+      x1d=0.76,
+      x2d=0.62,
+      x2q=0.58,
+      ra=0.01,
+      Sn=M_b,
+      V_b=V_b,
+      V_0=V_0,
+      angle_0=angle_0,
+      P_0=P_0,
+      Q_0=Q_0)
+        annotation (Placement(transformation(extent={{12,-26},{60,22}})));
     equation
-      connect(pwPin, order2_1.p) annotation (Line(points={{104,-2},{76,-2},{
-              76,12},{62,12}},
-                       color={0,0,255}));
-      connect(tGtypeII.pm, order2_1.pm) annotation (Line(points={{19,-42},{24,
-              -42},{24,7},{40,7}}, color={0,0,127}));
-      connect(order2_1.pm0, tGtypeII.pm0) annotation (Line(points={{44,1},{44,
-              -14},{8,-14},{8,-30}}, color={0,0,127}));
-      connect(order2_1.w, tGtypeII.w) annotation (Line(points={{63,21},{72,21},
-              {72,-58},{-10,-58},{-10,-42},{-4,-42}}, color={0,0,127}));
-      connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{44,23},{44,
-              32},{24,32},{24,17},{40,17}}, color={0,0,127}));
+      connect(order5_Type2_1.p, pwPin)
+        annotation (Line(points={{60,-2},{104,-2}}, color={0,0,255}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -100,-140},{100,100}}), graphics={
                                        Ellipse(
