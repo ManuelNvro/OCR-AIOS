@@ -52,8 +52,8 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
         rotation=180,
         origin={180,160})));
   Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(
-        transformation(extent={{200,-90},{220,-70}}), iconTransformation(extent
-          ={{200,-80},{240,-40}})));
+        transformation(extent={{200,-90},{220,-70}}), iconTransformation(extent=
+           {{200,-80},{240,-40}})));
   Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX)
     annotation (Placement(transformation(extent={{20,50},{40,70}})));
   Modelica.Blocks.Math.Feedback feedback1
@@ -331,8 +331,8 @@ protected
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
               textString="Active Power Control")}), Icon(coordinateSystem(
-            extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics
-          ={Rectangle(
+            extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics=
+           {Rectangle(
               extent={{-200,200},{200,-200}},
               lineColor={28,108,200},
               fillColor={255,255,255},
@@ -418,8 +418,8 @@ protected
 equation
   connect(P, PF_Controller.u) annotation (Line(points={{-200,0},{-170,0},{-140,
           0},{-140,48},{-120.8,48}}, color={0,150,0}));
-  connect(activePowerController.PELEC, PF_Controller.u) annotation (Line(points
-        ={{40,-80},{-140,-80},{-140,48},{-120.8,48}}, color={0,150,0}));
+  connect(activePowerController.PELEC, PF_Controller.u) annotation (Line(points=
+         {{40,-80},{-140,-80},{-140,48},{-120.8,48}}, color={0,150,0}));
 protected
   model windControlEmulator
     NonElectrical.Continuous.SimpleLag K(
@@ -515,8 +515,8 @@ protected
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
               textString="WindControl Emulator")}), Icon(coordinateSystem(
-            extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics
-          ={Rectangle(
+            extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics=
+           {Rectangle(
               extent={{-200,200},{200,-200}},
               lineColor={28,108,200},
               fillColor={255,255,255},

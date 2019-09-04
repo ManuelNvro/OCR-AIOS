@@ -213,7 +213,6 @@ equation
       visible=true,
       origin={14.0062,-41.6194},
       points={{-52.9937,1.6194},{15.9938,1.6194},{15.9938,-1.61938},{21.0063,-1.61938}},
-
       color={0,0,127}));
 
   connect(elecDyn.iqr, elecCircuit.iqr) annotation (Line(
@@ -236,14 +235,12 @@ equation
       visible=true,
       origin={-6.6693,-15.1284},
       points={{-32.3182,0.1284},{9.1019,0.1284},{9.1019,-0.12848},{14.1144,-0.12848}},
-
       color={0,0,127}));
 
   connect(windBlk1.Tm, mechaBlk1.Tm) annotation (Line(
       visible=true,
       origin={50.1452,-14.8679},
       points={{-26.7001,0.13217},{7.2292,0.13217},{7.2292,-0.1321},{12.2417,-0.1321}},
-
       color={0,0,127}));
 
   connect(mechaBlk1.omega_m, windBlk1.omega_m) annotation (Line(
@@ -256,7 +253,6 @@ equation
       visible=true,
       origin={-24.9193,-5.1166},
       points={{-87.0682,2.7238},{27.3519,2.7238},{27.3519,-2.72393},{32.3644,-2.72393}},
-
       color={0,0,127}));
 
   connect(pitchControl1.omega_m, mechaBlk1.omega_m) annotation (Line(

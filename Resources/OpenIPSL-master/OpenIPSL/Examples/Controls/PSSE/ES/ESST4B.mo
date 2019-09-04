@@ -64,7 +64,6 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-90.6,9.5},{-70,9.5},{-70,22},{-102,22},{-102,9.5},{-122.8,9.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -75,7 +74,6 @@ equation
       smooth=Smooth.None));
   connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
       points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-6.77778},{-78,-6.77778}},
-
       color={0,0,127},
       smooth=Smooth.None));
 

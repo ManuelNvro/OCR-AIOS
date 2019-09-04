@@ -73,8 +73,8 @@ equation
           lineColor={255,255,255},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),Ellipse(extent={{-50,30},{10,-30}},
-          lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor
-          ={28,108,200}),Line(
+          lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor=
+           {28,108,200}),Line(
           points={{-60,0},{-50,0}},
           color={28,108,200},
           arrow={Arrow.None,Arrow.Filled}),Line(points={{52,0},{60,0}}, color={

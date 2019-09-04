@@ -68,7 +68,6 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-74.6,9.5},{-70,9.5},{-70,22},{-104,22},{-104,9.5},{-106.8,9.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
 

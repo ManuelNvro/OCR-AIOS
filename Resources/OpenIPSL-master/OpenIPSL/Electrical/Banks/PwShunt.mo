@@ -64,8 +64,8 @@ equation
           origin={51,-34.5},
           rotation=90),Line(points={{-80,-30},{-20,-30}}, color={0,0,255}),Line(
           points={{-70,-70},{-30,-70}}, color={0,0,255}),Line(points={{-60,-80},
-          {-40,-80}}, color={0,0,255}),Line(points={{-80,-20},{-20,-20}}, color
-          ={0,0,255}),Line(points={{-80,0},{-20,0}}, color={0,0,255}),Line(
+          {-40,-80}}, color={0,0,255}),Line(points={{-80,-20},{-20,-20}}, color=
+           {0,0,255}),Line(points={{-80,0},{-20,0}}, color={0,0,255}),Line(
           points={{-80,10},{-20,10}}, color={0,0,255}),Line(points={{-80,30},{-20,
           30}}, color={0,0,255}),Line(points={{-80,40},{-20,40}}, color={0,0,
           255}),Line(points={{40,-70},{80,-70}}, color={0,0,255}),Line(points={
