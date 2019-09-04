@@ -168,55 +168,90 @@ package OCRAIOSPSAT
             iconTransformation(extent={{94,-12},{114,8}})));
       inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
         annotation (Placement(transformation(extent={{-98,78},{-38,98}})));
-    //   parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
-    //   parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
-    //   parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
-    //     "Voltage angle";
-    //   parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
-    //   parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
-    //   parameter Real M_b=460 "Machine base power (MVA)";
-      OpenIPSL.Electrical.Machines.PSAT.Order2 order2_1(
-        V_b=20,
-        Sn=500,
-        Vn=20,
-        ra=0,
-        x1d=0.4148,
-        M=7,
-        D=1,
+      parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus";
+      parameter Modelica.SIunits.PerUnit V_0=1 "Voltage magnitude (pu)";
+      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0
+        "Voltage angle";
+      parameter OpenIPSL.Types.ActivePowerMega P_0=1 "Active power";
+      parameter OpenIPSL.Types.ReactivePowerMega Q_0=0 "Reactive power";
+      parameter Real M_b=460 "Machine base power (MVA)";
+      OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 order5(
+        Vn=V_b,
+        w(fixed=true),
+        T1d0=5,
+        T2d0=0.07,
+        T2q0=0.09,
+        M=8.56,
+        D=0,
+        xd=2.5,
+        xq=1.65,
+        x1d=0.76,
+        x2d=0.62,
+        x2q=0.58,
+        ra=0.01,
+        Sn=M_b,
+        V_b=V_b,
         V_0=V_0,
         angle_0=angle_0,
         P_0=P_0,
-        Q_0=Q_0)
-        annotation (Placement(transformation(extent={{42,2},{62,22}})));
-      parameter Modelica.SIunits.PerUnit V_0
-        "Voltage magnitude (pu)";
-      parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0
-        "Voltage angle";
-      parameter OpenIPSL.Types.ActivePowerMega P_0
-        "Active power";
-      parameter OpenIPSL.Types.ReactivePowerMega Q_0
-        "Reactive power";
-      OpenIPSL.Electrical.Controls.PSAT.TG.TGtypeII tGtypeII(
-        R=0.05,
-        pmax0=0.7,
-        pmin0=0,
-        S_b=750,
-        Sn=460,
-        Ts=0.5,
-        T3=0.05)
-        annotation (Placement(transformation(extent={{-2,-52},{18,-32}})));
+        Q_0=Q_0) annotation (Placement(transformation(extent={{30,-26},{78,22}})));
+      OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII avr2(
+        Ka=50,
+        Ta=0.2,
+        Kf=0,
+        Tf=1,
+        Ke=1,
+        Te=0,
+        Tr=0.01,
+        Ae=0,
+        Be=1,
+        v0=V_0) annotation (Placement(transformation(extent={{-66,26},{-28,-6}})));
+      OpenIPSL.Electrical.Controls.PSAT.OEL.OEL oel(
+        T0=10,
+        xd=order5.xd,
+        xq=order5.xq,
+        if_lim=2.825,
+        vOEL_max=1,
+        Sn=order5.Sn,
+        Vn=order5.Vn,
+        V_b=V_b)
+        annotation (Placement(transformation(extent={{-28,-120},{-66,-86}})));
+      OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeI tGTypeI(
+        pref=p0,
+        R=25,
+        pmax=1,
+        pmin=0,
+        Ts=0.1,
+        Tc=0.4,
+        T3=0,
+        T4=2.33,
+        T5=4)
+        annotation (Placement(transformation(extent={{-10,-26},{14,-2}})));
+    protected
+          parameter Real p0 = P_0/M_b;
     equation
-      connect(pwPin, order2_1.p) annotation (Line(points={{104,-2},{76,-2},{
-              76,12},{62,12}},
-                       color={0,0,255}));
-      connect(tGtypeII.pm, order2_1.pm) annotation (Line(points={{19,-42},{24,
-              -42},{24,7},{40,7}}, color={0,0,127}));
-      connect(order2_1.pm0, tGtypeII.pm0) annotation (Line(points={{44,1},{44,
-              -14},{8,-14},{8,-30}}, color={0,0,127}));
-      connect(order2_1.w, tGtypeII.w) annotation (Line(points={{63,21},{72,21},
-              {72,-58},{-10,-58},{-10,-42},{-4,-42}}, color={0,0,127}));
-      connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{44,23},{44,
-              32},{24,32},{24,17},{40,17}}, color={0,0,127}));
+      connect(order5.p, pwPin)
+        annotation (Line(points={{78,-2},{104,-2}}, color={0,0,255}));
+      connect(order5.vf, avr2.vf)
+        annotation (Line(points={{25.2,10},{-24.2,10}}, color={0,0,127}));
+      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,24.4},{34.8,40},{
+              -47,40},{-47,29.2}}, color={0,0,127}));
+      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-9.2},{-46,-9.2},
+              {-46,-83.96},{-46.62,-83.96}}, color={0,0,127}));
+      connect(order5.Q, oel.q) annotation (Line(points={{80.4,-18.8},{88,-18.8},{88,
+              -106.4},{-29.52,-106.4}}, color={0,0,127}));
+      connect(order5.P, oel.p) annotation (Line(points={{80.4,-9.2},{86,-9.2},{86,-99.6},
+              {-29.52,-99.6}}, color={0,0,127}));
+      connect(order5.v, oel.v) annotation (Line(points={{80.4,5.2},{84,5.2},{84,-92.8},
+              {-29.52,-92.8}}, color={0,0,127}));
+      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,-103},
+              {-78,0.4},{-69.8,0.4}}, color={0,0,127}));
+      connect(order5.v, avr2.v) annotation (Line(points={{80.4,5.2},{84,5.2},{84,44},
+              {-78,44},{-78,19.6},{-69.8,19.6}}, color={0,0,127}));
+      connect(order5.pm, tGTypeI.pm)
+        annotation (Line(points={{25.2,-14},{15.2,-14}}, color={0,0,127}));
+      connect(order5.w, tGTypeI.w) annotation (Line(points={{80.4,19.6},{80,19.6},{80,
+              30},{-12,30},{-12,-4},{-12.4,-4},{-12.4,-14}}, color={0,0,127}));
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -100,-140},{100,100}}), graphics={
                                        Ellipse(
