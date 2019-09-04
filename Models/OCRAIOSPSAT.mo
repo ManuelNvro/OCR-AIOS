@@ -198,14 +198,15 @@ package OCRAIOSPSAT
       OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII avr2(
         Ka=50,
         Ta=0.2,
-        Kf=0,
         Tf=1,
         Ke=1,
-        Te=0,
         Tr=0.01,
         Ae=0,
         Be=1,
-        v0=V_0) annotation (Placement(transformation(extent={{-66,26},{-28,-6}})));
+        v0=V_0,
+        Kf=0.0001,
+        Te=0.0001)
+                annotation (Placement(transformation(extent={{-66,20},{-28,-12}})));
       OpenIPSL.Electrical.Controls.PSAT.OEL.OEL oel(
         T0=10,
         xd=order5.xd,
@@ -233,21 +234,26 @@ package OCRAIOSPSAT
       connect(order5.p, pwPin)
         annotation (Line(points={{78,-2},{104,-2}}, color={0,0,255}));
       connect(order5.vf, avr2.vf)
-        annotation (Line(points={{25.2,10},{-24.2,10}}, color={0,0,127}));
-      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,24.4},{34.8,40},{
-              -47,40},{-47,29.2}}, color={0,0,127}));
-      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-9.2},{-46,-9.2},
-              {-46,-83.96},{-46.62,-83.96}}, color={0,0,127}));
+        annotation (Line(points={{25.2,10},{0,10},{0,4},{-24.2,4}},
+                                                        color={0,0,127}));
+      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,24.4},{34.8,
+              40},{-47,40},{-47,23.2}},
+                                   color={0,0,127}));
+      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-15.2},{-46,
+              -15.2},{-46,-83.96},{-46.62,-83.96}},
+                                             color={0,0,127}));
       connect(order5.Q, oel.q) annotation (Line(points={{80.4,-18.8},{88,-18.8},{88,
               -106.4},{-29.52,-106.4}}, color={0,0,127}));
       connect(order5.P, oel.p) annotation (Line(points={{80.4,-9.2},{86,-9.2},{86,-99.6},
               {-29.52,-99.6}}, color={0,0,127}));
       connect(order5.v, oel.v) annotation (Line(points={{80.4,5.2},{84,5.2},{84,-92.8},
               {-29.52,-92.8}}, color={0,0,127}));
-      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,-103},
-              {-78,0.4},{-69.8,0.4}}, color={0,0,127}));
-      connect(order5.v, avr2.v) annotation (Line(points={{80.4,5.2},{84,5.2},{84,44},
-              {-78,44},{-78,19.6},{-69.8,19.6}}, color={0,0,127}));
+      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,
+              -103},{-78,-5.6},{-69.8,-5.6}},
+                                      color={0,0,127}));
+      connect(order5.v, avr2.v) annotation (Line(points={{80.4,5.2},{84,5.2},{
+              84,44},{-78,44},{-78,13.6},{-69.8,13.6}},
+                                                 color={0,0,127}));
       connect(order5.pm, tGTypeI.pm)
         annotation (Line(points={{25.2,-14},{15.2,-14}}, color={0,0,127}));
       connect(order5.w, tGTypeI.w) annotation (Line(points={{80.4,19.6},{80,19.6},{80,
@@ -1946,7 +1952,7 @@ package OCRAIOSPSAT
 
   package TestSystemsNotJoined
 
-    model AIOSNoMotor
+    model AIOSNoMotorPSSE
       OpenIPSL.Electrical.Buses.Bus ThreeBus(
         V_b=380,
         V_0=1.0455,
@@ -2063,7 +2069,7 @@ package OCRAIOSPSAT
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
-    end AIOSNoMotor;
+    end AIOSNoMotorPSSE;
 
     model AIOSNoMotorRelayMNC
       OpenIPSL.Electrical.Buses.Bus ThreeBus(
@@ -2231,7 +2237,7 @@ package OCRAIOSPSAT
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
     end AIOSNoMotorRelayMNC;
 
-    model AIOSMotor
+    model AIOSMotorPSSE
       OpenIPSL.Electrical.Buses.Bus ThreeBus(
         V_b=380,
         V_0=1.0455,
@@ -2396,7 +2402,7 @@ package OCRAIOSPSAT
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
                 -280,-140},{140,80}})), Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-280,-140},{140,80}})));
-    end AIOSMotor;
+    end AIOSMotorPSSE;
 
     model AIOSMotorRelay
        Real Imag;
@@ -3862,6 +3868,125 @@ package OCRAIOSPSAT
                 -140},{140,80}})),      Diagram(coordinateSystem(
               preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
     end AIOSNoMotorRelay;
+
+    model AIOSNoMotorPSAT
+      OpenIPSL.Electrical.Buses.Bus ThreeBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-12.7,
+        P_0=1200,
+        Q_0=53)
+        annotation (Placement(transformation(extent={{-82,-102},{-62,-82}})));
+      inner OpenIPSL.Electrical.SystemBase SysData(S_b=750)
+        annotation (Placement(transformation(extent={{-274,56},{-214,76}})));
+      OpenIPSL.Electrical.Buses.Bus OneBus(
+        angle_0=0,
+        V_b=380,
+        V_0=1.08,
+        P_0=450,
+        Q_0=118)
+        annotation (Placement(transformation(extent={{-244,-26},{-224,-6}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine1(
+        R=0,
+        X=0.4143333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-64},{-160,-44}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine3(
+        R=0,
+        X=0.414333333,
+        G=0,
+        B=0,
+        displayPF=false)
+        annotation (Placement(transformation(extent={{-180,-26},{-160,-6}})));
+      OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
+        V_b=380,
+        displayPF=true,
+        V_0=PowerFlow.voltage.InfiniteBusV_0,
+        angle_0=PowerFlow.voltage.InfiniteBusangle_0,
+        P_0=PowerFlow.power.InfiniteBusP_0,
+        Q_0=PowerFlow.power.InfiniteBusQ_0)
+        annotation (Placement(transformation(extent={{-290,-26},{-270,-6}})));
+      OpenIPSL.Electrical.Buses.Bus TwoBus(V_b=750) annotation (Placement(
+            transformation(extent={{-174,-102},{-154,-82}})));
+      OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
+        twoWindingTransformer1(
+        Sn=500,
+        V_b=20,
+        Vn=20,
+        S_b=750,
+        rT=0,
+        xT=0.08,
+        m=1/1.04)
+        annotation (Placement(transformation(extent={{-142,-102},{-122,-82}})));
+      OpenIPSL.Electrical.Buses.Bus FiveBus(
+        V_b=380,
+        V_0=1.0455,
+        angle_0=-15.2,
+        P_0=1200,
+        Q_0=0)
+        annotation (Placement(transformation(extent={{18,-102},{38,-82}})));
+      OpenIPSL.Electrical.Branches.PwLine pwLine2(
+        R=0,
+        X=0.029999989612,
+        G=0,
+        B=0,
+        displayPF=true)
+        annotation (Placement(transformation(extent={{-28,-102},{-8,-82}})));
+      OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
+        V_b=380,
+        V_0=PowerFlow.voltage.PQLoadV_0,
+        angle_0=PowerFlow.voltage.PQLoadangle_0,
+        P_0=PowerFlow.power.PQLoadP_0,
+        Q_0=PowerFlow.power.PQLoadQ_0) annotation (Placement(transformation(
+            extent={{-18,-18},{18,18}},
+            rotation=90,
+            origin={74,-92})));
+
+     Real Imag;
+      Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
+            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
+        annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
+      Components.PSATGeneratorTGOV pSATGeneratorTGOV(
+       V_b=20,
+        M_b=750,
+        V_0=PowerFlow.voltage.GeneratorV_0,
+        angle_0=PowerFlow.voltage.Generatorangle_0,
+        P_0=PowerFlow.power.GeneratorP_0,
+        Q_0=PowerFlow.power.GeneratorQ_0)
+        annotation (Placement(transformation(extent={{-220,-106},{-200,-82}})));
+    equation
+      Imag =  sqrt(pwLine3.p.ir^2+pwLine3.p.ii^2);
+      connect(TwoBus.p, twoWindingTransformer1.p)
+        annotation (Line(points={{-164,-92},{-143,-92}}, color={0,0,255}));
+      connect(twoWindingTransformer1.n, ThreeBus.p)
+        annotation (Line(points={{-121,-92},{-72,-92}}, color={0,0,255}));
+      connect(FiveBus.p, pwLine2.n)
+        annotation (Line(points={{28,-92},{-9,-92}}, color={0,0,255}));
+      connect(FiveBus.p, lOADPQ.p) annotation (Line(points={{28,-92},{56,-92}},
+                                       color={0,0,255}));
+      connect(pwLine2.p, ThreeBus.p)
+        annotation (Line(points={{-27,-92},{-72,-92}}, color={0,0,255}));
+      connect(infiniteBus.p, OneBus.p)
+        annotation (Line(points={{-270,-16},{-234,-16}},
+                                                       color={0,0,255}));
+      connect(OneBus.p, pwLine1.p) annotation (Line(points={{-234,-16},{-226,
+              -16},{-226,-54},{-179,-54}},
+                                        color={0,0,255}));
+      connect(pwLine3.p, pwLine1.p) annotation (Line(points={{-179,-16},{-226,
+              -16},{-226,-54},{-179,-54}}, color={0,0,255}));
+      connect(pwLine3.n, pwLine1.n) annotation (Line(points={{-161,-16},{-116,
+              -16},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(ThreeBus.p, pwLine1.n) annotation (Line(points={{-72,-92},{-72,
+              -38},{-116,-38},{-116,-54},{-161,-54}}, color={0,0,255}));
+      connect(TwoBus.p, pSATGeneratorTGOV.pwPin) annotation (Line(points={{-164,
+              -92},{-198,-92},{-198,-92.2},{-199.6,-92.2}},
+                                                       color={0,0,255}));
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-300,
+                -140},{140,80}})),      Diagram(coordinateSystem(
+              preserveAspectRatio=false, extent={{-300,-140},{140,80}})));
+    end AIOSNoMotorPSAT;
   end TestSystemsNotJoined;
 
   package Data
