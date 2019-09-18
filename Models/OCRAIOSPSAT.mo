@@ -204,9 +204,9 @@ package OCRAIOSPSAT
         Be=1,
         v0=V_0,
         Te=0.0001,
-        Kf=0.01,
-        Tf=0.01)
-                annotation (Placement(transformation(extent={{-66,20},{-28,-12}})));
+        Kf=1,
+        Tf=0.015)
+                annotation (Placement(transformation(extent={{-66,22},{-28,-10}})));
       OpenIPSL.Electrical.Controls.PSAT.OEL.OEL oel(
         T0=10,
         xd=order5.xd,
@@ -240,23 +240,26 @@ package OCRAIOSPSAT
         annotation (Line(points={{78,0},{92,0},{92,-2},{104,-2}},
                                                     color={0,0,255}));
       connect(order5.vf, avr2.vf)
-        annotation (Line(points={{25.2,12},{0,12},{0,4},{-24.2,4}},
+        annotation (Line(points={{25.2,12},{0,12},{0,6},{-24.2,6}},
                                                         color={0,0,127}));
-      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,26.4},{34.8,40},{
-              -47,40},{-47,23.2}}, color={0,0,127}));
-      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-15.2},{-46,-15.2},
-              {-46,-83.96},{-46.62,-83.96}}, color={0,0,127}));
+      connect(order5.vf0, avr2.vf0) annotation (Line(points={{34.8,26.4},{34.8,
+              40},{-47,40},{-47,25.2}},
+                                   color={0,0,127}));
+      connect(avr2.vref0, oel.v_ref0) annotation (Line(points={{-47,-13.2},{-46,
+              -13.2},{-46,-83.96},{-46.62,-83.96}},
+                                             color={0,0,127}));
       connect(order5.Q, oel.q) annotation (Line(points={{80.4,-16.8},{88,-16.8},{88,
               -106.4},{-29.52,-106.4}}, color={0,0,127}));
       connect(order5.P, oel.p) annotation (Line(points={{80.4,-7.2},{86,-7.2},{86,-99.6},
               {-29.52,-99.6}}, color={0,0,127}));
       connect(order5.v, oel.v) annotation (Line(points={{80.4,7.2},{84,7.2},{84,-92.8},
               {-29.52,-92.8}}, color={0,0,127}));
-      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,-103},
-              {-78,-5.6},{-69.8,-5.6}},
+      connect(oel.v_ref, avr2.vref) annotation (Line(points={{-66.76,-103},{-78,
+              -103},{-78,-3.6},{-69.8,-3.6}},
                                       color={0,0,127}));
-      connect(order5.v, avr2.v) annotation (Line(points={{80.4,7.2},{84,7.2},{84,44},
-              {-78,44},{-78,13.6},{-69.8,13.6}}, color={0,0,127}));
+      connect(order5.v, avr2.v) annotation (Line(points={{80.4,7.2},{84,7.2},{
+              84,44},{-78,44},{-78,15.6},{-69.8,15.6}},
+                                                 color={0,0,127}));
       connect(order5.pm, tGTypeI.pm)
         annotation (Line(points={{25.2,-12},{20,-12},{20,-14},{15.2,-14}},
                                                          color={0,0,127}));
