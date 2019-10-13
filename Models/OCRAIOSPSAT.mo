@@ -231,9 +231,9 @@ package OCRAIOSPSAT
 
 
 
-    protected
-          parameter Real p0 = 0.6; // for PF1
-          //parameter Real p0 = 0.4;// for PF4
+          //parameter Real p0 = 0.6; // for PF1 PF7
+          //parameter Real p0 = 0.466666667; // for PF2 PF3
+          parameter Real p0 = 0.4;// for PF4 PF5 PF6 PF8
           //parameter Real p0 = P_0/M_b;
     equation
       connect(order5.p, pwPin)
@@ -4984,7 +4984,7 @@ package OCRAIOSPSAT
 
      Real Imag;
       Data.SystemData.SystemData.PF1 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF1, redeclare record Power = Data.PowerData.PPF1)
+            Data.VoltageData.VPF7, redeclare record Power = Data.PowerData.PPF7)
         annotation (Placement(transformation(extent={{-200,56},{-180,76}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
        V_b=20,
@@ -5143,7 +5143,7 @@ package OCRAIOSPSAT
             rotation=90,
             origin={74,-92})));
       Data.SystemData.SystemData.PF8 PowerFlow(redeclare record Voltage =
-            Data.VoltageData.VPF4, redeclare record Power = Data.PowerData.PPF4)
+            Data.VoltageData.VPF8, redeclare record Power = Data.PowerData.PPF8)
         annotation (Placement(transformation(extent={{-204,58},{-184,78}})));
       Components.PSATGeneratorTGOV pSATGeneratorTGOV(
         V_b=20,
